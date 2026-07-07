@@ -44,7 +44,7 @@
   html{scroll-behavior:smooth}
   body{
     margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Helvetica Neue",sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Helvetica Neue","PingFang TC","Hiragino Sans TC","Microsoft JhengHei","Noto Sans TC",sans-serif;
     color:var(--ink);
     background:var(--bg);
     line-height:1.6;
@@ -79,6 +79,13 @@
   .nav-links{display:flex;gap:26px}
   .nav-links a{color:var(--muted);font-weight:600;font-size:.92rem;transition:color .2s}
   .nav-links a:hover{color:var(--blue)}
+  .nav-right{display:flex;align-items:center;gap:22px}
+  .lang-toggle{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);background:var(--card);
+    border-radius:999px;padding:3px;cursor:pointer;font-weight:800;font-size:.8rem;color:var(--muted);
+    box-shadow:var(--shadow);font-family:inherit;line-height:1;flex:0 0 auto}
+  .lang-toggle span{padding:6px 12px;border-radius:999px;transition:background .2s, color .2s}
+  .lang-toggle[data-active="en"] span[data-l="en"],
+  .lang-toggle[data-active="zh"] span[data-l="zh"]{background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff}
   @media(max-width:760px){.nav-links{display:none}}
 
   /* ---------- Hero ---------- */
@@ -241,13 +248,16 @@
     <div class="brand">
       <span>So Dental</span>
     </div>
-    <nav class="nav-links">
-      <a href="#about">What is it</a>
-      <a href="#need">When you need one</a>
-      <a href="#procedure">The procedure</a>
-      <a href="#types">Types</a>
-      <a href="#faq">FAQ</a>
-    </nav>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#about">What is it</a>
+        <a href="#need">When you need one</a>
+        <a href="#procedure">The procedure</a>
+        <a href="#types">Types</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="lang-toggle" id="langToggle" data-active="en" type="button" aria-label="Switch language / 切換語言"><span data-l="en">EN</span><span data-l="zh">中文</span></button>
+    </div>
   </div>
 </header>
 
@@ -662,6 +672,159 @@
 </footer>
 
 <script>
+  // ---------- Language toggle (EN / Traditional Chinese) ----------
+  var T = {
+    nav:{
+      en:["What is it","When you need one","The procedure","Types","FAQ"],
+      zh:["認識牙冠","何時需要","療程步驟","牙冠種類","常見問題"]
+    },
+    eyebrow:{
+      en:["Patient Guide","The basics","Is it for me?","How it works","Your options","Make it last","Good to know","Strong · Protected · Beautiful"],
+      zh:["患者指南","基礎認識","我適合嗎？","療程流程","你的選擇","延長壽命","值得了解","堅固 · 保護 · 美觀"]
+    },
+    h1:{
+      en:'Dental Crown<span class="sub">THE PROCEDURE</span>',
+      zh:'牙冠療程<span class="sub">完整療程解析</span>'
+    },
+    lead:{
+      en:"A custom-made cap that covers and protects a damaged or weakened tooth — restoring its strength, shape and appearance.",
+      zh:"量身訂製的牙套，能包覆並保護受損或脆弱的牙齒，重建牙齒的強度、形狀與美觀。"
+    },
+    pills:{en:["Strong","Protected","Beautiful"], zh:["堅固","保護","美觀"]},
+    btnPrimary:{en:"See the 6 steps", zh:"查看六大步驟"},
+    btnGhost:{en:"Read the FAQ", zh:"常見問題"},
+    h2:{
+      en:["What exactly is a dental crown?","When you might need a crown","The procedure — 6 simple steps","Common types of crowns","Caring for your new crown","Frequently asked questions"],
+      zh:["牙冠究竟是什麼？","什麼情況需要牙冠？","療程步驟 — 簡單六步驟","常見的牙冠種類","如何照護你的新牙冠","常見問題"]
+    },
+    secp:{
+      en:["Think of it as a tailor-made helmet for a tooth that needs a little extra strength.","Your dentist may recommend a crown in any of these common situations.","Here's exactly how the process works, from your first visit to your finished smile.","Crowns come in different materials. Your dentist helps you pick the best fit for the tooth, your bite and your budget.","A crown isn't fussy — treat it like a natural tooth and it will serve you well for years.","The things patients ask us most about getting a crown."],
+      zh:["你可以把它想像成為牙齒量身打造的防護頭盔，為需要額外強度的牙齒提供保護。","在以下常見情況中，牙醫可能會建議你製作牙冠。","從第一次就診到重獲燦爛笑容，以下是完整的療程流程。","牙冠有多種材質，牙醫會依照牙齒狀況、咬合與預算，協助你挑選最合適的選擇。","牙冠的照護並不複雜，只要像對待天然牙齒一樣呵護，就能陪伴你多年。","患者對於製作牙冠最常詢問的問題。"]
+    },
+    aboutp:{
+      en:["A <strong>dental crown</strong> is a custom-made cap that fits snugly over an entire tooth, from the gum line up. It's shaped and coloured to blend in with your natural teeth, so most people won't be able to tell it's there.","Crowns are used when a tooth is too damaged for a simple filling but is still worth saving. By covering the whole tooth, a crown seals and protects what's left underneath — letting you bite, chew and smile with confidence again."],
+      zh:["<strong>牙冠</strong>是一種量身訂製的牙套，能完整包覆整顆牙齒（從牙齦線以上）。它的形狀與顏色都會與你的天然牙齒相配，因此大多數人都看不出來。","當牙齒受損過大、無法單靠補牙修復，但仍值得保留時，就會使用牙冠。牙冠包覆整顆牙齒，密封並保護底下剩餘的齒質，讓你重新自信地咬合、咀嚼與微笑。"]
+    },
+    statlbl:{
+      en:["years of life with good care","simple steps, start to finish","custom-made to fit your tooth"],
+      zh:["妥善照護可使用的年數","從頭到尾的簡單步驟","為你的牙齒量身訂製"]
+    },
+    cardh:{
+      en:["Cracked or weak tooth","Large filling","After a root canal","Worn-down teeth","Cosmetic makeover","Bridge or implant"],
+      zh:["牙齒裂開或脆弱","大範圍補牙","根管治療後","牙齒磨損","美觀修復","牙橋或植牙"]
+    },
+    cardp:{
+      en:["A crown holds a fragile or cracked tooth together and stops the damage from spreading.","When a filling is too big for the tooth to support on its own, a crown restores its strength.","A treated tooth becomes brittle. A crown protects it so it can keep working for years.","Grinding or acid wear can flatten teeth over time — a crown rebuilds their natural shape.","Crowns can improve the colour and shape of a misshapen or badly discoloured tooth.","Crowns anchor a dental bridge or finish an implant, replacing a missing tooth naturally."],
+      zh:["牙冠能將脆弱或裂開的牙齒固定在一起，防止損害繼續擴大。","當補牙範圍過大、牙齒無法自行支撐時，牙冠能重建其強度。","接受治療後的牙齒會變得脆弱，牙冠能加以保護，讓它持續使用多年。","磨牙或酸蝕會使牙齒逐漸變平，牙冠能重建其自然形狀。","牙冠能改善形狀不佳或嚴重變色牙齒的顏色與外形。","牙冠可作為牙橋的支撐或植牙的最後修復，自然地替補缺失的牙齒。"]
+    },
+    steph:{
+      en:["Exam & Treatment Plan","Tooth Preparation","Impression Taken","Temporary Crown Placed","Custom Crown Fitting","Crown Cemented"],
+      zh:["檢查與治療計畫","牙齒修形","取模印模","裝上臨時牙冠","訂製牙冠試戴","黏著固定牙冠"]
+    },
+    stepp:{
+      en:["We examine your tooth, take X-rays if needed, and create a personalised treatment plan.","The tooth is gently reshaped to make room for the crown.","Impressions are taken to create a custom crown that fits perfectly.","A temporary crown is placed to protect your tooth while your custom crown is made.","Your custom crown is checked for fit, shape and colour, then adjusted for comfort.","The crown is securely cemented in place, restoring strength and a natural smile."],
+      zh:["我們會檢查你的牙齒，必要時拍攝 X 光，並制定專屬的治療計畫。","輕柔地修整牙齒，為牙冠預留空間。","取得牙齒印模，以製作完美貼合的訂製牙冠。","在訂製牙冠製作期間，先裝上臨時牙冠保護牙齒。","檢查訂製牙冠的密合度、形狀與顏色，並調整至舒適為止。","將牙冠穩固地黏著定位，重建牙齒強度與自然笑容。"]
+    },
+    visit:{
+      en:["1 Visit","1 Visit","1 Visit","1 Visit","1 Visit","1 Visit"],
+      zh:["一次就診","一次就診","一次就診","一次就診","一次就診","一次就診"]
+    },
+    typeh:{
+      en:["Porcelain / All-Ceramic","Zirconia","Porcelain-Fused-to-Metal","Metal / Gold Alloy"],
+      zh:["陶瓷／全瓷","二氧化鋯","金屬燒瓷","金屬／金合金"]
+    },
+    typep:{
+      en:["The most natural-looking option, prized for front teeth where appearance matters most.","Exceptionally tough and long-lasting while still tooth-coloured — great for back teeth.","A metal core for strength with a porcelain coating for a natural finish — a proven all-rounder.","Extremely durable and gentle on opposing teeth. Ideal for out-of-sight molars."],
+      zh:["外觀最自然的選擇，特別適合重視美觀的前牙。","極為堅固耐用，同時保有牙齒色澤，非常適合後牙。","以金屬為核心提供強度，外層覆以陶瓷呈現自然外觀，是經實證的全能選擇。","極為耐用且對對咬牙溫和，最適合不易被看見的臼齒。"]
+    },
+    typetag:{
+      en:["Best for a natural look","Strongest & durable","Strength + looks","Longest lasting"],
+      zh:["最自然美觀","最堅固耐用","兼顧強度與美觀","最耐久"]
+    },
+    careh:{en:["Do","Avoid"], zh:["建議做","應避免"]},
+    careli:{
+      en:["Brush twice a day and floss gently around the crown.","Keep up with regular dental check-ups and cleanings.","Wear a night guard if you grind your teeth.","Call your dentist if the crown feels high or uncomfortable.","Chewing ice, hard candy or pen caps on the new crown.","Using your teeth as tools to open packaging.","Sticky, chewy foods while wearing a temporary crown.","Ignoring lasting pain or sensitivity — get it checked."],
+      zh:["每天刷牙兩次，並輕柔地清潔牙冠周圍的牙縫。","定期回診檢查與洗牙。","若有磨牙習慣，請配戴夜間咬合板。","若牙冠感覺過高或不適，請聯絡牙醫。","用新牙冠咬冰塊、硬糖或筆蓋。","把牙齒當工具來拆開包裝。","配戴臨時牙冠時食用黏性或耐嚼的食物。","忽略持續的疼痛或敏感，應盡快就診檢查。"]
+    },
+    faqq:{
+      en:["Does getting a crown hurt?","How long does a crown last?","Will my crown look natural?","How do I take care of it?","What if it feels high or uncomfortable?"],
+      zh:["製作牙冠會痛嗎？","牙冠可以使用多久？","牙冠看起來自然嗎？","我該如何照護？","如果感覺過高或不舒服怎麼辦？"]
+    },
+    faqa:{
+      en:["Not usually. The tooth is numbed with local anaesthetic during preparation, so most people feel only mild pressure. Some tenderness or sensitivity for a few days afterwards is normal and settles quickly.","With proper care, a dental crown can last <strong>10–15 years or more</strong>. Good brushing and flossing, regular check-ups, and avoiding hard foods all help it last as long as possible.","Yes. Crowns are custom-made and matched to the shape and colour of your surrounding teeth. Porcelain and ceramic crowns in particular are almost impossible to tell apart from a natural tooth.","Treat it just like a natural tooth: brush twice a day, floss daily, and keep up regular dental visits. Avoid chewing very hard items directly on the crown, and wear a night guard if you grind your teeth.","Let your dentist know. A crown that feels too tall on your bite is a quick, painless adjustment. It's important to fix it early so your bite stays comfortable and balanced."],
+      zh:["通常不會。修形過程中會以局部麻醉使牙齒失去知覺，因此大多數人只會感覺到輕微壓力。術後幾天內出現些微酸軟或敏感屬於正常現象，並會很快緩解。","只要妥善照護，牙冠可以使用<strong>10 至 15 年，甚至更久</strong>。良好的刷牙與使用牙線、定期回診，以及避免咬硬物，都能讓它用得更久。","會的。牙冠皆為量身訂製，並會與周圍牙齒的形狀與顏色相配。尤其是陶瓷與全瓷牙冠，幾乎與天然牙齒難以分辨。","把它當作天然牙齒照護即可：每天刷牙兩次、每天使用牙線，並定期回診。避免直接用牙冠咬非常硬的東西，若會磨牙請配戴夜間咬合板。","請告知你的牙醫。牙冠若在咬合時感覺過高，只需快速且無痛地調整即可。及早處理很重要，能讓你的咬合維持舒適與平衡。"]
+    },
+    bannerh2:{en:"Strong. Protected. Beautiful.", zh:"堅固。保護。美觀。"},
+    bannerp:{
+      en:"With proper care, your dental crown can last 10–15 years or more — restoring your tooth's strength and your natural smile. Talk to your dentist to find out if a crown is right for you.",
+      zh:"只要妥善照護，你的牙冠可以使用 10 至 15 年甚至更久，重建牙齒強度與自然笑容。歡迎諮詢你的牙醫，了解牙冠是否適合你。"
+    },
+    disclaimer:{
+      en:"This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.",
+      zh:"本頁面僅提供一般衛教資訊，不能取代專業的牙科建議、診斷或治療。請務必就個人需求諮詢合格的牙醫師。"
+    },
+    title:{en:"Dental Crown — The Procedure | Patient Guide", zh:"牙冠療程 — 患者衛教指南"}
+  };
+
+  function qs(s){return document.querySelectorAll(s);}
+  function setHTMLall(sel, arr){var els=qs(sel);for(var i=0;i<els.length;i++){if(arr[i]!=null)els[i].innerHTML=arr[i];}}
+  function setLabel(el, txt){
+    var ns=el.childNodes, tn=null, i;
+    for(i=0;i<ns.length;i++){if(ns[i].nodeType===3){tn=ns[i];break;}}
+    var iconFirst = el.firstChild && el.firstChild.nodeType!==3;
+    if(tn){tn.textContent = iconFirst ? (" "+txt) : (txt+" ");}
+    else{el.appendChild(document.createTextNode(iconFirst?(" "+txt):txt));}
+  }
+  function setLabelAll(sel, arr){var els=qs(sel);for(var i=0;i<els.length;i++){if(arr[i]!=null)setLabel(els[i],arr[i]);}}
+
+  function applyLang(L){
+    document.documentElement.setAttribute("lang", L==="zh"?"zh-Hant":"en");
+    document.documentElement.setAttribute("data-lang", L);
+    setHTMLall(".nav-links a", T.nav[L]);
+    setHTMLall(".eyebrow", T.eyebrow[L]);
+    qs(".hero h1")[0].innerHTML = T.h1[L];
+    qs(".hero .lead")[0].innerHTML = T.lead[L];
+    setLabelAll(".pills .pill", T.pills[L]);
+    setLabel(qs(".btn-primary")[0], T.btnPrimary[L]);
+    setLabel(qs(".btn-ghost")[0], T.btnGhost[L]);
+    setHTMLall(".sec-head h2", T.h2[L]);
+    setHTMLall(".sec-head p", T.secp[L]);
+    setHTMLall(".about-copy p", T.aboutp[L]);
+    setHTMLall(".stat .lbl", T.statlbl[L]);
+    setHTMLall(".card h3", T.cardh[L]);
+    setHTMLall(".card p", T.cardp[L]);
+    setHTMLall(".step h3", T.steph[L]);
+    setHTMLall(".step p", T.stepp[L]);
+    setLabelAll(".visit", T.visit[L]);
+    setHTMLall(".type h3", T.typeh[L]);
+    setHTMLall(".type p", T.typep[L]);
+    setHTMLall(".type .tag", T.typetag[L]);
+    setLabelAll(".care h3", T.careh[L]);
+    setLabelAll(".care li", T.careli[L]);
+    setHTMLall(".q button span:not(.chev)", T.faqq[L]);
+    setHTMLall(".ans-inner", T.faqa[L]);
+    qs(".banner h2")[0].innerHTML = T.bannerh2[L];
+    qs(".banner p")[0].innerHTML = T.bannerp[L];
+    qs(".disclaimer")[0].innerHTML = T.disclaimer[L];
+    document.title = T.title[L];
+    // re-fit any open FAQ answer to its new (translated) height
+    qs('.q[aria-open="true"] .ans').forEach(function(a){ a.style.maxHeight = a.scrollHeight + "px"; });
+    var tog = document.getElementById("langToggle");
+    if(tog) tog.setAttribute("data-active", L);
+    try{ localStorage.setItem("lang", L); }catch(e){}
+  }
+
+  var savedLang = "en";
+  try{ savedLang = localStorage.getItem("lang") || "en"; }catch(e){}
+  applyLang(savedLang);
+  (function(){
+    var tog = document.getElementById("langToggle");
+    if(tog){ tog.addEventListener("click", function(){
+      var cur = document.documentElement.getAttribute("data-lang") || "en";
+      applyLang(cur==="en" ? "zh" : "en");
+    }); }
+  })();
+
   // FAQ accordion
   document.querySelectorAll('.q button').forEach(function(btn){
     btn.addEventListener('click', function(){
