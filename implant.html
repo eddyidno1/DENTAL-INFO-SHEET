@@ -769,6 +769,8 @@
 </script>
 
 <script src="three.min.js"></script>
+<script src="GLTFLoader.js"></script>
+<script src="implant-model.js"></script>
 <script>
   // ---------- 3D implant model (hero + anatomy section) ----------
   (function(){
@@ -831,13 +833,25 @@
     var hexGeo = new THREE.CylinderGeometry(0.5,0.5,0.02,6);
     var barGeo = new THREE.BoxGeometry(1.5,0.4,0.4);
 
-    // Assembled resting positions and how far each part travels when exploded
-    var base = {crown:2.85, abut:-0.05, screw:0};
-    var off  = {crown:3.9,  abut:1.1,   screw:-1.7};
+    function plusMesh(matPlus){
+      var g = new THREE.Group();
+      var m2 = new THREE.Mesh(barGeo, matPlus); m2.rotation.z = Math.PI/2;
+      g.add(new THREE.Mesh(barGeo, matPlus)); g.add(m2);
+      return g;
+    }
+
+    function assembleParts(gCrown, gAbut, gScrew, matPlus, lay){
+      var plus1 = plusMesh(matPlus), plus2 = plusMesh(matPlus);
+      plus1.position.y = lay.plus1; plus2.position.y = lay.plus2;
+      var root = new THREE.Group();
+      root.add(gCrown, gAbut, gScrew, plus1, plus2);
+      return {root:root, gCrown:gCrown, gAbut:gAbut, gScrew:gScrew, plus1:plus1, plus2:plus2, matPlus:matPlus, lay:lay};
+    }
 
     // One set of meshes per viewer; each viewer gets its own "+" material so
     // fading them in the anatomy card doesn't affect the hero.
-    function buildParts(plusColor){
+    // Fallback model: procedural lathe geometry (used if the scanned GLB fails).
+    function buildProcedural(plusColor){
       var matPlus = new THREE.MeshBasicMaterial({color:plusColor, transparent:true});
       var gCrown = new THREE.Group(); gCrown.add(new THREE.Mesh(crownGeo, matPorcelain));
       var gAbut = new THREE.Group(); gAbut.add(new THREE.Mesh(abutGeo, matTitanium));
@@ -846,29 +860,48 @@
       gScrew.add(new THREE.Mesh(threadGeo, matTitanium));
       var hexHole = new THREE.Mesh(hexGeo, matHex);
       hexHole.position.y = 0.005; gScrew.add(hexHole);
-      function plusMesh(){
-        var g = new THREE.Group();
-        var m2 = new THREE.Mesh(barGeo, matPlus); m2.rotation.z = Math.PI/2;
-        g.add(new THREE.Mesh(barGeo, matPlus)); g.add(m2);
-        return g;
-      }
-      var plus1 = plusMesh(), plus2 = plusMesh();
-      plus1.position.y = 5.56; plus2.position.y = -0.33;
-      var root = new THREE.Group();
-      root.add(gCrown, gAbut, gScrew, plus1, plus2);
-      return {root:root, gCrown:gCrown, gAbut:gAbut, gScrew:gScrew, plus1:plus1, plus2:plus2, matPlus:matPlus};
+      return assembleParts(gCrown, gAbut, gScrew, matPlus, {
+        base:{crown:2.85, abut:-0.05, screw:0},
+        off:{crown:3.9, abut:1.1, screw:-1.7},
+        plus1:5.56, plus2:-0.33, root0:0.63, root1:-0.48
+      });
+    }
+
+    // Real scanned model (implant-model.js): crown / abutment / fixture nodes,
+    // recentred on their own origins at source scale (~1.9 units tall exploded).
+    var REAL_S = 11.3; // scales the scan to the same world size as the procedural model
+    function makeBuildReal(src){
+      return function(plusColor){
+        var matPlus = new THREE.MeshBasicMaterial({color:plusColor, transparent:true});
+        function partGroup(mesh){
+          var g = new THREE.Group();
+          var m = mesh.clone();
+          m.scale.setScalar(REAL_S);
+          g.add(m);
+          return g;
+        }
+        // Assembled: the abutment telescopes away — its post sinks into the
+        // fixture and its cone into the crown, leaving only a sliver of the
+        // middle collar visible between crown rim and fixture top.
+        return assembleParts(partGroup(src.crown), partGroup(src.abutment), partGroup(src.fixture), matPlus, {
+          base:{crown:-1.82, abut:-3.81, screw:-7.62},
+          off:{crown:10.37, abut:4.93, screw:0},
+          plus1:4.82, plus2:-2.77, root0:5.19, root1:0.0
+        });
+      };
     }
 
     // t: 0 = assembled, 1 = exploded
     function layoutParts(p, t){
-      p.gCrown.position.y = base.crown + off.crown*t;
-      p.gAbut.position.y  = base.abut  + off.abut*t;
-      p.gScrew.position.y = base.screw + off.screw*t;
+      p.gCrown.position.y = p.lay.base.crown + p.lay.off.crown*t;
+      p.gAbut.position.y  = p.lay.base.abut  + p.lay.off.abut*t;
+      p.gScrew.position.y = p.lay.base.screw + p.lay.off.screw*t;
       p.matPlus.opacity = t;
       p.plus1.visible = p.plus2.visible = t > 0.03;
       p.plus1.scale.setScalar(Math.max(0.001, t));
       p.plus2.scale.setScalar(Math.max(0.001, t));
-      p.root.position.y = 0.63 - 1.11*t; // keeps the model vertically centred in both poses
+      // keeps the model vertically centred in both poses
+      p.root.position.y = p.lay.root0 + (p.lay.root1 - p.lay.root0)*t;
     }
 
     function makeScene(){
@@ -899,7 +932,7 @@
     }
 
     // ---------- Hero display: fixed exploded pose, gentle spin, no controls ----------
-    (function(){
+    function initHero(makeParts){
       var canvas = document.getElementById('hero3d');
       if(!canvas) return;
       var renderer = makeRenderer(canvas);
@@ -910,7 +943,7 @@
       var camera = new THREE.PerspectiveCamera(32, 2, 0.1, 200);
       camera.position.set(0, 0, 33.5);
 
-      var parts = buildParts(0x17bd83);
+      var parts = makeParts(0x17bd83);
       // Desktop: lean ~50° so the model runs diagonally across the full hero
       // width (it sits behind the text as a ghost), nudged right so the
       // headline side stays a bit clearer. Mobile keeps the smaller ~34° lean.
@@ -946,10 +979,10 @@
           renderer.render(scene, camera);
         })();
       }
-    })();
+    }
 
     // ---------- Anatomy viewer: drag to rotate + exploded/assembled toggle ----------
-    (function(){
+    function initAnatomy(makeParts){
       var canvas = document.getElementById('implant3d');
       if(!canvas) return;
       var renderer = makeRenderer(canvas);
@@ -960,7 +993,7 @@
       var camera = new THREE.PerspectiveCamera(32, 360/440, 0.1, 200);
       camera.position.set(0, 0, 46.5);
 
-      var parts = buildParts(0x0f9d6b);
+      var parts = makeParts(0x0f9d6b);
       scene.add(parts.root);
 
       var exploded = true, expT = 1, targetT = 1;
@@ -1018,7 +1051,35 @@
         renderer.render(scene, camera);
       }
       resize(); layoutParts(parts, expT); window.updateViewerUI(); tick();
-    })();
+    }
+
+    // ---------- Bootstrap: try the real scanned model, fall back to procedural ----------
+    var started = false;
+    function startViewers(makeParts){
+      if(started) return;
+      started = true;
+      initHero(makeParts);
+      initAnatomy(makeParts);
+    }
+
+    if(window.IMPLANT_GLB && THREE.GLTFLoader){
+      try{
+        var raw = atob(window.IMPLANT_GLB);
+        var bin = new Uint8Array(raw.length);
+        for(var k = 0; k < raw.length; k++) bin[k] = raw.charCodeAt(k);
+        new THREE.GLTFLoader().parse(bin.buffer, '', function(gltf){
+          var src = {
+            crown: gltf.scene.getObjectByName('crown'),
+            abutment: gltf.scene.getObjectByName('abutment'),
+            fixture: gltf.scene.getObjectByName('fixture')
+          };
+          if(src.crown && src.abutment && src.fixture){ startViewers(makeBuildReal(src)); }
+          else{ startViewers(buildProcedural); }
+        }, function(){ startViewers(buildProcedural); });
+      }catch(e){ startViewers(buildProcedural); }
+    }else{
+      startViewers(buildProcedural);
+    }
   })();
 </script>
 </body>
