@@ -121,6 +121,23 @@
   .diagram{background:linear-gradient(160deg,var(--sky),#d3f0e0);border:1px solid var(--line);border-radius:24px;
     padding:14px;box-shadow:var(--shadow);max-width:380px;margin:0 auto;width:100%}
   .diagram svg{display:block;width:100%;height:auto}
+  .viewer3d{position:relative;display:none}
+  .diagram.has3d .viewer3d{display:block}
+  .diagram.has3d>svg{display:none}
+  .viewer3d canvas{display:block;width:100%;aspect-ratio:360/440;border-radius:16px;touch-action:pan-y;cursor:grab}
+  .viewer3d canvas:active{cursor:grabbing}
+  .viewer-btn{position:absolute;bottom:9px;right:9px;border:1px solid var(--line);background:var(--card);color:var(--forest);
+    font-family:inherit;font-weight:800;font-size:.72rem;padding:5px 11px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow);
+    display:inline-flex;align-items:center;gap:5px;transition:transform .2s, box-shadow .25s;white-space:nowrap}
+  .viewer-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+  .viewer-btn svg{color:var(--brand)}
+  .viewer-hint{position:absolute;left:14px;bottom:11px;text-align:left;font-size:.72rem;font-weight:700;color:var(--muted);pointer-events:none}
+  .hero3d{display:none;position:absolute;z-index:0;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:100%;height:124%;opacity:.22;pointer-events:none}
+  @media (prefers-color-scheme: dark){.hero3d{opacity:.16}}
+  @media(max-width:900px){.hero3d{width:auto;height:132%;aspect-ratio:4/5}}
+  .hero.has3d .hero3d{display:block}
+  .hero.has3d .art-card{display:none}
   .legend{display:grid;gap:14px}
   .leg{display:flex;gap:15px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
     border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
@@ -267,6 +284,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <canvas id="hero3d" class="hero3d" role="img" aria-label="An exploded view of a dental implant: crown, abutment and titanium fixture"></canvas>
   <div class="wrap hero-inner">
     <div class="reveal in">
       <span class="eyebrow">Patient Guide</span>
@@ -330,6 +348,14 @@
     </div>
     <div class="anatomy-grid">
       <div class="diagram reveal">
+        <div class="viewer3d">
+          <canvas id="implant3d" role="img" aria-label="Interactive 3D model of a dental implant showing the crown, abutment and titanium implant fixture"></canvas>
+          <button id="explodeToggle" class="viewer-btn" type="button" aria-pressed="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 12 7 16 3"/><path d="M8 21 12 17 16 21"/></svg>
+            <span id="explodeLabel">View assembled</span>
+          </button>
+          <span class="viewer-hint" id="viewerHint">Drag to rotate</span>
+        </div>
         <svg viewBox="0 0 360 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section of a dental implant showing the crown, abutment and titanium fixture set into the jawbone">
           <defs>
             <linearGradient id="an_bone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3e6c6"/><stop offset="1" stop-color="#e0cc9c"/></linearGradient>
@@ -647,7 +673,13 @@
     bannerp:{en:"Your daily care and regular check-ups are the key to the comfort, confidence and long life of your implants. Talk to your dentist to find out if implants are right for you.", zh:"你每天的照護與定期回診，是植牙舒適、自信與長壽的關鍵。歡迎諮詢你的牙醫，了解植牙是否適合你。"},
     disclaimer:{en:"This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.", zh:"本頁面僅提供一般衛教資訊，不能取代專業的牙科建議、診斷或治療。請務必就個人需求諮詢合格的牙醫師。"},
     foot:{en:["Dental Crowns","Anatomy","The process","FAQ"], zh:["牙冠","植體構造","療程","常見問題"]},
-    title:{en:"Dental Implants — Restore Your Smile | Patient Guide", zh:"植牙 — 重拾笑容 | 患者衛教指南"}
+    title:{en:"Dental Implants — Restore Your Smile | Patient Guide", zh:"植牙 — 重拾笑容 | 患者衛教指南"},
+    viewerBtn:{en:["View assembled","View exploded"], zh:["組合檢視","分解檢視"]},
+    viewerHint:{en:"Drag to rotate", zh:"拖曳旋轉"},
+    viewerAria:{
+      en:"Interactive 3D model of a dental implant showing the crown, abutment and titanium implant fixture",
+      zh:"互動式植牙 3D 模型，顯示牙冠、支台與鈦金屬植體"
+    }
   };
 
   function qs(s){return document.querySelectorAll(s);}
@@ -698,6 +730,7 @@
     var tog = document.getElementById("langToggle");
     if(tog) tog.setAttribute("data-active", L);
     qs('.q[aria-open="true"] .ans').forEach(function(a){ a.style.maxHeight = a.scrollHeight + "px"; });
+    if(window.updateViewerUI) window.updateViewerUI();
     try{ localStorage.setItem("lang", L); }catch(e){}
   }
 
@@ -727,6 +760,260 @@
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+
+<script src="three.min.js"></script>
+<script>
+  // ---------- 3D implant model (hero + anatomy section) ----------
+  (function(){
+    if(!window.THREE) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Studio-style environment, drawn on a small canvas, so the metal parts
+    // have something to reflect (no external HDR asset needed).
+    var envCanvas = document.createElement('canvas');
+    envCanvas.width = 256; envCanvas.height = 128;
+    var ec = envCanvas.getContext('2d');
+    var grad = ec.createLinearGradient(0,0,0,128);
+    grad.addColorStop(0,'#eef3f6'); grad.addColorStop(.4,'#78909c'); grad.addColorStop(.62,'#31404b'); grad.addColorStop(1,'#141c22');
+    ec.fillStyle = grad; ec.fillRect(0,0,256,128);
+    ec.fillStyle = 'rgba(255,255,255,.95)';
+    ec.fillRect(0,16,256,12); ec.fillRect(0,50,256,7);
+    ec.fillStyle = 'rgba(20,28,34,.65)'; ec.fillRect(0,66,256,8);
+    ec.fillStyle = 'rgba(190,235,215,.45)'; ec.fillRect(0,88,256,8);
+    var envTex = new THREE.CanvasTexture(envCanvas);
+    envTex.mapping = THREE.EquirectangularReflectionMapping;
+    envTex.encoding = THREE.sRGBEncoding;
+
+    var matPorcelain = new THREE.MeshPhysicalMaterial({color:0xfff7ea, roughness:0.28, metalness:0,
+      clearcoat:0.7, clearcoatRoughness:0.28, envMapIntensity:0.7});
+    var matTitanium = new THREE.MeshStandardMaterial({color:0xd5dade, metalness:1, roughness:0.24, envMapIntensity:1.25});
+    var matHex = new THREE.MeshStandardMaterial({color:0x39424a, metalness:0.6, roughness:0.6});
+
+    function lathe(pts, segs){
+      return new THREE.LatheGeometry(pts.map(function(p){ return new THREE.Vector2(p[0], p[1]); }), segs||64);
+    }
+
+    // Crown — lathe profile with cusps raised around the rim so it reads as a molar
+    var crownGeo = lathe([[0.01,0.06],[0.95,0],[2.1,0.5],[2.6,1.6],[2.68,2.8],[2.4,3.8],[1.7,4.35],[0.85,4.1],[0.01,4.28]], 72);
+    var pos = crownGeo.attributes.position;
+    for(var i=0;i<pos.count;i++){
+      var y = pos.getY(i);
+      if(y > 3.2){
+        var th = Math.atan2(pos.getZ(i), pos.getX(i));
+        var t = Math.min(1, (y-3.2)/1.1);
+        pos.setY(i, y + t*(0.34*Math.abs(Math.cos(th*2)) - 0.14));
+      }
+    }
+    crownGeo.scale(1,1,0.86);
+    crownGeo.computeVertexNormals();
+
+    // Abutment — flared collar, tapered post, ridge near the top
+    var abutGeo = lathe([[0.01,0],[1.05,0],[1.58,0.22],[1.62,0.6],[1.15,0.85],[1.08,1.7],[0.98,2.5],[1.04,2.62],[0.82,2.8],[0.78,3.18],[0.5,3.32],[0.01,3.32]]);
+
+    // Implant fixture — tapered core + helical thread swept along the taper
+    var screwGeo = lathe([[0.01,-8.6],[0.32,-8.45],[0.62,-7.9],[0.98,-6.4],[1.16,-4.2],[1.26,-1.6],[1.32,-0.6],[1.42,-0.28],[1.42,0],[0.01,0]]);
+    function coreR(y){
+      return THREE.MathUtils.clamp(THREE.MathUtils.mapLinear(y, -8.3, -1.2, 0.6, 1.27), 0.35, 1.3);
+    }
+    var helixPts = [], turns = 7, yTop = -1.1, yBot = -8.15, N = 420;
+    for(var j=0;j<=N;j++){
+      var s = j/N, hy = yTop + (yBot-yTop)*s, a = s*turns*Math.PI*2, r = coreR(hy)+0.08;
+      helixPts.push(new THREE.Vector3(Math.cos(a)*r, hy, Math.sin(a)*r));
+    }
+    var threadGeo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(helixPts), 600, 0.17, 8, false);
+    var hexGeo = new THREE.CylinderGeometry(0.5,0.5,0.02,6);
+    var barGeo = new THREE.BoxGeometry(1.5,0.4,0.4);
+
+    // Assembled resting positions and how far each part travels when exploded
+    var base = {crown:2.85, abut:-0.05, screw:0};
+    var off  = {crown:3.9,  abut:1.1,   screw:-1.7};
+
+    // One set of meshes per viewer; each viewer gets its own "+" material so
+    // fading them in the anatomy card doesn't affect the hero.
+    function buildParts(plusColor){
+      var matPlus = new THREE.MeshBasicMaterial({color:plusColor, transparent:true});
+      var gCrown = new THREE.Group(); gCrown.add(new THREE.Mesh(crownGeo, matPorcelain));
+      var gAbut = new THREE.Group(); gAbut.add(new THREE.Mesh(abutGeo, matTitanium));
+      var gScrew = new THREE.Group();
+      gScrew.add(new THREE.Mesh(screwGeo, matTitanium));
+      gScrew.add(new THREE.Mesh(threadGeo, matTitanium));
+      var hexHole = new THREE.Mesh(hexGeo, matHex);
+      hexHole.position.y = 0.005; gScrew.add(hexHole);
+      function plusMesh(){
+        var g = new THREE.Group();
+        var m2 = new THREE.Mesh(barGeo, matPlus); m2.rotation.z = Math.PI/2;
+        g.add(new THREE.Mesh(barGeo, matPlus)); g.add(m2);
+        return g;
+      }
+      var plus1 = plusMesh(), plus2 = plusMesh();
+      plus1.position.y = 5.56; plus2.position.y = -0.33;
+      var root = new THREE.Group();
+      root.add(gCrown, gAbut, gScrew, plus1, plus2);
+      return {root:root, gCrown:gCrown, gAbut:gAbut, gScrew:gScrew, plus1:plus1, plus2:plus2, matPlus:matPlus};
+    }
+
+    // t: 0 = assembled, 1 = exploded
+    function layoutParts(p, t){
+      p.gCrown.position.y = base.crown + off.crown*t;
+      p.gAbut.position.y  = base.abut  + off.abut*t;
+      p.gScrew.position.y = base.screw + off.screw*t;
+      p.matPlus.opacity = t;
+      p.plus1.visible = p.plus2.visible = t > 0.03;
+      p.plus1.scale.setScalar(Math.max(0.001, t));
+      p.plus2.scale.setScalar(Math.max(0.001, t));
+      p.root.position.y = 0.63 - 1.11*t; // keeps the model vertically centred in both poses
+    }
+
+    function makeScene(){
+      var scene = new THREE.Scene();
+      scene.environment = envTex;
+      scene.add(new THREE.HemisphereLight(0xffffff, 0x93a7b0, 0.55));
+      var key = new THREE.DirectionalLight(0xffffff, 0.85); key.position.set(6,10,8); scene.add(key);
+      var rim = new THREE.DirectionalLight(0xbdf5dc, 0.4); rim.position.set(-7,-2,-6); scene.add(rim);
+      return scene;
+    }
+
+    function makeRenderer(canvas){
+      var r;
+      try{ r = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true}); }
+      catch(e){ return null; }
+      r.outputEncoding = THREE.sRGBEncoding;
+      r.toneMapping = THREE.ACESFilmicToneMapping;
+      r.toneMappingExposure = 1.05;
+      return r;
+    }
+
+    function fitRenderer(renderer, canvas, camera, fw, fh){
+      var w = canvas.clientWidth || fw, h = canvas.clientHeight || Math.round(w*fh/fw);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setSize(w, h, false);
+      camera.aspect = w/h;
+      camera.updateProjectionMatrix();
+    }
+
+    // ---------- Hero display: fixed exploded pose, gentle spin, no controls ----------
+    (function(){
+      var canvas = document.getElementById('hero3d');
+      if(!canvas) return;
+      var renderer = makeRenderer(canvas);
+      if(!renderer) return;
+      canvas.closest('.hero').classList.add('has3d');
+
+      var scene = makeScene();
+      var camera = new THREE.PerspectiveCamera(32, 2, 0.1, 200);
+      camera.position.set(0, 0, 33.5);
+
+      var parts = buildParts(0x17bd83);
+      // Desktop: lean ~50° so the model runs diagonally across the full hero
+      // width (it sits behind the text as a ghost), nudged right so the
+      // headline side stays a bit clearer. Mobile keeps the smaller ~34° lean.
+      // Either way it still spins around its own long axis.
+      var tilt = new THREE.Group();
+      tilt.add(parts.root);
+      scene.add(tilt);
+      var desktopMQ = window.matchMedia('(min-width:901px)');
+      function applyHeroPose(){
+        var d = desktopMQ.matches;
+        tilt.rotation.z = d ? 0.85 : 0.6;
+        tilt.position.x = d ? 2.5 : 0;
+        camera.position.z = d ? 33.5 : 38.5;
+      }
+      layoutParts(parts, 1);
+      parts.root.rotation.x = 0.1;
+      var rotY = -0.4;
+      parts.root.rotation.y = rotY;
+
+      function resize(){ applyHeroPose(); fitRenderer(renderer, canvas, camera, 400, 500); renderer.render(scene, camera); }
+      new ResizeObserver(resize).observe(canvas);
+      var inView = true;
+      new IntersectionObserver(function(en){ inView = en[0].isIntersecting; }, {rootMargin:'80px'}).observe(canvas);
+
+      resize();
+      if(!reduceMotion){
+        var clock = new THREE.Clock();
+        (function tick(){
+          requestAnimationFrame(tick);
+          if(!inView || document.hidden) return;
+          rotY += Math.min(clock.getDelta(), 0.05)*0.18;
+          parts.root.rotation.y = rotY;
+          renderer.render(scene, camera);
+        })();
+      }
+    })();
+
+    // ---------- Anatomy viewer: drag to rotate + exploded/assembled toggle ----------
+    (function(){
+      var canvas = document.getElementById('implant3d');
+      if(!canvas) return;
+      var renderer = makeRenderer(canvas);
+      if(!renderer) return;
+      canvas.closest('.diagram').classList.add('has3d');
+
+      var scene = makeScene();
+      var camera = new THREE.PerspectiveCamera(32, 360/440, 0.1, 200);
+      camera.position.set(0, 0, 46.5);
+
+      var parts = buildParts(0x0f9d6b);
+      scene.add(parts.root);
+
+      var exploded = true, expT = 1, targetT = 1;
+      var rotY = 0.35, tiltX = 0.12, dragging = false, px = 0, py = 0, lastPointer = 0;
+
+      canvas.addEventListener('pointerdown', function(e){
+        dragging = true; px = e.clientX; py = e.clientY;
+        lastPointer = performance.now();
+        try{ canvas.setPointerCapture(e.pointerId); }catch(err){}
+      });
+      canvas.addEventListener('pointermove', function(e){
+        if(!dragging) return;
+        var dx = e.clientX - px, dy = e.clientY - py;
+        px = e.clientX; py = e.clientY;
+        rotY += dx*0.011;
+        if(e.pointerType === 'mouse'){ tiltX = THREE.MathUtils.clamp(tiltX + dy*0.006, -0.6, 0.6); }
+        lastPointer = performance.now();
+      });
+      ['pointerup','pointercancel','pointerleave'].forEach(function(ev){
+        canvas.addEventListener(ev, function(){ dragging = false; lastPointer = performance.now(); });
+      });
+
+      var btn = document.getElementById('explodeToggle');
+      btn.addEventListener('click', function(){
+        exploded = !exploded; targetT = exploded ? 1 : 0;
+        btn.setAttribute('aria-pressed', String(exploded));
+        window.updateViewerUI();
+      });
+
+      window.updateViewerUI = function(){
+        var L = document.documentElement.getAttribute('data-lang') === 'zh' ? 'zh' : 'en';
+        document.getElementById('explodeLabel').textContent = exploded ? T.viewerBtn[L][0] : T.viewerBtn[L][1];
+        document.getElementById('viewerHint').textContent = T.viewerHint[L];
+        canvas.setAttribute('aria-label', T.viewerAria[L]);
+      };
+
+      function resize(){ fitRenderer(renderer, canvas, camera, 360, 440); }
+      new ResizeObserver(resize).observe(canvas);
+      var inView = true;
+      new IntersectionObserver(function(en){ inView = en[0].isIntersecting; }, {rootMargin:'80px'}).observe(canvas);
+
+      var clock = new THREE.Clock();
+      function tick(){
+        requestAnimationFrame(tick);
+        if(!inView || document.hidden) return;
+        var dt = Math.min(clock.getDelta(), 0.05);
+        if(reduceMotion){ expT = targetT; }
+        else{
+          expT += (targetT - expT)*Math.min(1, dt*6);
+          if(Math.abs(targetT - expT) < 0.001) expT = targetT;
+        }
+        if(!reduceMotion && !dragging && performance.now() - lastPointer > 3000){ rotY += dt*0.45; }
+        parts.root.rotation.y = rotY; parts.root.rotation.x = tiltX;
+        layoutParts(parts, expT);
+        renderer.render(scene, camera);
+      }
+      resize(); layoutParts(parts, expT); window.updateViewerUI(); tick();
+    })();
+  })();
 </script>
 </body>
 </html>
