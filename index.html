@@ -98,14 +98,15 @@
   .ex-head{max-width:640px;margin:0 auto 40px;text-align:center}
   .ex-head h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:850;color:var(--navy);letter-spacing:-.01em}
   .ex-head p{margin-top:12px;color:var(--muted);font-size:1.04rem}
-  .related{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
-  @media(max-width:680px){.related{grid-template-columns:1fr}}
+  .related{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:980px;margin:0 auto}
+  @media(max-width:860px){.related{grid-template-columns:1fr}}
   .rel-card{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:20px;
     padding:22px;box-shadow:var(--shadow);transition:transform .2s, box-shadow .25s;color:inherit}
   .rel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
   .rel-ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;color:#fff;flex:0 0 auto}
   .rel-ic-implant{background:linear-gradient(135deg,#0f9d6b,#17bd83)}
   .rel-ic-denture{background:linear-gradient(135deg,#7c3aed,#9a63f2)}
+  .rel-ic-sameday{background:linear-gradient(135deg,#0d9488,#06b6d4)}
   .rel-tx{flex:1}
   .rel-tx h3{color:var(--navy);font-size:1.1rem;margin-bottom:2px}
   .rel-tx p{color:var(--muted);font-size:.92rem}
@@ -694,6 +695,11 @@
         <div class="rel-tx"><h3>Dentures</h3><p>Removable replacements for one or many missing teeth.</p></div>
         <span class="rel-go">&rarr;</span>
       </a>
+      <a class="rel-card reveal" href="same-day-crown.html">
+        <span class="rel-ic rel-ic-sameday"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></span>
+        <div class="rel-tx"><h3>Same-Day Crowns</h3><p>One-visit CEREC crown, no second appointment.</p></div>
+        <span class="rel-go">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -820,8 +826,8 @@
     navImplant:{en:"Dental Implants", zh:"植牙"},
     exH:{en:"Explore our other treatments", zh:"探索我們的其他療程"},
     exP:{en:"A crown restores a damaged tooth — but if a tooth is missing entirely, here are the other ways we can rebuild your smile.", zh:"牙冠能修復受損的牙齒；但若整顆牙齒缺失，以下是我們重建笑容的其他方式。"},
-    relName:{en:["Dental Implants","Dentures"], zh:["植牙","活動假牙"]},
-    relTag:{en:["Replace a whole missing tooth, root and all.","Removable replacements for one or many missing teeth."], zh:["連同牙根替換整顆缺失的牙齒。","針對一顆或多顆缺牙的可拆卸式替代方案。"]}
+    relName:{en:["Dental Implants","Dentures","Same-Day Crowns"], zh:["植牙","活動假牙","當天牙冠"]},
+    relTag:{en:["Replace a whole missing tooth, root and all.","Removable replacements for one or many missing teeth.","One-visit CEREC crown, no second appointment."], zh:["連同牙根替換整顆缺失的牙齒。","針對一顆或多顆缺牙的可拆卸式替代方案。","一次看診的 CEREC 牙冠，免二次回診。"]}
   };
 
   function qs(s){return document.querySelectorAll(s);}
