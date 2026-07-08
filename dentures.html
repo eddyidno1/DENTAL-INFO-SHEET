@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dentures — Restore Your Smile | Patient Guide</title>
+<meta name="description" content="A friendly guide to dentures: the types (complete, partial, Valplast, flipper), the step-by-step process, care tips, benefits and FAQs.">
+<style>
+  :root{
+    --plum:#43206b;
+    --brand:#7c3aed;
+    --brand-2:#9a63f2;
+    --accent:#ec4899;
+    --accent-2:#f472b6;
+    --ink:#241733;
+    --muted:#6b5a7e;
+    --card:#ffffff;
+    --bg:#faf7fe;
+    --sky:#f1e9fd;
+    --sky-2:#f7f2fe;
+    --line:#ebe2f7;
+    --shadow:0 10px 30px -12px rgba(74,30,110,.24);
+    --shadow-lg:0 24px 60px -20px rgba(74,30,110,.32);
+    --radius:20px;
+    --maxw:1140px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --plum:#e9dcff;
+      --brand:#a883f5;
+      --brand-2:#c0a3f8;
+      --accent:#f472b6;
+      --accent-2:#f9a8d4;
+      --ink:#efe9f8;
+      --muted:#b3a3c8;
+      --card:#1c1430;
+      --bg:#120c20;
+      --sky:#241a3d;
+      --sky-2:#191130;
+      --line:#332552;
+      --shadow:0 10px 30px -12px rgba(0,0,0,.5);
+      --shadow-lg:0 24px 60px -20px rgba(0,0,0,.6);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Helvetica Neue","PingFang TC","Hiragino Sans TC","Microsoft JhengHei","Noto Sans TC",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3{line-height:1.15;margin:0}
+  p{margin:0}
+  a{color:var(--brand);text-decoration:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--brand);background:var(--sky);padding:7px 14px;border-radius:999px;border:1px solid var(--line)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(12px);
+    background:color-mix(in srgb, var(--bg) 82%, transparent);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--plum);letter-spacing:.02em}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav-links{display:flex;gap:22px}
+  .nav-links a{color:var(--muted);font-weight:600;font-size:.92rem;transition:color .2s}
+  .nav-links a:hover{color:var(--brand)}
+  .nav-cta{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;color:#fff;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:9px 15px;border-radius:999px;
+    box-shadow:var(--shadow);white-space:nowrap;transition:transform .15s}
+  .nav-cta:hover{transform:translateY(-2px)}
+  .lang-toggle{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);background:var(--card);
+    border-radius:999px;padding:3px;cursor:pointer;font-weight:800;font-size:.8rem;color:var(--muted);
+    box-shadow:var(--shadow);font-family:inherit;line-height:1;flex:0 0 auto}
+  .lang-toggle span{padding:6px 12px;border-radius:999px;transition:background .2s, color .2s}
+  .lang-toggle[data-active="en"] span[data-l="en"],
+  .lang-toggle[data-active="zh"] span[data-l="zh"]{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+  @media(max-width:860px){.nav-links{display:none}.nav-cta{padding:8px 13px;font-size:.82rem}.nav-cta svg{display:none}.nav-right{gap:12px}}
+
+  /* hero (centered) */
+  .hero{position:relative;overflow:hidden;padding:66px 0 78px}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:
+    radial-gradient(55% 50% at 80% 15%, color-mix(in srgb,var(--accent) 20%, transparent), transparent 70%),
+    radial-gradient(60% 55% at 12% 88%, color-mix(in srgb,var(--brand) 22%, transparent), transparent 66%)}
+  .hero-inner{position:relative;z-index:1;max-width:840px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
+  .hero h1{font-size:clamp(2.7rem,7vw,4.6rem);font-weight:900;color:var(--plum);letter-spacing:-.02em}
+  .hero .sub{display:block;margin-top:8px;font-size:clamp(1rem,2.4vw,1.4rem);font-weight:700;color:var(--accent)}
+  .hero .lead{margin-top:18px;font-size:clamp(1.02rem,2.2vw,1.2rem);color:var(--muted);max-width:56ch}
+  .pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;justify-content:center}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
+    padding:8px 13px;border-radius:999px;font-weight:700;font-size:.86rem;color:var(--plum);box-shadow:var(--shadow)}
+  .pill svg{color:var(--accent);flex:0 0 auto}
+  .cta-row{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;padding:13px 22px;border-radius:14px;transition:transform .15s ease, box-shadow .2s;cursor:pointer}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .btn-ghost{background:var(--card);color:var(--plum);border:1px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-2px)}
+  .hero-art{margin-top:38px;width:100%;display:flex;justify-content:center}
+  .art-card{width:min(520px,92%);border-radius:26px;overflow:hidden;border:6px solid var(--card);
+    box-shadow:var(--shadow-lg);background:linear-gradient(160deg,var(--sky),#e7dbfb)}
+  .art-card svg{display:block;width:100%;height:auto}
+
+  section{padding:74px 0}
+  .sec-head{max-width:660px;margin:0 auto 46px;text-align:center}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:850;color:var(--plum);margin-top:14px;letter-spacing:-.01em}
+  .sec-head p{margin-top:13px;color:var(--muted);font-size:1.06rem}
+  .alt{background:linear-gradient(180deg,var(--sky-2),transparent 32%),var(--bg)}
+
+  /* types */
+  .types{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(min-width:1000px){.types{grid-template-columns:repeat(4,1fr)}}
+  @media(max-width:600px){.types{grid-template-columns:1fr}}
+  .type-card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;transition:transform .2s, box-shadow .25s}
+  .type-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+  .type-media{height:150px;background:linear-gradient(160deg,var(--sky),#e7dbfb);position:relative;overflow:hidden}
+  .type-media svg{position:absolute;inset:0;width:100%;height:100%}
+  .type-body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
+  .type-body h3{color:var(--plum);font-size:1.1rem;margin-bottom:6px}
+  .type-body .desc{color:var(--muted);font-size:.93rem;margin-bottom:13px}
+  .type-body ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;margin-top:auto}
+  .type-body li{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;color:var(--ink)}
+  .type-body li svg{color:var(--brand);flex:0 0 auto;margin-top:2px}
+
+  /* journey stepper */
+  .journey{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;position:relative;max-width:1040px;margin:0 auto}
+  .journey::before{content:"";position:absolute;top:28px;left:8%;right:8%;height:3px;
+    background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:2px;z-index:0}
+  .jstep{text-align:center;position:relative;z-index:1}
+  .jnode{width:56px;height:56px;border-radius:50%;margin:0 auto 15px;display:grid;place-items:center;font-weight:900;color:#fff;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow-lg);border:4px solid var(--bg);font-size:1.2rem}
+  .jstep h3{font-size:.98rem;color:var(--plum);margin-bottom:5px}
+  .jstep p{font-size:.85rem;color:var(--muted)}
+  @media(max-width:860px){
+    .journey{grid-template-columns:1fr;gap:8px;max-width:460px}
+    .journey::before{left:27px;right:auto;top:12px;bottom:12px;width:3px;height:auto}
+    .jstep{display:grid;grid-template-columns:56px 1fr;gap:16px;text-align:left;align-items:start;padding-bottom:22px}
+    .jnode{margin:0}
+    .jstep p{margin-bottom:0}
+  }
+
+  /* benefit cards */
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+  @media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .25s}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+  .icon-badge{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:15px;
+    background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 16%,var(--card)),color-mix(in srgb,var(--accent) 16%,var(--card)));
+    color:var(--brand);border:1px solid var(--line)}
+  .card h3{font-size:1.12rem;color:var(--plum);margin-bottom:7px}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* care */
+  .care{max-width:820px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow)}
+  .care ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:620px){.care ul{grid-template-columns:1fr}}
+  .care li{display:flex;gap:12px;align-items:flex-start;color:var(--ink);font-size:1rem}
+  .care li svg{flex:0 0 auto;margin-top:2px;color:var(--brand)}
+  .care .note{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);display:flex;gap:10px;align-items:center;font-weight:600}
+  .care .note svg{color:var(--accent);flex:0 0 auto}
+
+  /* faq */
+  .faq{max-width:800px;margin:0 auto;display:grid;gap:14px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+  .q button{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:20px 22px;font-size:1.03rem;
+    font-weight:700;color:var(--plum);display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit}
+  .q button:focus-visible{outline:3px solid color-mix(in srgb,var(--brand) 45%,transparent);outline-offset:-3px}
+  .q .chev{flex:0 0 auto;transition:transform .3s;color:var(--brand)}
+  .q[aria-open="true"] .chev{transform:rotate(180deg)}
+  .q .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .q .ans-inner{padding:0 22px 22px;color:var(--muted)}
+
+  /* explore other treatments */
+  .ex-head{max-width:640px;margin:0 auto 40px;text-align:center}
+  .ex-head h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:850;color:var(--plum);letter-spacing:-.01em}
+  .ex-head p{margin-top:12px;color:var(--muted);font-size:1.04rem}
+  .related{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
+  @media(max-width:680px){.related{grid-template-columns:1fr}}
+  .rel-card{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:22px;box-shadow:var(--shadow);transition:transform .2s, box-shadow .25s;color:inherit}
+  .rel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .rel-ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;color:#fff;flex:0 0 auto}
+  .rel-ic-crown{background:linear-gradient(135deg,#1766c9,#2f8ee0)}
+  .rel-ic-implant{background:linear-gradient(135deg,#0f9d6b,#17bd83)}
+  .rel-tx{flex:1}
+  .rel-tx h3{color:var(--plum);font-size:1.1rem;margin-bottom:2px}
+  .rel-tx p{color:var(--muted);font-size:.92rem}
+  .rel-go{color:var(--accent);font-weight:900;font-size:1.35rem;flex:0 0 auto}
+
+  /* banner */
+  .banner{position:relative;overflow:hidden;border-radius:28px;padding:56px 40px;text-align:center;
+    background:linear-gradient(135deg,var(--plum),var(--brand));color:#fff;box-shadow:var(--shadow-lg)}
+  @media (prefers-color-scheme: dark){.banner{background:linear-gradient(135deg,#2a1147,#5b2ba0)}}
+  .banner .eyebrow{background:rgba(255,255,255,.15);color:#f6ecff;border-color:rgba(255,255,255,.2)}
+  .banner h2{color:#fff;font-size:clamp(1.9rem,5vw,3rem);font-weight:900;margin-top:16px}
+  .banner p{color:#efe1fb;margin-top:14px;font-size:1.1rem;max-width:58ch;margin-left:auto;margin-right:auto}
+
+  footer{padding:40px 0 54px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  .foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap}
+  .foot-links a{color:var(--brand);font-weight:600}
+  .disclaimer{max-width:620px;font-size:.85rem;line-height:1.6;margin-top:14px}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span>So Dental</span></div>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#types">Types</a>
+        <a href="#journey">The process</a>
+        <a href="#care">Care</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="index.html">Dental Crowns
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="lang-toggle" id="langToggle" data-active="en" type="button" aria-label="Switch language / 切換語言"><span data-l="en">EN</span><span data-l="zh">中文</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner reveal in">
+    <span class="eyebrow">Patient Guide</span>
+    <h1>Dentures<span class="sub">Restore your smile. Improve your life.</span></h1>
+    <p class="lead">Dentures are custom-made, removable replacements for missing teeth and the surrounding tissues — helping you speak, eat and smile with confidence again.</p>
+    <div class="pills">
+      <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Natural-looking</span>
+      <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Comfortable fit</span>
+      <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Removable &amp; easy-care</span>
+      <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Non-invasive</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#types">See denture types
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#journey">The process</a>
+    </div>
+    <div class="hero-art">
+      <div class="art-card"><svg viewBox="0 58 300 122" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A full denture arch of natural-looking teeth"><defs><filter id="hsh0" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#5b2b7a" flood-opacity="0.2"/></filter><linearGradient id="dg0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7a8b6"/><stop offset="1" stop-color="#e8788c"/></linearGradient><linearGradient id="dt0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef1f6"/></linearGradient></defs><g filter="url(#hsh0)"><path d="M42.4,89.5 L55.7,101.9 L74.2,112.4 L97.0,120.4 L122.7,125.3 L150.0,127.0 L177.3,125.3 L203.0,120.4 L225.8,112.4 L244.3,101.9 L257.6,89.5" fill="none" stroke="url(#dg0)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(42.4,100.5) rotate(68.0)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(55.7,112.9) rotate(54.4)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(74.2,123.4) rotate(40.8)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(97.0,131.4) rotate(27.2)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(122.7,136.3) rotate(13.6)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(150.0,138.0) rotate(0.0)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(177.3,136.3) rotate(-13.6)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(203.0,131.4) rotate(-27.2)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(225.8,123.4) rotate(-40.8)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(244.3,112.9) rotate(-54.4)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(257.6,100.5) rotate(-68.0)"><rect x="-9.0" y="-3" width="18" height="32" rx="5" fill="url(#dt0)" stroke="#e3e8ef" stroke-width="1"/></g></g></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section id="types" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Find your fit</span>
+      <h2>Types of dentures</h2>
+      <p>From a full set to a single tooth, there's a denture designed for your needs.</p>
+    </div>
+    <div class="types">
+      <div class="type-card reveal">
+        <div class="type-media"><svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A complete denture: a full arch of teeth on a pink gum base"><defs><linearGradient id="dg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7a8b6"/><stop offset="1" stop-color="#e8788c"/></linearGradient><linearGradient id="dt1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef1f6"/></linearGradient></defs><path d="M38.4,54.2 L48.4,63.8 L62.5,71.8 L79.8,77.9 L99.3,81.7 L120.0,83.0 L140.7,81.7 L160.2,77.9 L177.5,71.8 L191.6,63.8 L201.6,54.2" fill="none" stroke="url(#dg1)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(38.4,63.2) rotate(68.0)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(48.4,72.8) rotate(54.4)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(62.5,80.8) rotate(40.8)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(79.8,86.9) rotate(27.2)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(99.3,90.7) rotate(13.6)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(120.0,92.0) rotate(0.0)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(140.7,90.7) rotate(-13.6)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(160.2,86.9) rotate(-27.2)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(177.5,80.8) rotate(-40.8)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(191.6,72.8) rotate(-54.4)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(201.6,63.2) rotate(-68.0)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt1)" stroke="#e3e8ef" stroke-width="1"/></g></svg></div>
+        <div class="type-body">
+          <h3>Complete Dentures</h3>
+          <p class="desc">For patients missing all teeth in the upper, lower or both jaws.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Removable and easy to clean</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Restores full function and appearance</li>
+          </ul>
+        </div>
+      </div>
+      <div class="type-card reveal">
+        <div class="type-media"><svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A partial denture with a metal framework and clasps"><defs><linearGradient id="dm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6ebf1"/><stop offset="1" stop-color="#a9b4c2"/></linearGradient><linearGradient id="dt2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef1f6"/></linearGradient></defs><path d="M38.4,54.2 L48.4,63.8 L62.5,71.8 L79.8,77.9 L99.3,81.7 L120.0,83.0 L140.7,81.7 L160.2,77.9 L177.5,71.8 L191.6,63.8 L201.6,54.2" fill="none" stroke="url(#dm2)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M38,59 q-12,-3 -14,10" fill="none" stroke="#aab4c2" stroke-width="3.2" stroke-linecap="round"/><path d="M202,59 q12,-3 14,10" fill="none" stroke="#aab4c2" stroke-width="3.2" stroke-linecap="round"/><g transform="translate(38.4,63.2) rotate(68.0)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt2)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(48.4,72.8) rotate(54.4)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt2)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(62.5,80.8) rotate(40.8)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt2)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(177.5,80.8) rotate(-40.8)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt2)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(191.6,72.8) rotate(-54.4)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt2)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(201.6,63.2) rotate(-68.0)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt2)" stroke="#e3e8ef" stroke-width="1"/></g></svg></div>
+        <div class="type-body">
+          <h3>Partial Dentures</h3>
+          <p class="desc">For patients who still have some natural teeth remaining.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Strong metal framework for durability</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Clasp design for a secure, comfortable fit</li>
+          </ul>
+        </div>
+      </div>
+      <div class="type-card reveal">
+        <div class="type-media"><svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A flexible Valplast denture"><defs><linearGradient id="df3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8b4c0"/><stop offset="1" stop-color="#ee93a4"/></linearGradient><linearGradient id="dt3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef1f6"/></linearGradient></defs><path d="M38.4,54.2 L48.4,63.8 L62.5,71.8 L79.8,77.9 L99.3,81.7 L120.0,83.0 L140.7,81.7 L160.2,77.9 L177.5,71.8 L191.6,63.8 L201.6,54.2" fill="none" stroke="url(#df3)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(62.5,80.8) rotate(40.8)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt3)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(79.8,86.9) rotate(27.2)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt3)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(99.3,90.7) rotate(13.6)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt3)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(120.0,92.0) rotate(0.0)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt3)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(140.7,90.7) rotate(-13.6)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt3)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(160.2,86.9) rotate(-27.2)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt3)" stroke="#e3e8ef" stroke-width="1"/></g><g transform="translate(177.5,80.8) rotate(-40.8)"><rect x="-6.5" y="-3" width="13" height="22" rx="5" fill="url(#dt3)" stroke="#e3e8ef" stroke-width="1"/></g></svg></div>
+        <div class="type-body">
+          <h3>Valplast Dentures</h3>
+          <p class="desc">Made from a soft, flexible material that is lightweight and comfortable.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Metal-free and more comfortable</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Aesthetic, durable and gentle on gums</li>
+          </ul>
+        </div>
+      </div>
+      <div class="type-card reveal">
+        <div class="type-media"><svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A single-tooth denture, or flipper"><defs><linearGradient id="dg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7a8b6"/><stop offset="1" stop-color="#e8788c"/></linearGradient><linearGradient id="dt4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef1f6"/></linearGradient></defs><path d="M72.0,92.0 q48,30 96,0" fill="none" stroke="url(#dg4)" stroke-width="19" stroke-linecap="round"/><path d="M76.0,90.0 q-16,-2 -20,-13" fill="none" stroke="#b9c2cf" stroke-width="3" stroke-linecap="round"/><path d="M164.0,90.0 q16,-2 20,-13" fill="none" stroke="#b9c2cf" stroke-width="3" stroke-linecap="round"/><g transform="translate(120.0,92.0) rotate(-90.0)"><rect x="-8.5" y="-3" width="17" height="25" rx="5" fill="url(#dt4)" stroke="#e3e8ef" stroke-width="1"/></g></svg></div>
+        <div class="type-body">
+          <h3>Single Tooth (Flipper)</h3>
+          <p class="desc">A simple, economical solution for a single missing tooth.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Fills a single gap instantly</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Economical and non-invasive</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>The denture journey</h2>
+      <p>A comfortable, natural-looking denture is crafted over a few simple visits.</p>
+    </div>
+    <div class="journey">
+      <div class="jstep reveal"><div class="jnode">1</div><h3>Consultation</h3><p>We assess your oral health, discuss your needs and recommend the best option.</p></div>
+      <div class="jstep reveal"><div class="jnode">2</div><h3>Impressions</h3><p>Precise impressions are taken to create your custom denture.</p></div>
+      <div class="jstep reveal"><div class="jnode">3</div><h3>Design &amp; try-in</h3><p>Your denture is designed and tried in to perfect the fit, comfort and look.</p></div>
+      <div class="jstep reveal"><div class="jnode">4</div><h3>Final denture</h3><p>Crafted with high-quality materials for durability and a natural look.</p></div>
+      <div class="jstep reveal"><div class="jnode">5</div><h3>Fitting</h3><p>We ensure a comfortable fit and make any adjustments needed.</p></div>
+      <div class="jstep reveal"><div class="jnode">6</div><h3>Follow-up care</h3><p>Ongoing check-ups and relines keep your dentures fitting beautifully.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why dentures</span>
+      <h2>Why choose dentures?</h2>
+      <p>A time-tested, affordable way to bring back your smile and quality of life.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.9 7.1 18.2l.9-5.5-4-3.9L9.5 8Z"/></svg></div>
+        <h3>Natural-looking smile</h3><p>Custom-shaded teeth restore a natural, confident smile.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-2 5 5 0 0 1 9 2c-2 4.5-9 9-9 9Z"/></svg></div>
+        <h3>Comfortable &amp; custom-fit</h3><p>Made to the exact shape of your mouth for a snug, comfortable feel.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <h3>Eat &amp; speak with ease</h3><p>Bring back your ability to chew a wide range of foods and speak clearly.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <h3>Removable &amp; easy to clean</h3><p>Take them out to clean thoroughly and keep your mouth healthy.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5A2.5 2.5 0 0 1 12 8c1.5 0 2.5 1 2.5 2s-1 1.8-2.5 2-2.5 1-2.5 2 1 2 2.5 2a2.5 2.5 0 0 0 2.5-1.5"/></svg></div>
+        <h3>Affordable</h3><p>Often the most budget-friendly way to replace several missing teeth.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Non-invasive</h3><p>No surgery required, making them suitable for almost everyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARE -->
+<section id="care">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Make them last</span>
+      <h2>Caring for your dentures</h2>
+      <p>A little daily care keeps your dentures fresh, comfortable and long-lasting.</p>
+    </div>
+    <div class="care reveal">
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Clean daily with a soft brush and a denture cleaner (not regular toothpaste).</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Rinse your dentures after eating.</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Store them in water or denture solution when not being worn.</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Take them out at night to let your gums rest.</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Visit us regularly for check-ups and relines.</li>
+      </ul>
+      <div class="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg> Handle them over a folded towel or a basin of water — dentures can crack if dropped.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently asked questions</h2>
+      <p>The things patients ask us most about dentures.</p>
+    </div>
+    <div class="faq">
+      <div class="q reveal"><button aria-expanded="false"><span>Do dentures hurt or feel uncomfortable?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">New dentures can feel bulky or cause minor soreness at first. This is normal and settles as your mouth adjusts — and we fine-tune the fit at your follow-up visits.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>How long does it take to get used to them?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">Usually a few weeks. Eating and speaking feel more natural with a little practice — reading aloud at home can really help.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>Can I eat normally with dentures?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">Yes. Start with soft foods cut into small pieces, chew slowly on both sides, and gradually add more variety. It's best to limit very hard or sticky foods.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>How do I keep my dentures clean?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">Brush them daily with a denture brush and cleaner, rinse after meals, and soak overnight. Avoid hot water, which can warp the denture.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>How long do dentures last?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">Typically <strong>5–10 years</strong>. Because your mouth changes shape over time, occasional relines or a remake keep them fitting comfortably.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>Dentures, implants or a bridge — which is right for me?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">Dentures are removable and cost-effective for replacing many teeth, while implants and bridges are fixed in place. We'll help you weigh comfort, longevity and budget to choose what's right for you.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE OTHER TREATMENTS -->
+<section id="explore">
+  <div class="wrap">
+    <div class="ex-head reveal">
+      <h2 class="ex-h">Explore our other treatments</h2>
+      <p class="ex-p">Missing teeth can be restored in more than one way. See which option best fits your smile.</p>
+    </div>
+    <div class="related">
+      <a class="rel-card reveal" href="index.html">
+        <span class="rel-ic rel-ic-crown"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 6 2 7 5 1 3-1 5-1 8 0 2-1 4-2 4s-1-3-2-3-1 3-2 3-2-2-2-4c0-3-2-5-1-8 1-3 5-3 6-5Z"/></svg></span>
+        <div class="rel-tx"><h3>Dental Crowns</h3><p>Cap and protect a damaged tooth.</p></div>
+        <span class="rel-go">→</span>
+      </a>
+      <a class="rel-card reveal" href="implant.html">
+        <span class="rel-ic rel-ic-implant"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v5M9 4l3-2 3 2"/><rect x="9" y="8" width="6" height="6" rx="1.5"/><path d="M10 14l-1 7h6l-1-7"/></svg></span>
+        <div class="rel-tx"><h3>Dental Implants</h3><p>Replace a whole missing tooth, root and all.</p></div>
+        <span class="rel-go">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section>
+  <div class="wrap">
+    <div class="banner reveal">
+      <span class="eyebrow">Restore your smile · Improve your life</span>
+      <h2>A beautiful smile can change everything.</h2>
+      <p>Our dentures are designed to look natural, feel comfortable and help you enjoy life to the fullest — and our friendly team is with you every step of the way.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="brand" style="color:var(--plum)"><span>So Dental</span></div>
+      <p class="disclaimer">This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.</p>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Dental Crowns</a>
+      <a href="implant.html">Dental Implants</a>
+      <a href="#types">Types</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Language toggle (EN / Traditional Chinese) ----------
+  var T = {
+    nav:{en:["Types","The process","Care","Benefits","FAQ"], zh:["假牙種類","療程","照護","優點","常見問題"]},
+    navCrown:{en:"Dental Crowns", zh:"牙冠"},
+    eyebrow:{
+      en:["Patient Guide","Find your fit","How it works","Why dentures","Make them last","Good to know","Restore your smile · Improve your life"],
+      zh:["患者指南","找到適合你的","療程流程","為什麼選假牙","延長壽命","值得了解","重拾笑容 · 改善生活"]
+    },
+    h1:{en:'Dentures<span class="sub">Restore your smile. Improve your life.</span>', zh:'活動假牙<span class="sub">重拾笑容，改善生活。</span>'},
+    lead:{en:"Dentures are custom-made, removable replacements for missing teeth and the surrounding tissues — helping you speak, eat and smile with confidence again.", zh:"活動假牙是量身訂製、可拆卸的缺牙及周圍組織替代物，能幫助你重新自信地說話、進食與微笑。"},
+    pills:{en:["Natural-looking","Comfortable fit","Removable & easy-care","Non-invasive"], zh:["外觀自然","配戴舒適","可拆卸易清潔","無需手術"]},
+    btnPrimary:{en:"See denture types", zh:"查看假牙種類"},
+    btnGhost:{en:"The process", zh:"了解療程"},
+    h2:{en:["Types of dentures","The denture journey","Why choose dentures?","Caring for your dentures","Frequently asked questions"],
+        zh:["假牙的種類","假牙製作療程","為什麼選擇假牙？","假牙的照護","常見問題"]},
+    secp:{
+      en:["From a full set to a single tooth, there's a denture designed for your needs.","A comfortable, natural-looking denture is crafted over a few simple visits.","A time-tested, affordable way to bring back your smile and quality of life.","A little daily care keeps your dentures fresh, comfortable and long-lasting.","The things patients ask us most about dentures."],
+      zh:["從整口重建到單顆缺牙，總有一款假牙符合你的需求。","只需幾次簡單的看診，就能打造出舒適又自然的假牙。","一種歷久彌新且經濟實惠的方式，讓你找回笑容與生活品質。","每天一點簡單的照護，就能讓假牙保持潔淨、舒適又耐用。","患者對於假牙最常詢問的問題。"]
+    },
+    typeh:{en:["Complete Dentures","Partial Dentures","Valplast Dentures","Single Tooth (Flipper)"], zh:["全口假牙","局部假牙","彈性假牙（Valplast）","單顆假牙（Flipper）"]},
+    typed:{en:["For patients missing all teeth in the upper, lower or both jaws.","For patients who still have some natural teeth remaining.","Made from a soft, flexible material that is lightweight and comfortable.","A simple, economical solution for a single missing tooth."],
+           zh:["適合上顎、下顎或全口缺牙的患者。","適合仍保有部分天然牙齒的患者。","採用柔軟有彈性的材質，輕巧且配戴舒適。","針對單顆缺牙的簡單又經濟的解決方案。"]},
+    typeb:{en:["Removable and easy to clean","Restores full function and appearance","Strong metal framework for durability","Clasp design for a secure, comfortable fit","Metal-free and more comfortable","Aesthetic, durable and gentle on gums","Fills a single gap instantly","Economical and non-invasive"],
+           zh:["可拆卸、易清潔","重建完整的功能與外觀","堅固的金屬支架，耐用可靠","扣環設計，穩固又舒適","不含金屬，配戴更舒適","美觀耐用，對牙齦溫和","立即填補單顆缺牙","經濟實惠且無需手術"]},
+    jh:{en:["Consultation","Impressions","Design & try-in","Final denture","Fitting","Follow-up care"], zh:["諮詢評估","取模","設計與試戴","完成假牙","配戴調整","後續照護"]},
+    jp:{en:["We assess your oral health, discuss your needs and recommend the best option.","Precise impressions are taken to create your custom denture.","Your denture is designed and tried in to perfect the fit, comfort and look.","Crafted with high-quality materials for durability and a natural look.","We ensure a comfortable fit and make any adjustments needed.","Ongoing check-ups and relines keep your dentures fitting beautifully."],
+        zh:["評估你的口腔健康，了解你的需求，並推薦最合適的方案。","取得精準的口腔印模，用以製作專屬假牙。","設計你的假牙並進行試戴，調整至密合、舒適又美觀。","以高品質材料製作，兼具耐用度與自然外觀。","確保配戴舒適，並進行必要的調整。","定期回診與襯底，讓假牙持續密合好用。"]},
+    cardh:{en:["Natural-looking smile","Comfortable & custom-fit","Eat & speak with ease","Removable & easy to clean","Affordable","Non-invasive"],
+           zh:["自然的笑容","舒適且量身密合","輕鬆進食與說話","可拆卸易清潔","經濟實惠","無需手術"]},
+    cardp:{en:["Custom-shaded teeth restore a natural, confident smile.","Made to the exact shape of your mouth for a snug, comfortable feel.","Bring back your ability to chew a wide range of foods and speak clearly.","Take them out to clean thoroughly and keep your mouth healthy.","Often the most budget-friendly way to replace several missing teeth.","No surgery required, making them suitable for almost everyone."],
+           zh:["依你量身配色的假牙，重現自然又自信的笑容。","依你口腔形狀量身製作，配戴貼合又舒適。","重新找回咀嚼各種食物與清晰說話的能力。","可取下徹底清潔，維持口腔健康。","通常是替換多顆缺牙中最經濟實惠的選擇。","無需手術，幾乎人人適用。"]},
+    careli:{en:["Clean daily with a soft brush and a denture cleaner (not regular toothpaste).","Rinse your dentures after eating.","Store them in water or denture solution when not being worn.","Take them out at night to let your gums rest.","Visit us regularly for check-ups and relines."],
+            zh:["每天以軟毛刷與假牙清潔劑清潔（勿用一般牙膏）。","用餐後沖洗假牙。","不配戴時，浸泡在清水或假牙保養液中。","晚上取下假牙，讓牙齦休息。","定期回診檢查與襯底。"]},
+    carenote:{en:"Handle them over a folded towel or a basin of water — dentures can crack if dropped.", zh:"清潔或拿取時，下方墊條毛巾或裝水的盆子，以免假牙摔落破裂。"},
+    faqq:{en:["Do dentures hurt or feel uncomfortable?","How long does it take to get used to them?","Can I eat normally with dentures?","How do I keep my dentures clean?","How long do dentures last?","Dentures, implants or a bridge — which is right for me?"],
+          zh:["戴假牙會痛或不舒服嗎？","需要多久才能適應？","戴假牙能正常進食嗎？","該如何保持假牙清潔？","假牙可以用多久？","假牙、植牙還是牙橋，哪個適合我？"]},
+    faqa:{en:["New dentures can feel bulky or cause minor soreness at first. This is normal and settles as your mouth adjusts — and we fine-tune the fit at your follow-up visits.","Usually a few weeks. Eating and speaking feel more natural with a little practice — reading aloud at home can really help.","Yes. Start with soft foods cut into small pieces, chew slowly on both sides, and gradually add more variety. It's best to limit very hard or sticky foods.","Brush them daily with a denture brush and cleaner, rinse after meals, and soak overnight. Avoid hot water, which can warp the denture.","Typically <strong>5–10 years</strong>. Because your mouth changes shape over time, occasional relines or a remake keep them fitting comfortably.","Dentures are removable and cost-effective for replacing many teeth, while implants and bridges are fixed in place. We'll help you weigh comfort, longevity and budget to choose what's right for you."],
+          zh:["剛戴新假牙時可能覺得有異物感或些微痠痛，這是正常的，會隨著口腔適應而改善；我們也會在回診時微調密合度。","通常需要幾週。稍加練習後，進食與說話會愈來愈自然；在家朗讀是很有幫助的練習。","可以。先從切成小塊的軟質食物開始，兩側慢慢咀嚼，再逐漸增加種類。建議少吃過硬或過黏的食物。","每天用假牙刷與清潔劑刷洗、餐後沖洗，並整夜浸泡。避免使用熱水，以免假牙變形。","一般約 <strong>5 至 10 年</strong>。由於口腔形狀會隨時間改變，偶爾進行襯底或重製，能讓假牙保持舒適密合。","假牙可拆卸，且在替換多顆牙齒時較經濟；植牙與牙橋則是固定式。我們會協助你權衡舒適度、耐用度與預算，選出最適合你的方案。"]},
+    exH:{en:"Explore our other treatments", zh:"探索我們的其他療程"},
+    exP:{en:"Missing teeth can be restored in more than one way. See which option best fits your smile.", zh:"缺牙的重建方式不只一種，看看哪一種最適合你的笑容。"},
+    relName:{en:["Dental Crowns","Dental Implants"], zh:["牙冠","植牙"]},
+    relTag:{en:["Cap and protect a damaged tooth.","Replace a whole missing tooth, root and all."], zh:["包覆並保護受損的牙齒。","連同牙根替換整顆缺失的牙齒。"]},
+    bannerh2:{en:"A beautiful smile can change everything.", zh:"美麗的笑容能改變一切。"},
+    bannerp:{en:"Our dentures are designed to look natural, feel comfortable and help you enjoy life to the fullest — and our friendly team is with you every step of the way.", zh:"我們的假牙講求自然的外觀與舒適的配戴，讓你盡情享受生活；親切的團隊也會一路陪伴你。"},
+    disclaimer:{en:"This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.", zh:"本頁面僅提供一般衛教資訊，不能取代專業的牙科建議、診斷或治療。請務必就個人需求諮詢合格的牙醫師。"},
+    foot:{en:["Dental Crowns","Dental Implants","Types","FAQ"], zh:["牙冠","植牙","假牙種類","常見問題"]},
+    title:{en:"Dentures — Restore Your Smile | Patient Guide", zh:"活動假牙 — 重拾笑容 | 患者衛教指南"}
+  };
+
+  function qs(s){return document.querySelectorAll(s);}
+  function setHTMLall(sel, arr){var els=qs(sel);for(var i=0;i<els.length;i++){if(arr[i]!=null)els[i].innerHTML=arr[i];}}
+  function setLabel(el, txt){
+    if(!el) return;
+    var ns=el.childNodes, tn=null, i;
+    for(i=0;i<ns.length;i++){if(ns[i].nodeType===3){tn=ns[i];break;}}
+    var iconFirst = el.firstChild && el.firstChild.nodeType!==3;
+    if(tn){tn.textContent = iconFirst ? (" "+txt) : (txt+" ");}
+    else{el.appendChild(document.createTextNode(iconFirst?(" "+txt):txt));}
+  }
+  function setLabelAll(sel, arr){var els=qs(sel);for(var i=0;i<els.length;i++){if(arr[i]!=null)setLabel(els[i],arr[i]);}}
+
+  function applyLang(L){
+    document.documentElement.setAttribute("lang", L==="zh"?"zh-Hant":"en");
+    document.documentElement.setAttribute("data-lang", L);
+    setHTMLall(".nav-links a", T.nav[L]);
+    setLabel(qs(".nav-cta")[0], T.navCrown[L]);
+    setHTMLall(".eyebrow", T.eyebrow[L]);
+    qs(".hero h1")[0].innerHTML = T.h1[L];
+    qs(".hero .lead")[0].innerHTML = T.lead[L];
+    setLabelAll(".pills .pill", T.pills[L]);
+    setLabel(qs(".btn-primary")[0], T.btnPrimary[L]);
+    setLabel(qs(".btn-ghost")[0], T.btnGhost[L]);
+    setHTMLall(".sec-head h2", T.h2[L]);
+    setHTMLall(".sec-head p", T.secp[L]);
+    setHTMLall(".type-body h3", T.typeh[L]);
+    setHTMLall(".type-body .desc", T.typed[L]);
+    setLabelAll(".type-body li", T.typeb[L]);
+    setHTMLall(".jstep h3", T.jh[L]);
+    setHTMLall(".jstep p", T.jp[L]);
+    setHTMLall(".card h3", T.cardh[L]);
+    setHTMLall(".card p", T.cardp[L]);
+    setLabelAll(".care li", T.careli[L]);
+    setLabel(qs(".care .note")[0], T.carenote[L]);
+    setHTMLall(".q button span:not(.chev)", T.faqq[L]);
+    setHTMLall(".ans-inner", T.faqa[L]);
+    qs(".ex-h")[0].innerHTML = T.exH[L];
+    qs(".ex-p")[0].innerHTML = T.exP[L];
+    setHTMLall(".rel-tx h3", T.relName[L]);
+    setHTMLall(".rel-tx p", T.relTag[L]);
+    qs(".banner h2")[0].innerHTML = T.bannerh2[L];
+    qs(".banner p")[0].innerHTML = T.bannerp[L];
+    qs(".disclaimer")[0].innerHTML = T.disclaimer[L];
+    setHTMLall(".foot-links a", T.foot[L]);
+    document.title = T.title[L];
+    var tog = document.getElementById("langToggle");
+    if(tog) tog.setAttribute("data-active", L);
+    qs('.q[aria-open="true"] .ans').forEach(function(a){ a.style.maxHeight = a.scrollHeight + "px"; });
+    try{ localStorage.setItem("lang", L); }catch(e){}
+  }
+
+  var savedLang = "en";
+  try{ savedLang = localStorage.getItem("lang") || "en"; }catch(e){}
+  applyLang(savedLang);
+  (function(){
+    var tog = document.getElementById("langToggle");
+    if(tog){ tog.addEventListener("click", function(){
+      var cur = document.documentElement.getAttribute("data-lang") || "en";
+      applyLang(cur==="en" ? "zh" : "en");
+    }); }
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.q button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var q = btn.closest('.q');
+      var ans = q.querySelector('.ans');
+      var open = q.getAttribute('aria-open') === 'true';
+      if(open){ ans.style.maxHeight = null; q.removeAttribute('aria-open'); btn.setAttribute('aria-expanded','false'); }
+      else{ ans.style.maxHeight = ans.scrollHeight + 'px'; q.setAttribute('aria-open','true'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  // Reveal on scroll
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

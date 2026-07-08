@@ -207,6 +207,21 @@
   .crosslink .cl-text{display:flex;gap:18px;align-items:center;min-width:280px;flex:1}
   .crosslink .btn-blue{background:linear-gradient(135deg,#1766c9,#2f8ee0);color:#fff;box-shadow:var(--shadow);white-space:nowrap}
   .crosslink .btn-blue:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .ex-head{max-width:640px;margin:0 auto 40px;text-align:center}
+  .ex-head h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:850;color:var(--forest);letter-spacing:-.01em}
+  .ex-head p{margin-top:12px;color:var(--muted);font-size:1.04rem}
+  .related{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
+  @media(max-width:680px){.related{grid-template-columns:1fr}}
+  .rel-card{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:22px;box-shadow:var(--shadow);transition:transform .2s, box-shadow .25s;color:inherit}
+  .rel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .rel-ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;color:#fff;flex:0 0 auto}
+  .rel-ic-crown{background:linear-gradient(135deg,#1766c9,#2f8ee0)}
+  .rel-ic-denture{background:linear-gradient(135deg,#7c3aed,#9a63f2)}
+  .rel-tx{flex:1}
+  .rel-tx h3{color:var(--forest);font-size:1.1rem;margin-bottom:2px}
+  .rel-tx p{color:var(--muted);font-size:.92rem}
+  .rel-go{color:var(--brand);font-weight:900;font-size:1.35rem;flex:0 0 auto}
 
   /* banner */
   .banner{position:relative;overflow:hidden;border-radius:28px;padding:56px 40px;text-align:center;
@@ -512,19 +527,24 @@
   </div>
 </section>
 
-<!-- CROSS-LINK -->
-<section>
+<!-- EXPLORE OTHER TREATMENTS -->
+<section id="explore">
   <div class="wrap">
-    <div class="crosslink reveal">
-      <div class="cl-text">
-        <span class="cl-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 6 2 7 5 1 3-1 5-1 8 0 2-1 4-2 4s-1-3-2-3-1 3-2 3-2-2-2-4c0-3-2-5-1-8 1-3 5-3 6-5Z"/></svg></span>
-        <div>
-          <h3>Just need to restore a damaged tooth?</h3>
-          <p>If your tooth is cracked or weakened but still there, a <strong>dental crown</strong> caps and protects it — no surgery needed. See how that works.</p>
-        </div>
-      </div>
-      <a class="btn btn-blue" href="index.html">Explore Dental Crowns
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="ex-head reveal">
+      <h2 class="ex-h">Explore our other treatments</h2>
+      <p class="ex-p">An implant replaces a missing tooth — but depending on your needs, one of these may suit you better.</p>
+    </div>
+    <div class="related">
+      <a class="rel-card reveal" href="index.html">
+        <span class="rel-ic rel-ic-crown"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 6 2 7 5 1 3-1 5-1 8 0 2-1 4-2 4s-1-3-2-3-1 3-2 3-2-2-2-4c0-3-2-5-1-8 1-3 5-3 6-5Z"/></svg></span>
+        <div class="rel-tx"><h3>Dental Crowns</h3><p>Cap and protect a damaged tooth.</p></div>
+        <span class="rel-go">&rarr;</span>
+      </a>
+      <a class="rel-card reveal" href="dentures.html">
+        <span class="rel-ic rel-ic-denture"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a8 8 0 0 0 16 0Z"/><path d="M8 10v3M12 10.5v3.5M16 10v3"/></svg></span>
+        <div class="rel-tx"><h3>Dentures</h3><p>Removable replacements for one or many missing teeth.</p></div>
+        <span class="rel-go">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -619,9 +639,10 @@
       en:["The procedure is done under local anaesthetic, so you shouldn't feel pain during placement — most patients say it's easier than a tooth extraction. Mild soreness or swelling for a few days afterwards is normal and easily managed.","From placement to final crown, expect roughly <strong>3–9 months</strong>. Most of that time is healing — the titanium needs 3–6 months to fully fuse with the bone (osseointegration). The appointments themselves are short.","Most healthy adults with good gum health and enough jawbone are great candidates. If bone has been lost, a bone graft can often rebuild it first. A CBCT 3D scan at your consultation tells us exactly what's possible for you.","Dental implants are one of the most reliable treatments in dentistry, with long-term success rates around <strong>95% or higher</strong> when placed by an experienced dentist and cared for well.","The titanium implant itself can last a lifetime with good care. The crown on top typically lasts <strong>10–15 years or more</strong> before it may need replacing, just like a normal crown.","An implant is the only option that replaces the tooth root, so it prevents bone loss and doesn't rely on grinding down neighbouring teeth (as a bridge does) or removable plates (like a denture). It's the most natural, self-supporting and long-lasting choice."],
       zh:["手術會在局部麻醉下進行，因此植入過程中不會感到疼痛，多數患者都覺得比拔牙還輕鬆。術後幾天出現輕微痠痛或腫脹屬於正常現象，也很容易緩解。","從植入到裝上最終牙冠，大約需要 <strong>3 至 9 個月</strong>。其中大部分是癒合時間，鈦金屬需要 3 至 6 個月與骨頭完全結合（骨整合）。看診本身的時間都很短。","大多數牙齦健康、齒槽骨足夠的成年人都很適合。若骨頭已流失，通常可先透過補骨手術重建。諮詢時的 CBCT 3D 掃描能明確告訴我們最適合你的方案。","植牙是牙科中最可靠的療程之一，只要由經驗豐富的牙醫執行並妥善照護，長期成功率約可達 <strong>95% 以上</strong>。","只要妥善照護，鈦金屬植體本身可以用上一輩子。上方的牙冠通常可使用 <strong>10 至 15 年或更久</strong>，之後可能需要更換，就和一般牙冠一樣。","植牙是唯一能取代牙根的選擇，因此能防止骨質流失，也不需要像牙橋那樣磨小鄰牙，或像活動假牙般需要拆卸。它是最自然、能自我支撐且最持久的選擇。"]
     },
-    clH:{en:"Just need to restore a damaged tooth?", zh:"只是想修復受損的牙齒嗎？"},
-    clP:{en:'If your tooth is cracked or weakened but still there, a <strong>dental crown</strong> caps and protects it — no surgery needed. See how that works.', zh:'如果牙齒只是裂了或變脆弱、但仍然存在，<strong>牙冠</strong>就能包覆並保護它，而且無需手術。看看它是如何運作的。'},
-    clBtn:{en:"Explore Dental Crowns", zh:"了解牙冠"},
+    exH:{en:"Explore our other treatments", zh:"探索我們的其他療程"},
+    exP:{en:"An implant replaces a missing tooth — but depending on your needs, one of these may suit you better.", zh:"植牙能替換缺失的牙齒；但依你的需求，以下選擇之一可能更適合你。"},
+    relName:{en:["Dental Crowns","Dentures"], zh:["牙冠","活動假牙"]},
+    relTag:{en:["Cap and protect a damaged tooth.","Removable replacements for one or many missing teeth."], zh:["包覆並保護受損的牙齒。","針對一顆或多顆缺牙的可拆卸式替代方案。"]},
     bannerh2:{en:"A new tooth, rooted for life.", zh:"扎根一生的新牙齒。"},
     bannerp:{en:"Your daily care and regular check-ups are the key to the comfort, confidence and long life of your implants. Talk to your dentist to find out if implants are right for you.", zh:"你每天的照護與定期回診，是植牙舒適、自信與長壽的關鍵。歡迎諮詢你的牙醫，了解植牙是否適合你。"},
     disclaimer:{en:"This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.", zh:"本頁面僅提供一般衛教資訊，不能取代專業的牙科建議、診斷或治療。請務必就個人需求諮詢合格的牙醫師。"},
@@ -665,9 +686,10 @@
     setLabel(qs(".care .note")[0], T.carenote[L]);
     setHTMLall(".q button span:not(.chev)", T.faqq[L]);
     setHTMLall(".ans-inner", T.faqa[L]);
-    qs(".crosslink h3")[0].innerHTML = T.clH[L];
-    qs(".crosslink p")[0].innerHTML = T.clP[L];
-    setLabel(qs(".btn-blue")[0], T.clBtn[L]);
+    qs(".ex-h")[0].innerHTML = T.exH[L];
+    qs(".ex-p")[0].innerHTML = T.exP[L];
+    setHTMLall(".rel-tx h3", T.relName[L]);
+    setHTMLall(".rel-tx p", T.relTag[L]);
     qs(".banner h2")[0].innerHTML = T.bannerh2[L];
     qs(".banner p")[0].innerHTML = T.bannerp[L];
     qs(".disclaimer")[0].innerHTML = T.disclaimer[L];
