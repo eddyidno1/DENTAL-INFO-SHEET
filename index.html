@@ -79,7 +79,22 @@
   .nav-links{display:flex;gap:26px}
   .nav-links a{color:var(--muted);font-weight:600;font-size:.92rem;transition:color .2s}
   .nav-links a:hover{color:var(--blue)}
-  .nav-right{display:flex;align-items:center;gap:22px}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav-cta{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;color:#fff;
+    background:linear-gradient(135deg,#0f9d6b,#17bd83);padding:9px 15px;border-radius:999px;
+    box-shadow:var(--shadow);white-space:nowrap;transition:transform .15s}
+  .nav-cta:hover{transform:translateY(-2px)}
+  @media(max-width:860px){.nav-cta span{display:none}}
+  .crosslink{position:relative;overflow:hidden;border-radius:26px;padding:34px;display:flex;gap:24px;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .crosslink .cl-ic{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;flex:0 0 auto;
+    color:#fff;background:linear-gradient(135deg,#0f9d6b,#17bd83);box-shadow:var(--shadow)}
+  .crosslink .cl-text{display:flex;gap:18px;align-items:center;min-width:280px;flex:1}
+  .crosslink h3{color:var(--navy);font-size:1.24rem;margin-bottom:4px}
+  .crosslink p{color:var(--muted);max-width:52ch}
+  .crosslink .btn-green{display:inline-flex;align-items:center;gap:9px;font-weight:700;padding:13px 22px;border-radius:14px;
+    background:linear-gradient(135deg,#0f9d6b,#17bd83);color:#fff;box-shadow:var(--shadow);white-space:nowrap;transition:transform .15s ease, box-shadow .2s}
+  .crosslink .btn-green:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
   .lang-toggle{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);background:var(--card);
     border-radius:999px;padding:3px;cursor:pointer;font-weight:800;font-size:.8rem;color:var(--muted);
     box-shadow:var(--shadow);font-family:inherit;line-height:1;flex:0 0 auto}
@@ -256,6 +271,7 @@
         <a href="#types">Types</a>
         <a href="#faq">FAQ</a>
       </nav>
+      <a class="nav-cta" href="implant.html" data-i18n-nav="implant"><span>Dental Implants</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="lang-toggle" id="langToggle" data-active="en" type="button" aria-label="Switch language / 切換語言"><span data-l="en">EN</span><span data-l="zh">中文</span></button>
     </div>
   </div>
@@ -645,6 +661,23 @@
   </div>
 </section>
 
+<!-- CROSS-LINK -->
+<section>
+  <div class="wrap">
+    <div class="crosslink reveal">
+      <div class="cl-text">
+        <span class="cl-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5l3-3 3 3"/><path d="M10 9h4l-1 8a1 1 0 0 1-2 0Z"/><ellipse cx="12" cy="20" rx="7" ry="2"/></svg></span>
+        <div>
+          <h3 class="cl-h">Missing a tooth entirely?</h3>
+          <p class="cl-p">A <strong>dental implant</strong> replaces the whole tooth — root and all — with a titanium post that fuses to your jaw. See how it works.</p>
+        </div>
+      </div>
+      <a class="btn-green" href="implant.html"><span class="cl-btn">Explore Dental Implants</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
 <!-- CLOSING BANNER -->
 <section>
   <div class="wrap">
@@ -763,7 +796,11 @@
       en:"This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.",
       zh:"本頁面僅提供一般衛教資訊，不能取代專業的牙科建議、診斷或治療。請務必就個人需求諮詢合格的牙醫師。"
     },
-    title:{en:"Dental Crown — The Procedure | Patient Guide", zh:"牙冠療程 — 患者衛教指南"}
+    title:{en:"Dental Crown — The Procedure | Patient Guide", zh:"牙冠療程 — 患者衛教指南"},
+    navImplant:{en:"Dental Implants", zh:"植牙"},
+    clH:{en:"Missing a tooth entirely?", zh:"缺了一整顆牙齒嗎？"},
+    clP:{en:"A <strong>dental implant</strong> replaces the whole tooth — root and all — with a titanium post that fuses to your jaw. See how it works.", zh:"<strong>植牙</strong>能連同牙根一起替換整顆牙齒，以鈦金屬植體與齒槽骨自然結合。看看它是如何運作的。"},
+    clBtn:{en:"Explore Dental Implants", zh:"了解植牙"}
   };
 
   function qs(s){return document.querySelectorAll(s);}
@@ -806,6 +843,10 @@
     qs(".banner h2")[0].innerHTML = T.bannerh2[L];
     qs(".banner p")[0].innerHTML = T.bannerp[L];
     qs(".disclaimer")[0].innerHTML = T.disclaimer[L];
+    qs(".nav-cta span")[0].innerHTML = T.navImplant[L];
+    qs(".cl-h")[0].innerHTML = T.clH[L];
+    qs(".cl-p")[0].innerHTML = T.clP[L];
+    qs(".cl-btn")[0].innerHTML = T.clBtn[L];
     document.title = T.title[L];
     // re-fit any open FAQ answer to its new (translated) height
     qs('.q[aria-open="true"] .ans').forEach(function(a){ a.style.maxHeight = a.scrollHeight + "px"; });

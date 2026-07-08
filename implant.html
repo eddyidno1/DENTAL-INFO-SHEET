@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dental Implants — Restore Your Smile | Patient Guide</title>
+<meta name="description" content="A clear, friendly guide to dental implants: what they are, their anatomy, the step-by-step procedure, benefits, aftercare and FAQs.">
+<style>
+  :root{
+    --forest:#0b3d34;
+    --brand:#0f9d6b;
+    --brand-2:#17bd83;
+    --accent:#e8992f;
+    --accent-2:#f4b451;
+    --ink:#122b25;
+    --muted:#5a7169;
+    --card:#ffffff;
+    --bg:#f3fbf7;
+    --sky:#e2f6ec;
+    --sky-2:#f0fbf5;
+    --line:#d6ece0;
+    --shadow:0 10px 30px -12px rgba(11,61,52,.26);
+    --shadow-lg:0 24px 60px -20px rgba(11,61,52,.34);
+    --radius:20px;
+    --maxw:1140px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --forest:#cff5e6;
+      --brand:#3ed69f;
+      --brand-2:#60e3b4;
+      --accent:#f4b451;
+      --accent-2:#f7c877;
+      --ink:#e9f6f0;
+      --muted:#9dbcae;
+      --card:#11261f;
+      --bg:#08150f;
+      --sky:#123028;
+      --sky-2:#0e2620;
+      --line:#22443a;
+      --shadow:0 10px 30px -12px rgba(0,0,0,.5);
+      --shadow-lg:0 24px 60px -20px rgba(0,0,0,.6);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Helvetica Neue","PingFang TC","Hiragino Sans TC","Microsoft JhengHei","Noto Sans TC",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3{line-height:1.15;margin:0}
+  p{margin:0}
+  a{color:var(--brand);text-decoration:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--brand);background:var(--sky);padding:7px 14px;border-radius:999px;border:1px solid var(--line)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(12px);
+    background:color-mix(in srgb, var(--bg) 82%, transparent);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--forest);letter-spacing:.02em}
+  .brand .dot{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--accent));
+    display:grid;place-items:center;color:#fff;box-shadow:var(--shadow);font-size:.7rem;font-weight:900}
+  .nav-right{display:flex;align-items:center;gap:22px}
+  .nav-links{display:flex;gap:22px}
+  .nav-links a{color:var(--muted);font-weight:600;font-size:.92rem;transition:color .2s}
+  .nav-links a:hover{color:var(--brand)}
+  .nav-cta{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;color:#fff;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:9px 15px;border-radius:999px;
+    box-shadow:var(--shadow);white-space:nowrap;transition:transform .15s}
+  .nav-cta:hover{transform:translateY(-2px)}
+  .lang-toggle{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);background:var(--card);
+    border-radius:999px;padding:3px;cursor:pointer;font-weight:800;font-size:.8rem;color:var(--muted);
+    box-shadow:var(--shadow);font-family:inherit;line-height:1;flex:0 0 auto}
+  .lang-toggle span{padding:6px 12px;border-radius:999px;transition:background .2s, color .2s}
+  .lang-toggle[data-active="en"] span[data-l="en"],
+  .lang-toggle[data-active="zh"] span[data-l="zh"]{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:70px 0 84px}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:
+    radial-gradient(55% 50% at 82% 20%, color-mix(in srgb,var(--accent) 20%, transparent), transparent 70%),
+    radial-gradient(65% 55% at 10% 85%, color-mix(in srgb,var(--brand) 20%, transparent), transparent 68%)}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center}
+  @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:26px}}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.3rem);font-weight:900;color:var(--forest);letter-spacing:-.02em}
+  .hero .sub{display:block;margin-top:8px;font-size:clamp(1rem,2.3vw,1.35rem);font-weight:700;color:var(--accent);letter-spacing:.02em}
+  .hero .lead{margin-top:20px;font-size:clamp(1.02rem,2.2vw,1.2rem);color:var(--muted);max-width:46ch}
+  .hero .lead b{color:var(--forest)}
+  .pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
+    padding:8px 13px;border-radius:999px;font-weight:700;font-size:.86rem;color:var(--forest);box-shadow:var(--shadow)}
+  .pill svg{color:var(--brand);flex:0 0 auto}
+  .cta-row{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;padding:13px 22px;border-radius:14px;transition:transform .15s ease, box-shadow .2s;cursor:pointer}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .btn-ghost{background:var(--card);color:var(--forest);border:1px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-2px)}
+  .hero-art{display:flex;justify-content:center}
+  .art-card{position:relative;width:min(320px,80vw);border-radius:28px;overflow:hidden;border:6px solid var(--card);
+    box-shadow:var(--shadow-lg);background:linear-gradient(160deg,var(--sky),#d3f0e0)}
+  .art-card svg{display:block;width:100%;height:auto}
+  .float-a{animation:floaty 4s ease-in-out infinite}
+  .float-b{animation:floaty 4s ease-in-out .4s infinite}
+  @keyframes floaty{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
+
+  /* sections */
+  section{padding:74px 0}
+  .sec-head{max-width:660px;margin:0 auto 46px;text-align:center}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:850;color:var(--forest);margin-top:14px;letter-spacing:-.01em}
+  .sec-head p{margin-top:13px;color:var(--muted);font-size:1.06rem}
+  .alt{background:linear-gradient(180deg,var(--sky-2),transparent 32%),var(--bg)}
+
+  /* anatomy */
+  .anatomy-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+  @media(max-width:860px){.anatomy-grid{grid-template-columns:1fr;gap:28px}}
+  .diagram{background:linear-gradient(160deg,var(--sky),#d3f0e0);border:1px solid var(--line);border-radius:24px;
+    padding:14px;box-shadow:var(--shadow);max-width:380px;margin:0 auto;width:100%}
+  .diagram svg{display:block;width:100%;height:auto}
+  .legend{display:grid;gap:14px}
+  .leg{display:flex;gap:15px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+  .leg .n{flex:0 0 auto;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:900;
+    color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-2));font-size:.95rem}
+  .leg.aux .n{background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .leg h3{font-size:1.04rem;color:var(--forest);margin-bottom:3px}
+  .leg h3 span{font-weight:600;color:var(--muted);font-size:.86rem}
+  .leg p{color:var(--muted);font-size:.94rem}
+
+  /* benefit cards */
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+  @media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .25s}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+  .icon-badge{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:15px;
+    background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 16%,var(--card)),color-mix(in srgb,var(--accent) 16%,var(--card)));
+    color:var(--brand);border:1px solid var(--line)}
+  .card h3{font-size:1.12rem;color:var(--forest);margin-bottom:7px}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* timeline */
+  .timeline{position:relative;max-width:860px;margin:0 auto}
+  .timeline::before{content:"";position:absolute;left:31px;top:6px;bottom:6px;width:3px;
+    background:linear-gradient(var(--brand),var(--accent));border-radius:2px}
+  .tl-item{position:relative;padding:0 0 0 82px;margin-bottom:30px}
+  .tl-node{position:absolute;left:8px;top:0;width:48px;height:48px;border-radius:50%;z-index:2;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;display:grid;place-items:center;
+    font-weight:900;font-size:1.2rem;box-shadow:var(--shadow-lg);border:4px solid var(--card)}
+  .tl-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow);
+    transition:transform .2s}
+  .tl-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+  .tl-head{display:flex;align-items:center;gap:11px;margin-bottom:7px}
+  .tl-ic{flex:0 0 auto;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:var(--brand);
+    background:color-mix(in srgb,var(--brand) 12%,var(--card));border:1px solid var(--line)}
+  .tl-card h3{font-size:1.08rem;color:var(--forest)}
+  .tl-card p{color:var(--muted);font-size:.97rem}
+  .dur{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-weight:800;font-size:.8rem;
+    color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,var(--card));
+    border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));padding:5px 11px;border-radius:999px}
+  .dur.long{color:var(--brand);background:color-mix(in srgb,var(--brand) 13%,var(--card));border-color:color-mix(in srgb,var(--brand) 32%,var(--line))}
+  @media(min-width:760px){
+    .timeline::before{left:50%;transform:translateX(-50%)}
+    .tl-item{width:50%;padding:0;margin-bottom:8px;min-height:96px}
+    .tl-item:nth-child(odd){left:0;padding-right:52px;text-align:right}
+    .tl-item:nth-child(even){left:50%;padding-left:52px;margin-top:-40px}
+    .tl-item:first-child{margin-top:0}
+    .tl-node{left:auto;right:-24px;top:14px}
+    .tl-item:nth-child(even) .tl-node{left:-24px;right:auto}
+    .tl-item:nth-child(odd) .tl-head{flex-direction:row-reverse}
+  }
+
+  /* aftercare */
+  .care{max-width:820px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:24px;
+    padding:34px;box-shadow:var(--shadow)}
+  .care ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:620px){.care ul{grid-template-columns:1fr}}
+  .care li{display:flex;gap:12px;align-items:flex-start;color:var(--ink);font-size:1rem}
+  .care li svg{flex:0 0 auto;margin-top:2px;color:var(--brand)}
+  .care .note{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);
+    display:flex;gap:10px;align-items:center;font-weight:600}
+  .care .note svg{color:var(--accent);flex:0 0 auto}
+
+  /* faq */
+  .faq{max-width:800px;margin:0 auto;display:grid;gap:14px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+  .q button{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:20px 22px;font-size:1.03rem;
+    font-weight:700;color:var(--forest);display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit}
+  .q button:focus-visible{outline:3px solid color-mix(in srgb,var(--brand) 45%,transparent);outline-offset:-3px}
+  .q .chev{flex:0 0 auto;transition:transform .3s;color:var(--brand)}
+  .q[aria-open="true"] .chev{transform:rotate(180deg)}
+  .q .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .q .ans-inner{padding:0 22px 22px;color:var(--muted)}
+
+  /* cross-link */
+  .crosslink{position:relative;overflow:hidden;border-radius:26px;padding:34px;display:flex;gap:24px;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .crosslink .cl-ic{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;flex:0 0 auto;
+    color:#fff;background:linear-gradient(135deg,#1766c9,#2f8ee0);box-shadow:var(--shadow)}
+  .crosslink h3{color:var(--forest);font-size:1.24rem;margin-bottom:4px}
+  .crosslink p{color:var(--muted);max-width:52ch}
+  .crosslink .cl-text{display:flex;gap:18px;align-items:center;min-width:280px;flex:1}
+  .crosslink .btn-blue{background:linear-gradient(135deg,#1766c9,#2f8ee0);color:#fff;box-shadow:var(--shadow);white-space:nowrap}
+  .crosslink .btn-blue:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+
+  /* banner */
+  .banner{position:relative;overflow:hidden;border-radius:28px;padding:56px 40px;text-align:center;
+    background:linear-gradient(135deg,var(--forest),var(--brand));color:#fff;box-shadow:var(--shadow-lg)}
+  @media (prefers-color-scheme: dark){.banner{background:linear-gradient(135deg,#07332b,#0d5b45)}}
+  .banner .eyebrow{background:rgba(255,255,255,.15);color:#eafff6;border-color:rgba(255,255,255,.2)}
+  .banner h2{color:#fff;font-size:clamp(1.9rem,5vw,3rem);font-weight:900;margin-top:16px}
+  .banner p{color:#dcf5ea;margin-top:14px;font-size:1.1rem;max-width:56ch;margin-left:auto;margin-right:auto}
+
+  footer{padding:40px 0 54px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  .foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap}
+  .foot-links a{color:var(--brand);font-weight:600}
+  .disclaimer{max-width:620px;font-size:.85rem;line-height:1.6;margin-top:14px}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span>So Dental</span></div>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#anatomy">Anatomy</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#process">The process</a>
+        <a href="#aftercare">Aftercare</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="index.html">Dental Crowns
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="lang-toggle" id="langToggle" data-active="en" type="button" aria-label="Switch language / 切換語言"><span data-l="en">EN</span><span data-l="zh">中文</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <div class="reveal in">
+      <span class="eyebrow">Patient Guide</span>
+      <h1>Dental Implants<span class="sub">Restore your smile. Improve your life.</span></h1>
+      <p class="lead">A dental implant is a <b>titanium post</b> surgically placed into the jawbone to replace a missing tooth root. It acts as a strong foundation for a crown that looks, feels and functions like a <b>natural tooth</b>.</p>
+      <div class="pills">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Natural look &amp; feel</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/></svg> Strong &amp; durable</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Prevents bone loss</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v8m-4-4h8"/><circle cx="12" cy="12" r="9"/></svg> Long-term solution</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#process">See how it works
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#benefits">Why implants?</a>
+      </div>
+    </div>
+    <div class="hero-art reveal in">
+      <div class="art-card">
+        <svg viewBox="0 0 240 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An exploded view of a dental implant: crown, abutment and titanium fixture">
+          <defs>
+            <linearGradient id="ex_tooth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfeee6"/></linearGradient>
+            <linearGradient id="ex_metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f2f6f9"/><stop offset=".5" stop-color="#c3ccd4"/><stop offset="1" stop-color="#93a0ab"/></linearGradient>
+            <filter id="ex_sh" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0b3d34" flood-opacity="0.22"/></filter>
+          </defs>
+          <!-- crown -->
+          <g transform="translate(120,58)" filter="url(#ex_sh)"><g class="float-a">
+            <path d="M-34,-4 C-34,-28 -18,-40 0,-40 C18,-40 34,-28 34,-4 C34,12 28,22 26,34 C24,46 14,42 0,42 C-14,42 -24,46 -26,34 C-28,22 -34,12 -34,-4 Z" fill="url(#ex_tooth)" stroke="#cadfd4" stroke-width="1.5"/>
+            <path d="M-16,-16 Q0,-6 16,-16" stroke="#cadfd4" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          </g></g>
+          <text x="120" y="122" text-anchor="middle" fill="#e8992f" font-size="30" font-weight="800">+</text>
+          <!-- abutment -->
+          <g transform="translate(120,168)" filter="url(#ex_sh)"><g class="float-b">
+            <rect x="-10" y="-26" width="20" height="20" rx="4" fill="url(#ex_metal)"/>
+            <path d="M-17,20 L-10,-9 L10,-9 L17,20 Z" fill="url(#ex_metal)"/>
+            <ellipse cx="0" cy="20" rx="17" ry="4" fill="#9aa6b0"/>
+            <path d="M-8,-20 L8,-20" stroke="#eef3f7" stroke-width="2.4" stroke-linecap="round"/>
+          </g></g>
+          <text x="120" y="222" text-anchor="middle" fill="#e8992f" font-size="30" font-weight="800">+</text>
+          <!-- fixture -->
+          <g transform="translate(120,296)" filter="url(#ex_sh)"><g class="float-a">
+            <ellipse cx="0" cy="-42" rx="18" ry="5" fill="#c7d0da"/>
+            <path d="M-18,-42 L18,-42 L14,8 C13,28 7,44 0,50 C-7,44 -13,28 -14,8 Z" fill="url(#ex_metal)"/>
+            <g stroke="#8f9dad" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M-16,-32 L0,-26 L16,-32"/><path d="M-15,-18 L0,-12 L15,-18"/><path d="M-13,-4 L0,2 L13,-4"/><path d="M-11,10 L0,16 L11,10"/><path d="M-8,24 L0,30 L8,24"/>
+            </g>
+          </g></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMY -->
+<section id="anatomy" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The building blocks</span>
+      <h2>Anatomy of a dental implant</h2>
+      <p>Every implant is built from three parts that work together — anchored by a titanium root that fuses with your own bone.</p>
+    </div>
+    <div class="anatomy-grid">
+      <div class="diagram reveal">
+        <svg viewBox="0 0 360 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section of a dental implant showing the crown, abutment and titanium fixture set into the jawbone">
+          <defs>
+            <linearGradient id="an_bone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3e6c6"/><stop offset="1" stop-color="#e0cc9c"/></linearGradient>
+            <linearGradient id="an_gum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6b6c2"/><stop offset="1" stop-color="#e88fa0"/></linearGradient>
+            <linearGradient id="an_tooth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e2efe8"/></linearGradient>
+            <linearGradient id="an_metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#eef2f5"/><stop offset=".5" stop-color="#bcc6cf"/><stop offset="1" stop-color="#96a2ad"/></linearGradient>
+            <filter id="an_sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#5a4a1f" flood-opacity="0.18"/></filter>
+          </defs>
+          <!-- bone block -->
+          <rect x="28" y="170" width="304" height="256" rx="26" fill="url(#an_bone)" stroke="#d3bd8c" stroke-width="3"/>
+          <!-- spongy texture -->
+          <g opacity="0.9"><circle cx="132" cy="227" r="6.6" fill="#f7edd4"/><circle cx="267" cy="216" r="6.3" fill="#f7edd4"/><circle cx="54" cy="286" r="3.6" fill="#f7edd4"/><circle cx="216" cy="317" r="3.5" fill="#e3d0a6"/><circle cx="57" cy="242" r="6.2" fill="#f7edd4"/><circle cx="123" cy="226" r="3.8" fill="#ecdcb4"/><circle cx="72" cy="315" r="4.2" fill="#f7edd4"/><circle cx="60" cy="239" r="6.8" fill="#e3d0a6"/><circle cx="255" cy="293" r="8.1" fill="#ecdcb4"/><circle cx="126" cy="361" r="6.9" fill="#f7edd4"/><circle cx="66" cy="258" r="5.8" fill="#ecdcb4"/><circle cx="242" cy="256" r="8.4" fill="#f7edd4"/><circle cx="137" cy="390" r="5.4" fill="#f7edd4"/><circle cx="252" cy="315" r="7.8" fill="#ecdcb4"/><circle cx="137" cy="269" r="5.8" fill="#e3d0a6"/><circle cx="63" cy="215" r="4.6" fill="#f7edd4"/><circle cx="61" cy="342" r="6.6" fill="#e3d0a6"/><circle cx="121" cy="276" r="6.7" fill="#f7edd4"/><circle cx="300" cy="270" r="6.4" fill="#e3d0a6"/><circle cx="60" cy="356" r="3.9" fill="#f7edd4"/><circle cx="81" cy="286" r="6.1" fill="#e3d0a6"/><circle cx="312" cy="338" r="5.2" fill="#f7edd4"/><circle cx="85" cy="233" r="4.4" fill="#f7edd4"/><circle cx="47" cy="369" r="4.2" fill="#ecdcb4"/><circle cx="45" cy="283" r="5.2" fill="#ecdcb4"/><circle cx="303" cy="340" r="5.9" fill="#f7edd4"/><circle cx="217" cy="209" r="3.6" fill="#f7edd4"/><circle cx="211" cy="227" r="4.5" fill="#ecdcb4"/><circle cx="75" cy="298" r="8.4" fill="#e3d0a6"/><circle cx="72" cy="267" r="4.6" fill="#f7edd4"/><circle cx="303" cy="271" r="6.9" fill="#f7edd4"/><circle cx="250" cy="258" r="6.6" fill="#f7edd4"/><circle cx="233" cy="250" r="5.1" fill="#f7edd4"/><circle cx="141" cy="242" r="6.1" fill="#ecdcb4"/><circle cx="217" cy="324" r="7.4" fill="#f7edd4"/><circle cx="263" cy="366" r="7.1" fill="#f7edd4"/><circle cx="98" cy="298" r="7.1" fill="#f7edd4"/><circle cx="259" cy="294" r="4.2" fill="#ecdcb4"/><circle cx="313" cy="395" r="5.1" fill="#f7edd4"/><circle cx="214" cy="383" r="7.7" fill="#e3d0a6"/><circle cx="291" cy="268" r="6.6" fill="#f7edd4"/><circle cx="291" cy="359" r="7.2" fill="#e3d0a6"/><circle cx="286" cy="286" r="6.6" fill="#f7edd4"/><circle cx="262" cy="398" r="5.3" fill="#e3d0a6"/><circle cx="246" cy="214" r="4.0" fill="#f7edd4"/><circle cx="51" cy="319" r="5.7" fill="#f7edd4"/><circle cx="210" cy="320" r="5.7" fill="#ecdcb4"/><circle cx="269" cy="240" r="4.5" fill="#ecdcb4"/><circle cx="133" cy="309" r="7.6" fill="#f7edd4"/><circle cx="269" cy="379" r="3.9" fill="#f7edd4"/><circle cx="45" cy="362" r="4.1" fill="#e3d0a6"/><circle cx="257" cy="218" r="6.2" fill="#f7edd4"/><circle cx="292" cy="288" r="6.4" fill="#f7edd4"/><circle cx="232" cy="290" r="6.0" fill="#e3d0a6"/><circle cx="296" cy="388" r="7.9" fill="#f7edd4"/><circle cx="130" cy="336" r="5.5" fill="#f7edd4"/><circle cx="226" cy="359" r="8.0" fill="#f7edd4"/><circle cx="300" cy="330" r="5.1" fill="#ecdcb4"/><circle cx="314" cy="280" r="5.4" fill="#ecdcb4"/><circle cx="134" cy="326" r="5.9" fill="#f7edd4"/><circle cx="75" cy="387" r="4.4" fill="#f7edd4"/><circle cx="67" cy="253" r="8.0" fill="#f7edd4"/><circle cx="118" cy="223" r="5.4" fill="#ecdcb4"/><circle cx="133" cy="254" r="7.4" fill="#f7edd4"/><circle cx="299" cy="328" r="7.4" fill="#f7edd4"/><circle cx="296" cy="252" r="3.9" fill="#f7edd4"/><circle cx="99" cy="261" r="4.8" fill="#f7edd4"/><circle cx="243" cy="311" r="4.2" fill="#e3d0a6"/><circle cx="111" cy="289" r="6.7" fill="#e3d0a6"/><circle cx="223" cy="310" r="7.9" fill="#ecdcb4"/><circle cx="225" cy="275" r="5.9" fill="#ecdcb4"/><circle cx="116" cy="396" r="8.4" fill="#ecdcb4"/><circle cx="94" cy="266" r="3.6" fill="#ecdcb4"/><circle cx="215" cy="214" r="8.3" fill="#f7edd4"/><circle cx="223" cy="345" r="7.9" fill="#e3d0a6"/><circle cx="252" cy="346" r="5.8" fill="#ecdcb4"/><circle cx="269" cy="317" r="7.9" fill="#f7edd4"/><circle cx="67" cy="205" r="6.6" fill="#f7edd4"/><circle cx="247" cy="295" r="7.5" fill="#ecdcb4"/><circle cx="108" cy="353" r="4.4" fill="#e3d0a6"/><circle cx="253" cy="324" r="6.6" fill="#f7edd4"/><circle cx="221" cy="340" r="6.5" fill="#f7edd4"/><circle cx="76" cy="382" r="4.3" fill="#f7edd4"/><circle cx="314" cy="276" r="8.1" fill="#f7edd4"/><circle cx="64" cy="215" r="7.2" fill="#ecdcb4"/><circle cx="303" cy="224" r="7.5" fill="#ecdcb4"/><circle cx="285" cy="342" r="4.4" fill="#e3d0a6"/></g>
+          <!-- titanium fixture -->
+          <g filter="url(#an_sh)">
+            <ellipse cx="180" cy="190" rx="18" ry="5" fill="#c7d0da"/>
+            <path d="M163,190 L197,190 L193,300 C192,335 186,372 180,386 C174,372 168,335 167,300 Z" fill="url(#an_metal)"/>
+            <g><path d="M163,190 L180,196 L197,190" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M164,205 L180,211 L196,205" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M165,220 L180,226 L195,220" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M166,235 L180,241 L194,235" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M167,250 L180,256 L193,250" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M168,265 L180,271 L192,265" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M169,280 L180,286 L191,280" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M171,295 L180,301 L189,295" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M172,310 L180,316 L188,310" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M173,325 L180,331 L187,325" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M174,340 L180,346 L186,340" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M175,355 L180,361 L185,355" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M176,370 L180,376 L184,370" fill="none" stroke="#8f9dad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+          </g>
+          <!-- gum -->
+          <path d="M28,150 C100,138 260,138 332,150 L332,196 C260,208 100,208 28,196 Z" fill="url(#an_gum)"/>
+          <!-- abutment -->
+          <g filter="url(#an_sh)"><path d="M170,130 L190,130 L193,166 L189,192 L171,192 L167,166 Z" fill="url(#an_metal)"/><path d="M172,138 L188,138" stroke="#e7edf2" stroke-width="2.5" stroke-linecap="round"/></g>
+          <!-- crown -->
+          <g transform="translate(180,96)" filter="url(#an_sh)"><path d="M-30,-6 C-30,-26 -16,-35 0,-35 C16,-35 30,-26 30,-6 C30,8 25,17 23,30 C22,40 12,36 0,36 C-12,36 -22,40 -23,30 C-25,17 -30,8 -30,-6 Z" fill="url(#an_tooth)"/><path d="M-14,-20 Q0,-11 14,-20" stroke="#d3e5db" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+        </svg>
+      </div>
+      <div class="legend reveal">
+        <div class="leg"><span class="n">1</span><div><h3>Crown <span>· visible part</span></h3><p>A custom-made tooth that looks and works just like a natural one — the only part you see.</p></div></div>
+        <div class="leg"><span class="n">2</span><div><h3>Abutment <span>· connector</span></h3><p>A small connector that joins the crown securely to the implant below the gum.</p></div></div>
+        <div class="leg"><span class="n">3</span><div><h3>Implant fixture <span>· titanium post</span></h3><p>Placed into the jawbone to act as an artificial tooth root — the foundation for everything above.</p></div></div>
+        <div class="leg aux"><span class="n">+</span><div><h3>Osseointegration <span>· the science</span></h3><p>Over 3–6 months the titanium fuses with your jaw bone, becoming remarkably strong and stable — and helping prevent the bone loss that follows a missing tooth.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why implants?</span>
+      <h2>Benefits that last a lifetime</h2>
+      <p>Implants are the closest thing to a natural tooth — restoring not just your smile, but the way you eat, speak and feel.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/></svg></div>
+        <h3>Natural look &amp; feel</h3>
+        <p>Custom-matched to your smile, an implant blends in so well most people won't know it's there.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Strong &amp; durable</h3>
+        <p>Made from proven, biocompatible titanium, it restores full biting and chewing power.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4c-2 0-3 1.5-3 3s1 2 1 4-1 3-1 4 1 3 3 3M16 4c2 0 3 1.5 3 3s-1 2-1 4 1 3 1 4-1 3-3 3"/><path d="M9 8h.01M15 8h.01M9 16h.01M15 16h.01"/></svg></div>
+        <h3>Prevents bone loss</h3>
+        <p>By replacing the tooth root, the implant stimulates the jaw and helps keep the bone healthy.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12a3 3 0 1 0 3 3c0-3-3-3-3-6a3 3 0 1 1 3 3c0 3 3 3 3 6a3 3 0 1 0 3-3c0-3-3-3-3-6"/></svg></div>
+        <h3>Lasts a lifetime</h3>
+        <p>With good care, the implant itself can last for life — a truly long-term solution.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 9l2 2 4-4"/><path d="M8 15l-2 6 6-3 6 3-2-6"/></svg></div>
+        <h3>Proven success</h3>
+        <p>Backed by decades of research, implants have a very high long-term success rate.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <h3>Confidence restored</h3>
+        <p>Eat, speak and smile with comfort again — no slipping, no worry, just your best self.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Here's how it works</span>
+      <h2>The implant journey — step by step</h2>
+      <p>From your first consultation to your finished smile. Most of the timeline is simply letting your body heal.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-node">1</div>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><h3>Consultation &amp; treatment plan</h3></div>
+          <p>We assess your oral health, take CBCT 3D scans, and create a personalised treatment plan.</p>
+          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node">2</div>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M20 4l-3 3"/></svg></span><h3>Tooth extraction</h3></div>
+          <p>If needed, the damaged tooth is gently extracted to make way for the implant.</p>
+          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node">3</div>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5l3-3 3 3"/><path d="M10 9h4l-1 8a1 1 0 0 1-2 0Z"/></svg></span><h3>Implant placement</h3></div>
+          <p>The titanium implant is surgically placed into the jawbone as your new tooth root.</p>
+          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node">4</div>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a4.5 4.5 0 0 0-6.4 0L12 8l-2.4-2.4a4.5 4.5 0 1 0-6.4 6.4L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.6Z"/></svg></span><h3>Healing &amp; osseointegration</h3></div>
+          <p>The titanium fuses with the jawbone over time, creating a strong and stable foundation.</p>
+          <span class="dur long"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 3–6 Months</span>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node">5</div>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v5M9 4l3-2 3 2"/><rect x="9" y="8" width="6" height="6" rx="1.5"/><path d="M10 14l-1 6h6l-1-6"/></svg></span><h3>Abutment placement</h3></div>
+          <p>A connector (abutment) is attached to the implant to hold your new crown.</p>
+          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node">6</div>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M9.5 9.5l1.5 1.5 3.5-3.5"/></svg></span><h3>Crown placement</h3></div>
+          <p>A custom-made crown is placed on top, completing your brand-new smile!</p>
+          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFTERCARE -->
+<section id="aftercare">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Make it last</span>
+      <h2>Caring for your implants</h2>
+      <p>Implants can't decay, but the gum and bone around them still need looking after. Treat them like natural teeth.</p>
+    </div>
+    <div class="care reveal">
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Clean daily with a soft brush and non-abrasive toothpaste.</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Floss daily and use interdental cleaners around the crown.</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Attend regular check-ups and professional cleanings.</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Avoid smoking and very hard, crunchy foods.</li>
+      </ul>
+      <div class="note"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.9 7.1 18.2l.9-5.5-4-3.9L9.5 8Z"/></svg> Good oral hygiene = long-lasting results. With proper care, a dental implant can last a lifetime.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently asked questions</h2>
+      <p>The things patients ask us most about dental implants.</p>
+    </div>
+    <div class="faq">
+      <div class="q reveal">
+        <button aria-expanded="false"><span>Does getting a dental implant hurt?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
+        <div class="ans"><div class="ans-inner">The procedure is done under local anaesthetic, so you shouldn't feel pain during placement — most patients say it's easier than a tooth extraction. Mild soreness or swelling for a few days afterwards is normal and easily managed.</div></div>
+      </div>
+      <div class="q reveal">
+        <button aria-expanded="false"><span>How long does the whole process take?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
+        <div class="ans"><div class="ans-inner">From placement to final crown, expect roughly <strong>3–9 months</strong>. Most of that time is healing — the titanium needs 3–6 months to fully fuse with the bone (osseointegration). The appointments themselves are short.</div></div>
+      </div>
+      <div class="q reveal">
+        <button aria-expanded="false"><span>Am I a suitable candidate?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
+        <div class="ans"><div class="ans-inner">Most healthy adults with good gum health and enough jawbone are great candidates. If bone has been lost, a bone graft can often rebuild it first. A CBCT 3D scan at your consultation tells us exactly what's possible for you.</div></div>
+      </div>
+      <div class="q reveal">
+        <button aria-expanded="false"><span>What's the success rate?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
+        <div class="ans"><div class="ans-inner">Dental implants are one of the most reliable treatments in dentistry, with long-term success rates around <strong>95% or higher</strong> when placed by an experienced dentist and cared for well.</div></div>
+      </div>
+      <div class="q reveal">
+        <button aria-expanded="false"><span>How long do implants last?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
+        <div class="ans"><div class="ans-inner">The titanium implant itself can last a lifetime with good care. The crown on top typically lasts <strong>10–15 years or more</strong> before it may need replacing, just like a normal crown.</div></div>
+      </div>
+      <div class="q reveal">
+        <button aria-expanded="false"><span>Implant vs. bridge or denture — what's the difference?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
+        <div class="ans"><div class="ans-inner">An implant is the only option that replaces the tooth root, so it prevents bone loss and doesn't rely on grinding down neighbouring teeth (as a bridge does) or removable plates (like a denture). It's the most natural, self-supporting and long-lasting choice.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS-LINK -->
+<section>
+  <div class="wrap">
+    <div class="crosslink reveal">
+      <div class="cl-text">
+        <span class="cl-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 6 2 7 5 1 3-1 5-1 8 0 2-1 4-2 4s-1-3-2-3-1 3-2 3-2-2-2-4c0-3-2-5-1-8 1-3 5-3 6-5Z"/></svg></span>
+        <div>
+          <h3>Just need to restore a damaged tooth?</h3>
+          <p>If your tooth is cracked or weakened but still there, a <strong>dental crown</strong> caps and protects it — no surgery needed. See how that works.</p>
+        </div>
+      </div>
+      <a class="btn btn-blue" href="index.html">Explore Dental Crowns
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section>
+  <div class="wrap">
+    <div class="banner reveal">
+      <span class="eyebrow">Restore your smile · Improve your life</span>
+      <h2>A new tooth, rooted for life.</h2>
+      <p>Your daily care and regular check-ups are the key to the comfort, confidence and long life of your implants. Talk to your dentist to find out if implants are right for you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="brand" style="color:var(--forest)"><span>So Dental</span></div>
+      <p class="disclaimer">This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.</p>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Dental Crowns</a>
+      <a href="#anatomy">Anatomy</a>
+      <a href="#process">The process</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Language toggle (EN / Traditional Chinese) ----------
+  var T = {
+    nav:{en:["Anatomy","Benefits","The process","Aftercare","FAQ"], zh:["植體構造","優點","療程","照護","常見問題"]},
+    navCrown:{en:"Dental Crowns", zh:"牙冠"},
+    eyebrow:{
+      en:["Patient Guide","The building blocks","Why implants?","Here's how it works","Make it last","Good to know","Restore your smile · Improve your life"],
+      zh:["患者指南","組成結構","為什麼選植牙","療程流程","延長壽命","值得了解","重拾笑容 · 改善生活"]
+    },
+    h1:{en:'Dental Implants<span class="sub">Restore your smile. Improve your life.</span>', zh:'植牙<span class="sub">重拾笑容，改善生活。</span>'},
+    lead:{
+      en:'A dental implant is a <b>titanium post</b> surgically placed into the jawbone to replace a missing tooth root. It acts as a strong foundation for a crown that looks, feels and functions like a <b>natural tooth</b>.',
+      zh:'植牙是一支以手術植入齒槽骨的<b>鈦金屬植體</b>，用來取代缺失的牙根。它可作為牙冠的穩固基座，讓成品看起來、用起來都像<b>真牙</b>一樣。'
+    },
+    pills:{en:["Natural look & feel","Strong & durable","Prevents bone loss","Long-term solution"], zh:["外觀自然","堅固耐用","防止骨質流失","長久之選"]},
+    btnPrimary:{en:"See how it works", zh:"了解療程"},
+    btnGhost:{en:"Why implants?", zh:"為什麼選植牙"},
+    h2:{
+      en:["Anatomy of a dental implant","Benefits that last a lifetime","The implant journey — step by step","Caring for your implants","Frequently asked questions"],
+      zh:["植牙的組成結構","受用一生的優點","植牙療程 — 逐步解析","植牙的照護","常見問題"]
+    },
+    secp:{
+      en:["Every implant is built from three parts that work together — anchored by a titanium root that fuses with your own bone.","Implants are the closest thing to a natural tooth — restoring not just your smile, but the way you eat, speak and feel.","From your first consultation to your finished smile. Most of the timeline is simply letting your body heal.","Implants can't decay, but the gum and bone around them still need looking after. Treat them like natural teeth.","The things patients ask us most about dental implants."],
+      zh:["每一顆植牙都由三個相互配合的部分組成，並由一支與自身骨頭緊密結合的鈦金屬牙根加以固定。","植牙是最接近真牙的選擇，不僅重建你的笑容，更找回你進食、說話與自在的感受。","從第一次諮詢到完成笑容。療程中大部分時間，其實只是讓身體自然癒合。","植牙不會蛀牙，但周圍的牙齦與骨頭仍需細心照顧。請像對待真牙一樣照護它們。","患者對於植牙最常詢問的問題。"]
+    },
+    legh:{
+      en:['Crown <span>· visible part</span>','Abutment <span>· connector</span>','Implant fixture <span>· titanium post</span>','Osseointegration <span>· the science</span>'],
+      zh:['牙冠 <span>· 可見部分</span>','支台 <span>· 連接件</span>','植體 <span>· 鈦金屬柱</span>','骨整合 <span>· 背後科學</span>']
+    },
+    legp:{
+      en:["A custom-made tooth that looks and works just like a natural one — the only part you see.","A small connector that joins the crown securely to the implant below the gum.","Placed into the jawbone to act as an artificial tooth root — the foundation for everything above.","Over 3–6 months the titanium fuses with your jaw bone, becoming remarkably strong and stable — and helping prevent the bone loss that follows a missing tooth."],
+      zh:["量身訂製的假牙，外觀與功能都和真牙一樣，也是唯一看得到的部分。","一個小型連接件，將牙冠穩固地連接到牙齦下方的植體。","植入齒槽骨中作為人工牙根，是上方一切結構的地基。","歷經 3 至 6 個月，鈦金屬會與齒槽骨緊密結合，變得非常穩固，並有助於防止缺牙後常見的骨質流失。"]
+    },
+    cardh:{
+      en:["Natural look & feel","Strong & durable","Prevents bone loss","Lasts a lifetime","Proven success","Confidence restored"],
+      zh:["外觀自然","堅固耐用","防止骨質流失","用得長久","實證成效","重拾自信"]
+    },
+    cardp:{
+      en:["Custom-matched to your smile, an implant blends in so well most people won't know it's there.","Made from proven, biocompatible titanium, it restores full biting and chewing power.","By replacing the tooth root, the implant stimulates the jaw and helps keep the bone healthy.","With good care, the implant itself can last for life — a truly long-term solution.","Backed by decades of research, implants have a very high long-term success rate.","Eat, speak and smile with comfort again — no slipping, no worry, just your best self."],
+      zh:["依你的笑容量身配色，植牙融入自然，多數人都察覺不出來。","採用經實證的生物相容鈦金屬，重建完整的咬合與咀嚼力。","藉由取代牙根，植牙能刺激齒槽骨，有助維持骨質健康。","只要妥善照護，植體本身可以用上一輩子，是真正的長久之選。","經數十年研究實證，植牙擁有非常高的長期成功率。","重新自在地進食、說話與微笑，不滑動、不擔心，做回最好的自己。"]
+    },
+    steph:{
+      en:["Consultation & treatment plan","Tooth extraction","Implant placement","Healing & osseointegration","Abutment placement","Crown placement"],
+      zh:["諮詢與治療計畫","拔除牙齒","植入植體","癒合與骨整合","裝上支台","裝上牙冠"]
+    },
+    stepp:{
+      en:["We assess your oral health, take CBCT 3D scans, and create a personalised treatment plan.","If needed, the damaged tooth is gently extracted to make way for the implant.","The titanium implant is surgically placed into the jawbone as your new tooth root.","The titanium fuses with the jawbone over time, creating a strong and stable foundation.","A connector (abutment) is attached to the implant to hold your new crown.","A custom-made crown is placed on top, completing your brand-new smile!"],
+      zh:["評估你的口腔健康，進行 CBCT 3D 掃描，並制定專屬的治療計畫。","如有需要，會先輕柔地拔除受損牙齒，為植體騰出空間。","以手術將鈦金屬植體植入齒槽骨，作為你全新的牙根。","鈦金屬會隨時間與齒槽骨結合，形成穩固紮實的地基。","在植體上裝上連接件（支台），用來固定你的新牙冠。","在最上方裝上量身訂製的牙冠，完成你嶄新的笑容！"]
+    },
+    dur:{en:["1 Visit","1 Visit","1 Visit","3–6 Months","1 Visit","1 Visit"], zh:["一次就診","一次就診","一次就診","3–6 個月","一次就診","一次就診"]},
+    careli:{
+      en:["Clean daily with a soft brush and non-abrasive toothpaste.","Floss daily and use interdental cleaners around the crown.","Attend regular check-ups and professional cleanings.","Avoid smoking and very hard, crunchy foods."],
+      zh:["每天以軟毛牙刷與非研磨性牙膏清潔。","每天使用牙線，並用牙間刷清潔牙冠周圍。","定期回診檢查並接受專業洗牙。","避免抽菸與過硬、酥脆的食物。"]
+    },
+    carenote:{en:"Good oral hygiene = long-lasting results. With proper care, a dental implant can last a lifetime.", zh:"良好的口腔衛生 = 長久的成效。只要妥善照護，植牙可以用上一輩子。"},
+    faqq:{
+      en:["Does getting a dental implant hurt?","How long does the whole process take?","Am I a suitable candidate?","What's the success rate?","How long do implants last?","Implant vs. bridge or denture — what's the difference?"],
+      zh:["植牙會痛嗎？","整個療程需要多久？","我適合做植牙嗎？","成功率有多高？","植牙可以用多久？","植牙、牙橋與活動假牙有什麼不同？"]
+    },
+    faqa:{
+      en:["The procedure is done under local anaesthetic, so you shouldn't feel pain during placement — most patients say it's easier than a tooth extraction. Mild soreness or swelling for a few days afterwards is normal and easily managed.","From placement to final crown, expect roughly <strong>3–9 months</strong>. Most of that time is healing — the titanium needs 3–6 months to fully fuse with the bone (osseointegration). The appointments themselves are short.","Most healthy adults with good gum health and enough jawbone are great candidates. If bone has been lost, a bone graft can often rebuild it first. A CBCT 3D scan at your consultation tells us exactly what's possible for you.","Dental implants are one of the most reliable treatments in dentistry, with long-term success rates around <strong>95% or higher</strong> when placed by an experienced dentist and cared for well.","The titanium implant itself can last a lifetime with good care. The crown on top typically lasts <strong>10–15 years or more</strong> before it may need replacing, just like a normal crown.","An implant is the only option that replaces the tooth root, so it prevents bone loss and doesn't rely on grinding down neighbouring teeth (as a bridge does) or removable plates (like a denture). It's the most natural, self-supporting and long-lasting choice."],
+      zh:["手術會在局部麻醉下進行，因此植入過程中不會感到疼痛，多數患者都覺得比拔牙還輕鬆。術後幾天出現輕微痠痛或腫脹屬於正常現象，也很容易緩解。","從植入到裝上最終牙冠，大約需要 <strong>3 至 9 個月</strong>。其中大部分是癒合時間，鈦金屬需要 3 至 6 個月與骨頭完全結合（骨整合）。看診本身的時間都很短。","大多數牙齦健康、齒槽骨足夠的成年人都很適合。若骨頭已流失，通常可先透過補骨手術重建。諮詢時的 CBCT 3D 掃描能明確告訴我們最適合你的方案。","植牙是牙科中最可靠的療程之一，只要由經驗豐富的牙醫執行並妥善照護，長期成功率約可達 <strong>95% 以上</strong>。","只要妥善照護，鈦金屬植體本身可以用上一輩子。上方的牙冠通常可使用 <strong>10 至 15 年或更久</strong>，之後可能需要更換，就和一般牙冠一樣。","植牙是唯一能取代牙根的選擇，因此能防止骨質流失，也不需要像牙橋那樣磨小鄰牙，或像活動假牙般需要拆卸。它是最自然、能自我支撐且最持久的選擇。"]
+    },
+    clH:{en:"Just need to restore a damaged tooth?", zh:"只是想修復受損的牙齒嗎？"},
+    clP:{en:'If your tooth is cracked or weakened but still there, a <strong>dental crown</strong> caps and protects it — no surgery needed. See how that works.', zh:'如果牙齒只是裂了或變脆弱、但仍然存在，<strong>牙冠</strong>就能包覆並保護它，而且無需手術。看看它是如何運作的。'},
+    clBtn:{en:"Explore Dental Crowns", zh:"了解牙冠"},
+    bannerh2:{en:"A new tooth, rooted for life.", zh:"扎根一生的新牙齒。"},
+    bannerp:{en:"Your daily care and regular check-ups are the key to the comfort, confidence and long life of your implants. Talk to your dentist to find out if implants are right for you.", zh:"你每天的照護與定期回診，是植牙舒適、自信與長壽的關鍵。歡迎諮詢你的牙醫，了解植牙是否適合你。"},
+    disclaimer:{en:"This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.", zh:"本頁面僅提供一般衛教資訊，不能取代專業的牙科建議、診斷或治療。請務必就個人需求諮詢合格的牙醫師。"},
+    foot:{en:["Dental Crowns","Anatomy","The process","FAQ"], zh:["牙冠","植體構造","療程","常見問題"]},
+    title:{en:"Dental Implants — Restore Your Smile | Patient Guide", zh:"植牙 — 重拾笑容 | 患者衛教指南"}
+  };
+
+  function qs(s){return document.querySelectorAll(s);}
+  function setHTMLall(sel, arr){var els=qs(sel);for(var i=0;i<els.length;i++){if(arr[i]!=null)els[i].innerHTML=arr[i];}}
+  function setLabel(el, txt){
+    if(!el) return;
+    var ns=el.childNodes, tn=null, i;
+    for(i=0;i<ns.length;i++){if(ns[i].nodeType===3){tn=ns[i];break;}}
+    var iconFirst = el.firstChild && el.firstChild.nodeType!==3;
+    if(tn){tn.textContent = iconFirst ? (" "+txt) : (txt+" ");}
+    else{el.appendChild(document.createTextNode(iconFirst?(" "+txt):txt));}
+  }
+  function setLabelAll(sel, arr){var els=qs(sel);for(var i=0;i<els.length;i++){if(arr[i]!=null)setLabel(els[i],arr[i]);}}
+
+  function applyLang(L){
+    document.documentElement.setAttribute("lang", L==="zh"?"zh-Hant":"en");
+    document.documentElement.setAttribute("data-lang", L);
+    setHTMLall(".nav-links a", T.nav[L]);
+    setLabel(qs(".nav-cta")[0], T.navCrown[L]);
+    setHTMLall(".eyebrow", T.eyebrow[L]);
+    qs(".hero h1")[0].innerHTML = T.h1[L];
+    qs(".hero .lead")[0].innerHTML = T.lead[L];
+    setLabelAll(".pills .pill", T.pills[L]);
+    setLabel(qs(".btn-primary")[0], T.btnPrimary[L]);
+    setLabel(qs(".btn-ghost")[0], T.btnGhost[L]);
+    setHTMLall(".sec-head h2", T.h2[L]);
+    setHTMLall(".sec-head p", T.secp[L]);
+    setHTMLall(".leg h3", T.legh[L]);
+    setHTMLall(".leg p", T.legp[L]);
+    setHTMLall(".card h3", T.cardh[L]);
+    setHTMLall(".card p", T.cardp[L]);
+    setHTMLall(".tl-card h3", T.steph[L]);
+    setHTMLall(".tl-card p", T.stepp[L]);
+    setLabelAll(".dur", T.dur[L]);
+    setLabelAll(".care li", T.careli[L]);
+    setLabel(qs(".care .note")[0], T.carenote[L]);
+    setHTMLall(".q button span:not(.chev)", T.faqq[L]);
+    setHTMLall(".ans-inner", T.faqa[L]);
+    qs(".crosslink h3")[0].innerHTML = T.clH[L];
+    qs(".crosslink p")[0].innerHTML = T.clP[L];
+    setLabel(qs(".btn-blue")[0], T.clBtn[L]);
+    qs(".banner h2")[0].innerHTML = T.bannerh2[L];
+    qs(".banner p")[0].innerHTML = T.bannerp[L];
+    qs(".disclaimer")[0].innerHTML = T.disclaimer[L];
+    setHTMLall(".foot-links a", T.foot[L]);
+    document.title = T.title[L];
+    var tog = document.getElementById("langToggle");
+    if(tog) tog.setAttribute("data-active", L);
+    qs('.q[aria-open="true"] .ans').forEach(function(a){ a.style.maxHeight = a.scrollHeight + "px"; });
+    try{ localStorage.setItem("lang", L); }catch(e){}
+  }
+
+  var savedLang = "en";
+  try{ savedLang = localStorage.getItem("lang") || "en"; }catch(e){}
+  applyLang(savedLang);
+  (function(){
+    var tog = document.getElementById("langToggle");
+    if(tog){ tog.addEventListener("click", function(){
+      var cur = document.documentElement.getAttribute("data-lang") || "en";
+      applyLang(cur==="en" ? "zh" : "en");
+    }); }
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.q button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var q = btn.closest('.q');
+      var ans = q.querySelector('.ans');
+      var open = q.getAttribute('aria-open') === 'true';
+      if(open){ ans.style.maxHeight = null; q.removeAttribute('aria-open'); btn.setAttribute('aria-expanded','false'); }
+      else{ ans.style.maxHeight = ans.scrollHeight + 'px'; q.setAttribute('aria-open','true'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  // Reveal on scroll
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
