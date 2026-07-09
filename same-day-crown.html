@@ -193,19 +193,20 @@
   .ex-head{max-width:640px;margin:0 auto 40px;text-align:center}
   .ex-head h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:850;color:var(--deep);letter-spacing:-.01em}
   .ex-head p{margin-top:12px;color:var(--muted);font-size:1.04rem}
-  .related{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:980px;margin:0 auto}
-  @media(max-width:860px){.related{grid-template-columns:1fr}}
-  .rel-card{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:20px;
-    padding:22px;box-shadow:var(--shadow);transition:transform .2s, box-shadow .25s;color:inherit}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;max-width:1010px;margin:0 auto}
+  
+  .rel-card{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:18px;box-shadow:var(--shadow);transition:transform .2s, box-shadow .25s;color:inherit}
   .rel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-  .rel-ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;color:#fff;flex:0 0 auto}
+  .rel-ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;color:#fff;flex:0 0 auto}
   .rel-ic-crown{background:linear-gradient(135deg,#1766c9,#2f8ee0)}
   .rel-ic-implant{background:linear-gradient(135deg,#0f9d6b,#17bd83)}
   .rel-ic-denture{background:linear-gradient(135deg,#7c3aed,#9a63f2)}
+  .rel-ic-compare{background:linear-gradient(135deg,#d97706,#f59e0b)}
   .rel-tx{flex:1}
-  .rel-tx h3{color:var(--deep);font-size:1.1rem;margin-bottom:2px}
-  .rel-tx p{color:var(--muted);font-size:.92rem}
-  .rel-go{color:var(--accent);font-weight:900;font-size:1.35rem;flex:0 0 auto}
+  .rel-tx h3{color:var(--deep);font-size:1.02rem;margin-bottom:2px}
+  .rel-tx p{color:var(--muted);font-size:.88rem}
+  .rel-go{color:var(--accent);font-weight:900;font-size:1.2rem;flex:0 0 auto}
 
   /* banner */
   .banner{position:relative;overflow:hidden;border-radius:28px;padding:56px 40px;text-align:center;
@@ -441,6 +442,11 @@
         <div class="rel-tx"><h3>Dentures</h3><p>Removable replacements for missing teeth.</p></div>
         <span class="rel-go">→</span>
       </a>
+      <a class="rel-card reveal" href="crown-vs-bridge.html">
+        <span class="rel-ic rel-ic-compare"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 7 3 12l4 3M17 7l4 5-4 3"/></svg></span>
+        <div class="rel-tx"><h3>Crown vs Bridge</h3><p>Which one do you need? A side-by-side guide.</p></div>
+        <span class="rel-go">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -537,8 +543,8 @@
     },
     exH:{en:"Explore our other treatments", zh:"探索我們的其他療程"},
     exP:{en:"A same-day crown is one way to restore a tooth. See which option best fits your smile.", zh:"當天牙冠是修復牙齒的方式之一，看看哪種選擇最適合你的笑容。"},
-    relName:{en:["Dental Crowns","Dental Implants","Dentures"], zh:["牙冠","植牙","活動假牙"]},
-    relTag:{en:["Cap and protect a damaged tooth.","Replace a whole missing tooth, root and all.","Removable replacements for missing teeth."], zh:["包覆並保護受損的牙齒。","連同牙根替換整顆缺失的牙齒。","針對缺牙的可拆卸式替代方案。"]},
+    relName:{en:["Dental Crowns","Dental Implants","Dentures","Crown vs Bridge"], zh:["牙冠","植牙","活動假牙","牙冠 vs 牙橋"]},
+    relTag:{en:["Cap and protect a damaged tooth.","Replace a whole missing tooth, root and all.","Removable replacements for missing teeth.","Which one do you need? A side-by-side guide."], zh:["包覆並保護受損的牙齒。","連同牙根替換整顆缺失的牙齒。","針對缺牙的可拆卸式替代方案。","你該選哪一個？並列比較一次看懂。"]},
     bannerh2:{en:"Smile with confidence — today.", zh:"今天，就自信地微笑。"},
     bannerp:{en:"CEREC same-day crowns combine precision, durability and convenience — so you can walk out with a beautiful new smile in a single visit.", zh:"CEREC 當天牙冠兼具精準、耐用與便利，讓你一次看診就帶著全新笑容離開。"},
     disclaimer:{en:"This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.", zh:"本頁面僅提供一般衛教資訊，不能取代專業的牙科建議、診斷或治療。請務必就個人需求諮詢合格的牙醫師。"},

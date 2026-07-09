@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crown vs Bridge — What's the Difference? | Patient Guide</title>
+<meta name="description" content="Dental crown vs dental bridge: a clear side-by-side comparison of what each one is, what it's used for, how it works, and which is right for you.">
+<style>
+  :root{
+    --slate:#1c2534;
+    --brand:#d97706;
+    --brand-2:#f59e0b;
+    --accent:#0ea5e9;
+    --accent-2:#38bdf8;
+    --ink:#2a2118;
+    --muted:#7c6f60;
+    --card:#ffffff;
+    --bg:#fbf7f1;
+    --sky:#fdf0dd;
+    --sky-2:#fff9f0;
+    --line:#efe4d2;
+    --shadow:0 10px 30px -12px rgba(120,72,12,.20);
+    --shadow-lg:0 24px 60px -20px rgba(120,72,12,.28);
+    --radius:20px;
+    --maxw:1140px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --slate:#f2e9db;
+      --brand:#fbbf24;
+      --brand-2:#fcd34d;
+      --accent:#38bdf8;
+      --accent-2:#7dd3fc;
+      --ink:#f3ece1;
+      --muted:#b3a794;
+      --card:#241d16;
+      --bg:#15110b;
+      --sky:#241c11;
+      --sky-2:#1b150d;
+      --line:#372d1e;
+      --shadow:0 10px 30px -12px rgba(0,0,0,.5);
+      --shadow-lg:0 24px 60px -20px rgba(0,0,0,.6);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Helvetica Neue","PingFang TC","Hiragino Sans TC","Microsoft JhengHei","Noto Sans TC",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3,h4{line-height:1.15;margin:0}
+  p{margin:0}
+  a{color:var(--brand);text-decoration:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--brand);background:var(--sky);padding:7px 14px;border-radius:999px;border:1px solid var(--line)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(12px);
+    background:color-mix(in srgb, var(--bg) 82%, transparent);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--slate);letter-spacing:.02em}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav-links{display:flex;gap:22px}
+  .nav-links a{color:var(--muted);font-weight:600;font-size:.92rem;transition:color .2s}
+  .nav-links a:hover{color:var(--brand)}
+  .nav-cta{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;color:#fff;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:9px 15px;border-radius:999px;
+    box-shadow:var(--shadow);white-space:nowrap;transition:transform .15s}
+  .nav-cta:hover{transform:translateY(-2px)}
+  .lang-toggle{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);background:var(--card);
+    border-radius:999px;padding:3px;cursor:pointer;font-weight:800;font-size:.8rem;color:var(--muted);
+    box-shadow:var(--shadow);font-family:inherit;line-height:1;flex:0 0 auto}
+  .lang-toggle span{padding:6px 12px;border-radius:999px;transition:background .2s, color .2s}
+  .lang-toggle[data-active="en"] span[data-l="en"],
+  .lang-toggle[data-active="zh"] span[data-l="zh"]{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+  @media(max-width:880px){.nav-links{display:none}.nav-cta{padding:8px 13px;font-size:.82rem}.nav-cta svg{display:none}.nav-right{gap:12px}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:66px 0 76px}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:
+    radial-gradient(52% 48% at 82% 12%, color-mix(in srgb,var(--brand) 24%, transparent), transparent 70%),
+    radial-gradient(56% 52% at 14% 90%, color-mix(in srgb,var(--accent) 20%, transparent), transparent 66%)}
+  .hero-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,6.4vw,4.4rem);font-weight:900;color:var(--slate);letter-spacing:-.02em}
+  .hero h1 .vs-em{color:var(--brand)}
+  .hero .sub{display:block;margin-top:8px;font-size:clamp(1rem,2.4vw,1.4rem);font-weight:700;color:var(--accent)}
+  .hero .lead{margin-top:18px;font-size:clamp(1.02rem,2.2vw,1.2rem);color:var(--muted);max-width:60ch}
+  .pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;justify-content:center}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
+    padding:8px 13px;border-radius:999px;font-weight:700;font-size:.86rem;color:var(--slate);box-shadow:var(--shadow)}
+  .pill svg{color:var(--brand);flex:0 0 auto}
+  .cta-row{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;padding:13px 22px;border-radius:14px;transition:transform .15s ease, box-shadow .2s;cursor:pointer}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  .btn-ghost{background:var(--card);color:var(--slate);border:1px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-2px)}
+  /* hero mini crown-vs-bridge visual */
+  .hero-vs{margin-top:40px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+  .hv-card{width:min(220px,40vw);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow-lg)}
+  .hv-card svg{display:block;width:100%;height:auto}
+  .hv-vs{width:56px;height:56px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.2rem;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow-lg)}
+
+  section{padding:72px 0}
+  .sec-head{max-width:680px;margin:0 auto 46px;text-align:center}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:850;color:var(--slate);margin-top:14px;letter-spacing:-.01em}
+  .sec-head p{margin-top:13px;color:var(--muted);font-size:1.06rem}
+  .alt{background:linear-gradient(180deg,var(--sky-2),transparent 32%),var(--bg)}
+
+  /* ===== signature: side-by-side VS split ===== */
+  .vs{position:relative;max-width:1000px;margin:0 auto}
+  .vs-grid{display:grid;grid-template-columns:1fr 1fr;position:relative}
+  .vs-col{background:var(--card);border:1px solid var(--line);padding:30px 28px 32px;box-shadow:var(--shadow)}
+  .vs-col.crown{border-radius:24px 0 0 24px}
+  .vs-col.bridge{border-radius:0 24px 24px 0;border-left:0}
+  .vs-badge{position:absolute;left:50%;top:74px;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;display:grid;place-items:center;font-weight:900;
+    font-size:1.25rem;letter-spacing:.02em;box-shadow:var(--shadow-lg);border:5px solid var(--bg);z-index:3}
+  .vs-head{display:flex;align-items:center;gap:13px;margin-bottom:14px}
+  .vs-ic{width:50px;height:50px;border-radius:14px;flex:0 0 auto;display:grid;place-items:center;color:#fff}
+  .vs-col.crown .vs-ic{background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .vs-col.bridge .vs-ic{background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+  .vs-title{font-size:1.4rem;color:var(--slate)}
+  .vs-tag{font-size:.82rem;font-weight:700;color:var(--muted)}
+  .vs-col.crown .vs-tag{color:var(--accent)}
+  .vs-col.bridge .vs-tag{color:var(--brand)}
+  .vs-def{color:var(--muted);font-size:1rem;margin-bottom:18px}
+  .vs-sub{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:18px 0 11px}
+  .vs-col ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .vs-col li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;color:var(--ink)}
+  .vs-col li svg{flex:0 0 auto;margin-top:2px}
+  .vs-col.crown li svg{color:var(--accent)}
+  .vs-col.bridge li svg{color:var(--brand)}
+  .vs-col .keys li{color:var(--muted)}
+  @media(max-width:800px){
+    .vs-grid{grid-template-columns:1fr;gap:22px}
+    .vs-col.crown{border-radius:24px}
+    .vs-col.bridge{border-radius:24px;border-left:1px solid var(--line)}
+    .vs-badge{display:none}
+  }
+
+  /* ===== how it works: two lanes ===== */
+  .how-lane{max-width:1000px;margin:0 auto 40px}
+  .how-lane:last-child{margin-bottom:0}
+  .lane-label{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:1.05rem;color:var(--slate);margin-bottom:18px}
+  .lane-dot{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff;flex:0 0 auto}
+  .how-lane.crown .lane-dot{background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .how-lane.bridge .lane-dot{background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+  .hsteps{display:grid;gap:14px}
+  .how-lane.crown .hsteps{grid-template-columns:repeat(3,1fr)}
+  .how-lane.bridge .hsteps{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:760px){.how-lane.crown .hsteps,.how-lane.bridge .hsteps{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.how-lane.crown .hsteps,.how-lane.bridge .hsteps{grid-template-columns:1fr}}
+  .hstep{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px;box-shadow:var(--shadow);position:relative}
+  .hstep .hn{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-weight:900;font-size:.82rem;color:#fff;margin-bottom:10px}
+  .how-lane.crown .hstep .hn{background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .how-lane.bridge .hstep .hn{background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+  .hstep h4{font-size:.98rem;color:var(--slate);margin-bottom:5px}
+  .hstep p{font-size:.87rem;color:var(--muted)}
+
+  /* ===== quick comparison table ===== */
+  .ctable{max-width:940px;margin:0 auto;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
+  .ctrow{display:grid;grid-template-columns:1fr 210px 1fr;align-items:stretch}
+  .ctrow+.ctrow{border-top:1px solid var(--line)}
+  .ctcell{padding:18px 20px;display:flex;align-items:center;gap:10px;font-size:.97rem}
+  .ctcell.mid{justify-content:center;text-align:center;font-weight:800;color:var(--slate);background:var(--sky);
+    font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .ctcell.crown svg{color:var(--accent);flex:0 0 auto}
+  .ctcell.bridge svg{color:var(--brand);flex:0 0 auto}
+  .ctcell.bridge{justify-content:flex-end;text-align:right;flex-direction:row-reverse}
+  .cthead .ctcell{font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;color:#fff}
+  .cthead .ctcell.crown{background:linear-gradient(135deg,var(--accent),var(--accent-2));justify-content:center}
+  .cthead .ctcell.bridge{background:linear-gradient(135deg,var(--brand),var(--brand-2));justify-content:center;flex-direction:row}
+  .cthead .ctcell.mid{background:var(--slate);color:#fff}
+  @media(max-width:720px){
+    .ctable{border-radius:16px}
+    .ctrow{grid-template-columns:1fr}
+    .ctcell.mid{order:-1;border-left:0;border-right:0;border-bottom:1px solid var(--line)}
+    .ctcell.bridge{justify-content:flex-start;text-align:left;flex-direction:row;border-top:1px dashed var(--line)}
+    .cthead{display:none}
+  }
+
+  /* which — cards */
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .25s}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+  .icon-badge{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:15px;color:#fff}
+  .card:nth-child(1) .icon-badge{background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .card:nth-child(2) .icon-badge{background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+  .card:nth-child(3) .icon-badge{background:linear-gradient(135deg,var(--slate),var(--muted))}
+  .card h3{font-size:1.12rem;color:var(--slate);margin-bottom:7px}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* faq */
+  .faq{max-width:800px;margin:0 auto;display:grid;gap:14px}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+  .q button{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:20px 22px;font-size:1.03rem;
+    font-weight:700;color:var(--slate);display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit}
+  .q button:focus-visible{outline:3px solid color-mix(in srgb,var(--brand) 45%,transparent);outline-offset:-3px}
+  .q .chev{flex:0 0 auto;transition:transform .3s;color:var(--brand)}
+  .q[aria-open="true"] .chev{transform:rotate(180deg)}
+  .q .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .q .ans-inner{padding:0 22px 22px;color:var(--muted)}
+
+  /* explore */
+  .ex-head{max-width:640px;margin:0 auto 40px;text-align:center}
+  .ex-head h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:850;color:var(--slate);letter-spacing:-.01em}
+  .ex-head p{margin-top:12px;color:var(--muted);font-size:1.04rem}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:1000px;margin:0 auto}
+  .rel-card{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:18px;box-shadow:var(--shadow);transition:transform .2s, box-shadow .25s;color:inherit}
+  .rel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .rel-ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;color:#fff;flex:0 0 auto}
+  .rel-ic-crown{background:linear-gradient(135deg,#1766c9,#2f8ee0)}
+  .rel-ic-implant{background:linear-gradient(135deg,#0f9d6b,#17bd83)}
+  .rel-ic-denture{background:linear-gradient(135deg,#7c3aed,#9a63f2)}
+  .rel-ic-sameday{background:linear-gradient(135deg,#0d9488,#06b6d4)}
+  .rel-tx{flex:1}
+  .rel-tx h3{color:var(--slate);font-size:1.02rem;margin-bottom:2px}
+  .rel-tx p{color:var(--muted);font-size:.88rem}
+  .rel-go{color:var(--brand);font-weight:900;font-size:1.25rem;flex:0 0 auto}
+
+  /* banner */
+  .banner{position:relative;overflow:hidden;border-radius:28px;padding:56px 40px;text-align:center;
+    background:linear-gradient(135deg,var(--slate),var(--brand));color:#fff;box-shadow:var(--shadow-lg)}
+  @media (prefers-color-scheme: dark){.banner{background:linear-gradient(135deg,#241a10,#a2660d)}}
+  .banner .eyebrow{background:rgba(255,255,255,.15);color:#fff5e6;border-color:rgba(255,255,255,.22)}
+  .banner h2{color:#fff;font-size:clamp(1.9rem,5vw,3rem);font-weight:900;margin-top:16px}
+  .banner p{color:#f7ead6;margin-top:14px;font-size:1.1rem;max-width:58ch;margin-left:auto;margin-right:auto}
+
+  footer{padding:40px 0 54px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  .foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap}
+  .foot-links a{color:var(--brand);font-weight:600}
+  .disclaimer{max-width:640px;font-size:.85rem;line-height:1.6;margin-top:14px}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span>So Dental</span></div>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#whatare">Crown</a>
+        <a href="#whatare">Bridge</a>
+        <a href="#how">How it works</a>
+        <a href="#table">Compare</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="index.html">Dental Crowns
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="lang-toggle" id="langToggle" data-active="en" type="button" aria-label="Switch language / 切換語言"><span data-l="en">EN</span><span data-l="zh">中文</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner reveal in">
+    <span class="eyebrow">Patient Guide</span>
+    <h1>Crown <span class="vs-em">vs</span> Bridge<span class="sub">What's the difference?</span></h1>
+    <p class="lead">Both restore your smile — but they solve different problems. A <b>crown</b> caps a damaged tooth that's still in place; a <b>bridge</b> fills the gap left by a missing one. Here's how to tell them apart.</p>
+    <div class="pills">
+      <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Restore your smile</span>
+      <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/></svg> Fixed, not removable</span>
+      <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg> Long-lasting</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#table">Compare them
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#how">See how they work</a>
+    </div>
+    <div class="hero-vs">
+      <div class="hv-card"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A single crown being placed on one tooth"><defs><linearGradient id="ht" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e7edf3"/></linearGradient><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b9c4"/><stop offset="1" stop-color="#e88fa0"/></linearGradient></defs><rect width="200" height="150" rx="12" fill="none"/><path d="M0,118 Q100,104 200,118 L200,150 L0,150 Z" fill="url(#hg)"/><g transform="translate(100,40)"><path d="M-26,-6 C-26,-24 -14,-32 0,-32 C14,-32 26,-24 26,-6 C26,8 21,16 19,26 C18,34 9,32 0,32 C-9,32 -18,34 -19,26 C-21,16 -26,8 -26,-6 Z" fill="url(#ht)" stroke="#0ea5e9" stroke-width="2.2"/><path d="M-12,-18 Q0,-9 12,-18" stroke="#bfe4f5" stroke-width="3" fill="none" stroke-linecap="round"/></g><path d="M92,80 L100,92 L108,80" fill="none" stroke="#0ea5e9" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(100,116)"><path d="M-20,-8 C-20,2 -14,12 0,12 C14,12 20,2 20,-8 C18,-14 -18,-14 -20,-8 Z" fill="url(#ht)" stroke="#cfdbe6" stroke-width="1.4"/></g></svg></div>
+      <div class="hv-vs">VS</div>
+      <div class="hv-card"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A three-unit bridge spanning a gap between two teeth"><defs><linearGradient id="bt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f0e6d5"/></linearGradient><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b9c4"/><stop offset="1" stop-color="#e88fa0"/></linearGradient></defs><path d="M0,118 Q100,104 200,118 L200,150 L0,150 Z" fill="url(#bg)"/><g stroke="#d97706" stroke-width="2.2" fill="url(#bt)"><path d="M40,44 C40,28 50,22 62,22 C74,22 84,28 84,44 C84,58 80,66 78,76 C77,84 70,82 62,82 C54,82 47,84 46,76 C44,66 40,58 40,44 Z"/><path d="M78,50 C78,36 88,32 100,32 C112,32 122,36 122,50 C122,62 118,70 116,80 C115,88 108,86 100,86 C92,86 85,88 84,80 C82,70 78,62 78,50 Z"/><path d="M116,44 C116,28 126,22 138,22 C150,22 160,28 160,44 C160,58 156,66 154,76 C153,84 146,82 138,82 C130,82 123,84 122,76 C120,66 116,58 116,44 Z"/></g><rect x="44" y="56" width="112" height="10" rx="5" fill="#d97706" opacity="0.28"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THEY ARE (side-by-side VS) -->
+<section id="whatare" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Side by side</span>
+      <h2>What they are</h2>
+      <p>A crown covers — a bridge replaces. Almost every other difference follows from that one idea.</p>
+    </div>
+    <div class="vs reveal">
+      <div class="vs-grid">
+        <div class="vs-col crown">
+          <div class="vs-head">
+            <span class="vs-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 6 2 7 5 1 3-1 5-1 8 0 2-1 4-2 4s-1-3-2-3-1 3-2 3-2-2-2-4c0-3-2-5-1-8 1-3 5-3 6-5Z"/></svg></span>
+            <div><h3 class="vs-title">Dental Crown</h3><div class="vs-tag">A protective cap</div></div>
+          </div>
+          <p class="vs-def">A crown is a custom "cap" that covers and protects a damaged or weakened tooth — restoring its strength, shape and appearance.</p>
+          <div class="vs-sub">Used for</div>
+          <ul class="used">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Protecting a weak tooth from breaking</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Restoring a broken, cracked or worn-down tooth</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Covering a tooth after a root canal</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Improving the shape, size or appearance of a tooth</li>
+          </ul>
+          <div class="vs-sub">Key points</div>
+          <ul class="keys">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg> Covers one existing tooth</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg> Restores and protects</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg> Does not replace missing teeth</li>
+          </ul>
+        </div>
+        <div class="vs-col bridge">
+          <div class="vs-head">
+            <span class="vs-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10c0-2 1.6-3 3.5-3S11 8 11 10M13 10c0-2 1.6-3 3.5-3S20 8 20 10"/><path d="M3 10h18v3a3 3 0 0 1-3 3h-2.5M6 16a3 3 0 0 1-3-3v-3M9 16h6"/></svg></span>
+            <div><h3 class="vs-title">Dental Bridge</h3><div class="vs-tag">Fills the gap</div></div>
+          </div>
+          <p class="vs-def">A bridge replaces one or more missing teeth by anchoring an artificial tooth — the "pontic" — to the natural teeth on either side of the gap.</p>
+          <div class="vs-sub">Used for</div>
+          <ul class="used">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Replacing one or more missing teeth</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Restoring your smile and ability to chew</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Preventing remaining teeth from shifting out of position</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Maintaining the natural shape of your face</li>
+          </ul>
+          <div class="vs-sub">Key points</div>
+          <ul class="keys">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg> Replaces one or more missing teeth</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg> Anchored by the teeth on both sides</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg> Fixed in place — not removable like dentures</li>
+          </ul>
+        </div>
+      </div>
+      <div class="vs-badge">VS</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Step by step</span>
+      <h2>How each one works</h2>
+      <p>Both start by gently reshaping teeth — but a crown restores one tooth, while a bridge spans a gap using its neighbours.</p>
+    </div>
+    <div class="how-lane crown reveal">
+      <div class="lane-label"><span class="lane-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 6 2 7 5 1 3-1 5-1 8 0 2-1 4-2 4s-1-3-2-3-1 3-2 3-2-2-2-4c0-3-2-5-1-8 1-3 5-3 6-5Z"/></svg></span> Crown — restoring one tooth</div>
+      <div class="hsteps">
+        <div class="hstep"><div class="hn">1</div><h4>Damaged tooth</h4><p>A tooth is cracked, worn or weakened, but its root is still healthy.</p></div>
+        <div class="hstep"><div class="hn">2</div><h4>Tooth reshaped</h4><p>The tooth is gently reshaped to make room for the crown.</p></div>
+        <div class="hstep"><div class="hn">3</div><h4>Crown placed</h4><p>A custom crown is bonded over it, restoring strength and shape.</p></div>
+      </div>
+    </div>
+    <div class="how-lane bridge reveal">
+      <div class="lane-label"><span class="lane-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10c0-2 1.6-3 3.5-3S11 8 11 10M13 10c0-2 1.6-3 3.5-3S20 8 20 10"/><path d="M3 10h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-3Z"/></svg></span> Bridge — spanning a gap</div>
+      <div class="hsteps">
+        <div class="hstep"><div class="hn">1</div><h4>Missing tooth</h4><p>There's a gap left by one or more missing teeth.</p></div>
+        <div class="hstep"><div class="hn">2</div><h4>Supporting teeth reshaped</h4><p>The teeth on each side are reshaped to act as anchors.</p></div>
+        <div class="hstep"><div class="hn">3</div><h4>Bridge placed</h4><p>The bridge — a pontic joined to two crowns — is fitted over them.</p></div>
+        <div class="hstep"><div class="hn">4</div><h4>Final result</h4><p>The gap is filled with a complete, natural-looking smile.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK COMPARISON TABLE -->
+<section id="table" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">At a glance</span>
+      <h2>Quick comparison</h2>
+      <p>The same questions, answered for each — so you can see the difference at a glance.</p>
+    </div>
+    <div class="ctable reveal">
+      <div class="ctrow cthead">
+        <div class="ctcell crown"><span class="ct-crownh">Crown</span></div>
+        <div class="ctcell mid"><span class="ct-midh">Quick comparison</span></div>
+        <div class="ctcell bridge"><span class="ct-bridgeh">Bridge</span></div>
+      </div>
+      <div class="ctrow">
+        <div class="ctcell crown"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="c-crown">Restores a damaged tooth</span></div>
+        <div class="ctcell mid"><span class="c-label">Purpose</span></div>
+        <div class="ctcell bridge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="c-bridge">Replaces one or more missing teeth</span></div>
+      </div>
+      <div class="ctrow">
+        <div class="ctcell crown"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="c-crown">Covers one existing tooth</span></div>
+        <div class="ctcell mid"><span class="c-label">Covers or replaces</span></div>
+        <div class="ctcell bridge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="c-bridge">Replaces the missing tooth (or teeth)</span></div>
+      </div>
+      <div class="ctrow">
+        <div class="ctcell crown"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="c-crown">Protects and strengthens</span></div>
+        <div class="ctcell mid"><span class="c-label">Main benefit</span></div>
+        <div class="ctcell bridge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="c-bridge">Restores function, appearance and alignment</span></div>
+      </div>
+      <div class="ctrow">
+        <div class="ctcell crown"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="c-crown">No — does not replace missing teeth</span></div>
+        <div class="ctcell mid"><span class="c-label">Missing tooth?</span></div>
+        <div class="ctcell bridge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="c-bridge">Yes — replaces the missing tooth (teeth)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHICH IS RIGHT -->
+<section id="which">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Which one</span>
+      <h2>Which is right for you?</h2>
+      <p>It usually comes down to one question: is the tooth still there, or is it missing?</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 6 2 7 5 1 3-1 5-1 8 0 2-1 4-2 4s-1-3-2-3-1 3-2 3-2-2-2-4c0-3-2-5-1-8 1-3 5-3 6-5Z"/></svg></div>
+        <h3>Your tooth is damaged but still there</h3><p>If a tooth is cracked, worn or weakened — but its root is healthy — a crown caps and protects it. Think of it as a helmet for a tooth.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10c0-2 1.6-3 3.5-3S11 8 11 10M13 10c0-2 1.6-3 3.5-3S20 8 20 10"/><path d="M3 10h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-3Z"/></svg></div>
+        <h3>You have a gap from a missing tooth</h3><p>If one or more teeth are missing and you have healthy teeth on both sides of the gap, a bridge can fill it and restore your bite.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        <h3>Curious about other options?</h3><p>An implant replaces a missing tooth root and all; dentures are removable. Your dentist will help you weigh comfort, cost and longevity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently asked questions</h2>
+      <p>The things patients ask us most about crowns and bridges.</p>
+    </div>
+    <div class="faq">
+      <div class="q reveal"><button aria-expanded="false"><span>Is a crown or a bridge better?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">Neither is "better" — they do different jobs. A crown restores a damaged tooth that's still in place; a bridge replaces a tooth that's missing. The right choice depends on whether the tooth is still there.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>How long do crowns and bridges last?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">With good care, both typically last <strong>10–15 years or more</strong> before they may need replacing. Daily cleaning and regular check-ups make a big difference.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>Does getting a crown or bridge hurt?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">The tooth is numbed with local anaesthetic, so the procedure itself is comfortable — similar to having a filling. Mild sensitivity for a few days afterwards is normal.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>How do I clean a crown or bridge?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">Brush and floss as normal. A bridge needs a little extra care — special floss threaders or interdental brushes help you clean underneath the pontic, where food can gather.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>Bridge or implant — what's the difference?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">A bridge relies on the neighbouring teeth for support, so those teeth are reshaped. An implant replaces the tooth root itself and leaves the adjacent teeth untouched. Both are fixed in place — your dentist can advise which suits your situation.</div></div></div>
+      <div class="q reveal"><button aria-expanded="false"><span>Are crowns and bridges removable?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button><div class="ans"><div class="ans-inner">No. Unlike dentures, crowns and bridges are fixed permanently in your mouth — you clean them in place and they stay put when you eat and speak.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section id="explore">
+  <div class="wrap">
+    <div class="ex-head reveal">
+      <h2 class="ex-h">Explore our treatments</h2>
+      <p class="ex-p">Crowns and bridges are two of several ways to restore a smile. See which option best fits your needs.</p>
+    </div>
+    <div class="related">
+      <a class="rel-card reveal" href="index.html">
+        <span class="rel-ic rel-ic-crown"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 6 2 7 5 1 3-1 5-1 8 0 2-1 4-2 4s-1-3-2-3-1 3-2 3-2-2-2-4c0-3-2-5-1-8 1-3 5-3 6-5Z"/></svg></span>
+        <div class="rel-tx"><h3>Dental Crowns</h3><p>Cap and protect a damaged tooth.</p></div>
+        <span class="rel-go">&rarr;</span>
+      </a>
+      <a class="rel-card reveal" href="implant.html">
+        <span class="rel-ic rel-ic-implant"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v5M9 4l3-2 3 2"/><rect x="9" y="8" width="6" height="6" rx="1.5"/><path d="M10 14l-1 7h6l-1-7"/></svg></span>
+        <div class="rel-tx"><h3>Dental Implants</h3><p>Replace a missing tooth, root and all.</p></div>
+        <span class="rel-go">&rarr;</span>
+      </a>
+      <a class="rel-card reveal" href="dentures.html">
+        <span class="rel-ic rel-ic-denture"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a8 8 0 0 0 16 0Z"/><path d="M8 10v3M12 10.5v3.5M16 10v3"/></svg></span>
+        <div class="rel-tx"><h3>Dentures</h3><p>Removable replacements for missing teeth.</p></div>
+        <span class="rel-go">&rarr;</span>
+      </a>
+      <a class="rel-card reveal" href="same-day-crown.html">
+        <span class="rel-ic rel-ic-sameday"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></span>
+        <div class="rel-tx"><h3>Same-Day Crowns</h3><p>One-visit CEREC crown, no second appointment.</p></div>
+        <span class="rel-go">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section>
+  <div class="wrap">
+    <div class="banner reveal">
+      <span class="eyebrow">Restore your smile · With confidence</span>
+      <h2>Not sure which you need?</h2>
+      <p>Your dentist can examine your teeth and recommend whether a crown, a bridge or another option is the right fit — so you can decide with confidence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="brand" style="color:var(--slate)"><span>So Dental</span></div>
+      <p class="disclaimer">This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.</p>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Dental Crowns</a>
+      <a href="implant.html">Dental Implants</a>
+      <a href="dentures.html">Dentures</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Language toggle (EN / Traditional Chinese) ----------
+  var T = {
+    nav:{en:["Crown","Bridge","How it works","Compare","FAQ"], zh:["牙冠","牙橋","療程","比較","常見問題"]},
+    navCrown:{en:"Dental Crowns", zh:"牙冠"},
+    eyebrow:{
+      en:["Patient Guide","Side by side","Step by step","At a glance","Which one","Good to know","Restore your smile · With confidence"],
+      zh:["患者指南","並列比較","逐步解析","一目了然","該選哪個","值得了解","重建笑容 · 安心選擇"]
+    },
+    h1:{en:'Crown <span class="vs-em">vs</span> Bridge<span class="sub">What\'s the difference?</span>', zh:'牙冠 <span class="vs-em">vs</span> 牙橋<span class="sub">有什麼不同？</span>'},
+    lead:{
+      en:'Both restore your smile — but they solve different problems. A <b>crown</b> caps a damaged tooth that\'s still in place; a <b>bridge</b> fills the gap left by a missing one. Here\'s how to tell them apart.',
+      zh:'兩者都能重建笑容，但解決的問題不同。<b>牙冠</b>用來包覆仍在口中的受損牙齒；<b>牙橋</b>則用來填補缺牙留下的空隙。以下帶你分辨兩者的差別。'
+    },
+    pills:{en:["Restore your smile","Fixed, not removable","Long-lasting"], zh:["重建笑容","固定式，非活動","持久耐用"]},
+    btnPrimary:{en:"Compare them", zh:"比較兩者"},
+    btnGhost:{en:"See how they work", zh:"了解療程"},
+    h2:{
+      en:["What they are","How each one works","Quick comparison","Which is right for you?","Frequently asked questions"],
+      zh:["兩者是什麼","各自如何進行","快速比較","哪一個適合你？","常見問題"]
+    },
+    secp:{
+      en:["A crown covers — a bridge replaces. Almost every other difference follows from that one idea.","Both start by gently reshaping teeth — but a crown restores one tooth, while a bridge spans a gap using its neighbours.","The same questions, answered for each — so you can see the difference at a glance.","It usually comes down to one question: is the tooth still there, or is it missing?","The things patients ask us most about crowns and bridges."],
+      zh:["牙冠是「包覆」，牙橋是「取代」，其他幾乎所有差異都由此而來。","兩者都會先輕微修磨牙齒，但牙冠修復單顆牙，牙橋則借助兩旁的牙齒跨越缺口。","以相同的問題分別作答，讓你一眼看出差異。","關鍵通常在於一個問題：牙齒還在，還是已經缺失？","患者對於牙冠與牙橋最常詢問的問題。"]
+    },
+    vsTitle:{en:["Dental Crown","Dental Bridge"], zh:["牙冠","牙橋"]},
+    vsTag:{en:["A protective cap","Fills the gap"], zh:["保護性牙套","填補缺口"]},
+    vsDef:{
+      en:['A crown is a custom "cap" that covers and protects a damaged or weakened tooth — restoring its strength, shape and appearance.','A bridge replaces one or more missing teeth by anchoring an artificial tooth — the "pontic" — to the natural teeth on either side of the gap.'],
+      zh:['牙冠是量身訂製的「牙套」，覆蓋並保護受損或脆弱的牙齒，重建其強度、形狀與外觀。','牙橋透過將人工假牙（即「橋體 / pontic」）固定於缺口兩側的天然牙齒上，取代一顆或多顆缺失的牙齒。']
+    },
+    vsSub:{en:["Used for","Key points","Used for","Key points"], zh:["適用情況","重點","適用情況","重點"]},
+    usedFor:{
+      en:["Protecting a weak tooth from breaking","Restoring a broken, cracked or worn-down tooth","Covering a tooth after a root canal","Improving the shape, size or appearance of a tooth","Replacing one or more missing teeth","Restoring your smile and ability to chew","Preventing remaining teeth from shifting out of position","Maintaining the natural shape of your face"],
+      zh:["保護脆弱的牙齒，避免斷裂","修復破裂、龜裂或磨損的牙齒","根管治療後包覆牙齒","改善牙齒的形狀、大小或外觀","取代一顆或多顆缺失的牙齒","重建笑容與咀嚼能力","防止其餘牙齒往缺口位移","維持臉部的自然輪廓"]
+    },
+    keyPoints:{
+      en:["Covers one existing tooth","Restores and protects","Does not replace missing teeth","Replaces one or more missing teeth","Anchored by the teeth on both sides","Fixed in place — not removable like dentures"],
+      zh:["包覆一顆現有的牙齒","修復並保護","不能取代缺失的牙齒","取代一顆或多顆缺失的牙齒","由兩側的牙齒支撐固定","固定式，不像活動假牙可拆卸"]
+    },
+    laneLabel:{en:["Crown — restoring one tooth","Bridge — spanning a gap"], zh:["牙冠 — 修復單顆牙齒","牙橋 — 跨越缺口"]},
+    howH:{
+      en:["Damaged tooth","Tooth reshaped","Crown placed","Missing tooth","Supporting teeth reshaped","Bridge placed","Final result"],
+      zh:["受損的牙齒","修磨牙齒","裝上牙冠","缺失的牙齒","修磨支撐牙","裝上牙橋","完成成果"]
+    },
+    howP:{
+      en:["A tooth is cracked, worn or weakened, but its root is still healthy.","The tooth is gently reshaped to make room for the crown.","A custom crown is bonded over it, restoring strength and shape.","There's a gap left by one or more missing teeth.","The teeth on each side are reshaped to act as anchors.","The bridge — a pontic joined to two crowns — is fitted over them.","The gap is filled with a complete, natural-looking smile."],
+      zh:["牙齒破裂、磨損或脆弱，但牙根仍然健康。","輕輕修磨牙齒，為牙冠騰出空間。","將量身訂製的牙冠黏著其上，重建強度與形狀。","一顆或多顆缺牙留下了空隙。","將兩側的牙齒修磨，作為支撐的支柱。","把牙橋（橋體連接兩個牙冠）裝戴於其上。","缺口被填補，重現完整自然的笑容。"]
+    },
+    ctCrownH:{en:"Crown", zh:"牙冠"},
+    ctMidH:{en:"Quick comparison", zh:"快速比較"},
+    ctBridgeH:{en:"Bridge", zh:"牙橋"},
+    ctLabel:{en:["Purpose","Covers or replaces","Main benefit","Missing tooth?"], zh:["用途","包覆或取代","主要優點","缺牙？"]},
+    ctCrown:{en:["Restores a damaged tooth","Covers one existing tooth","Protects and strengthens","No — does not replace missing teeth"], zh:["修復受損的牙齒","包覆一顆現有的牙齒","保護並強化","否 — 不能取代缺失的牙齒"]},
+    ctBridge:{en:["Replaces one or more missing teeth","Replaces the missing tooth (or teeth)","Restores function, appearance and alignment","Yes — replaces the missing tooth (teeth)"], zh:["取代一顆或多顆缺失的牙齒","取代缺失的牙齒","重建功能、外觀與齒列","是 — 取代缺失的牙齒"]},
+    cardh:{
+      en:["Your tooth is damaged but still there","You have a gap from a missing tooth","Curious about other options?"],
+      zh:["牙齒受損但仍在","有缺牙留下的空隙","想了解其他選擇？"]
+    },
+    cardp:{
+      en:["If a tooth is cracked, worn or weakened — but its root is healthy — a crown caps and protects it. Think of it as a helmet for a tooth.","If one or more teeth are missing and you have healthy teeth on both sides of the gap, a bridge can fill it and restore your bite.","An implant replaces a missing tooth root and all; dentures are removable. Your dentist will help you weigh comfort, cost and longevity."],
+      zh:["若牙齒破裂、磨損或脆弱，但牙根健康，牙冠能包覆並保護它，就像替牙齒戴上安全帽。","若缺了一顆或多顆牙，且缺口兩側有健康的牙齒，牙橋能填補空隙並恢復咬合。","植牙能連同牙根取代缺牙；活動假牙則可拆卸。牙醫會協助你權衡舒適度、費用與耐用度。"]
+    },
+    faqq:{
+      en:["Is a crown or a bridge better?","How long do crowns and bridges last?","Does getting a crown or bridge hurt?","How do I clean a crown or bridge?","Bridge or implant — what's the difference?","Are crowns and bridges removable?"],
+      zh:["牙冠和牙橋哪個比較好？","牙冠與牙橋可以用多久？","做牙冠或牙橋會痛嗎？","牙冠或牙橋要怎麼清潔？","牙橋還是植牙，有什麼不同？","牙冠與牙橋可以拆卸嗎？"]
+    },
+    faqa:{
+      en:["Neither is \"better\" — they do different jobs. A crown restores a damaged tooth that's still in place; a bridge replaces a tooth that's missing. The right choice depends on whether the tooth is still there.","With good care, both typically last <strong>10–15 years or more</strong> before they may need replacing. Daily cleaning and regular check-ups make a big difference.","The tooth is numbed with local anaesthetic, so the procedure itself is comfortable — similar to having a filling. Mild sensitivity for a few days afterwards is normal.","Brush and floss as normal. A bridge needs a little extra care — special floss threaders or interdental brushes help you clean underneath the pontic, where food can gather.","A bridge relies on the neighbouring teeth for support, so those teeth are reshaped. An implant replaces the tooth root itself and leaves the adjacent teeth untouched. Both are fixed in place — your dentist can advise which suits your situation.","No. Unlike dentures, crowns and bridges are fixed permanently in your mouth — you clean them in place and they stay put when you eat and speak."],
+      zh:["沒有哪個「比較好」，它們的功能不同。牙冠修復仍在口中的受損牙齒；牙橋取代已缺失的牙齒。該選哪個，取決於牙齒是否還在。","只要妥善照護，兩者通常可使用 <strong>10 至 15 年或更久</strong>，之後可能需要更換。每天清潔與定期回診差別很大。","牙齒會以局部麻醉止痛，因此過程相當舒適，類似補牙。術後幾天出現輕微敏感屬正常現象。","照常刷牙與使用牙線。牙橋需要多一點照護，可用牙線穿引器或牙間刷清潔橋體下方容易堆積食物的地方。","牙橋依靠鄰牙支撐，因此需要修磨鄰牙；植牙則取代牙根本身，不影響鄰牙。兩者都是固定式，牙醫可依你的狀況給予建議。","不行。與活動假牙不同，牙冠與牙橋固定在口中，直接在原位清潔，進食與說話時都穩固不動。"]
+    },
+    exH:{en:"Explore our treatments", zh:"探索我們的療程"},
+    exP:{en:"Crowns and bridges are two of several ways to restore a smile. See which option best fits your needs.", zh:"牙冠與牙橋只是重建笑容的其中兩種方式，看看哪個選擇最適合你的需求。"},
+    relName:{en:["Dental Crowns","Dental Implants","Dentures","Same-Day Crowns"], zh:["牙冠","植牙","活動假牙","當天牙冠"]},
+    relTag:{en:["Cap and protect a damaged tooth.","Replace a missing tooth, root and all.","Removable replacements for missing teeth.","One-visit CEREC crown, no second appointment."], zh:["包覆並保護受損的牙齒。","連同牙根替換整顆缺失的牙齒。","針對缺牙的可拆卸式替代方案。","一次看診的 CEREC 牙冠，免二次回診。"]},
+    bannerh2:{en:"Not sure which you need?", zh:"不確定自己需要哪一種？"},
+    bannerp:{en:"Your dentist can examine your teeth and recommend whether a crown, a bridge or another option is the right fit — so you can decide with confidence.", zh:"牙醫可以檢查你的牙齒，建議牙冠、牙橋或其他選項是否合適，讓你安心做決定。"},
+    disclaimer:{en:"This page is for general educational information only and is not a substitute for professional dental advice, diagnosis or treatment. Always consult a qualified dentist about your individual needs.", zh:"本頁面僅提供一般衛教資訊，不能取代專業的牙科建議、診斷或治療。請務必就個人需求諮詢合格的牙醫師。"},
+    foot:{en:["Dental Crowns","Dental Implants","Dentures","FAQ"], zh:["牙冠","植牙","活動假牙","常見問題"]},
+    title:{en:"Crown vs Bridge — What's the Difference? | Patient Guide", zh:"牙冠 vs 牙橋 — 有什麼不同？| 患者衛教指南"}
+  };
+
+  function qs(s){return document.querySelectorAll(s);}
+  function setHTMLall(sel, arr){var els=qs(sel);for(var i=0;i<els.length;i++){if(arr[i]!=null)els[i].innerHTML=arr[i];}}
+  function setText(el, txt){ if(el!=null) el.textContent = txt; }
+  function setLabel(el, txt){
+    if(!el) return;
+    var ns=el.childNodes, tn=null, i;
+    for(i=0;i<ns.length;i++){if(ns[i].nodeType===3){tn=ns[i];break;}}
+    var iconFirst = el.firstChild && el.firstChild.nodeType!==3;
+    if(tn){tn.textContent = iconFirst ? (" "+txt) : (txt+" ");}
+    else{el.appendChild(document.createTextNode(iconFirst?(" "+txt):txt));}
+  }
+  function setLabelAll(sel, arr){var els=qs(sel);for(var i=0;i<els.length;i++){if(arr[i]!=null)setLabel(els[i],arr[i]);}}
+
+  function applyLang(L){
+    document.documentElement.setAttribute("lang", L==="zh"?"zh-Hant":"en");
+    document.documentElement.setAttribute("data-lang", L);
+    setHTMLall(".nav-links a", T.nav[L]);
+    setLabel(qs(".nav-cta")[0], T.navCrown[L]);
+    setHTMLall(".eyebrow", T.eyebrow[L]);
+    qs(".hero h1")[0].innerHTML = T.h1[L];
+    qs(".hero .lead")[0].innerHTML = T.lead[L];
+    setLabelAll(".pills .pill", T.pills[L]);
+    setLabel(qs(".btn-primary")[0], T.btnPrimary[L]);
+    setLabel(qs(".btn-ghost")[0], T.btnGhost[L]);
+    setHTMLall(".sec-head h2", T.h2[L]);
+    setHTMLall(".sec-head p", T.secp[L]);
+    setHTMLall(".vs-title", T.vsTitle[L]);
+    setHTMLall(".vs-tag", T.vsTag[L]);
+    setHTMLall(".vs-def", T.vsDef[L]);
+    setHTMLall(".vs-sub", T.vsSub[L]);
+    setLabelAll(".vs-col .used li", T.usedFor[L]);
+    setLabelAll(".vs-col .keys li", T.keyPoints[L]);
+    setLabelAll(".lane-label", T.laneLabel[L]);
+    setHTMLall(".hstep h4", T.howH[L]);
+    setHTMLall(".hstep p", T.howP[L]);
+    setText(qs(".ct-crownh")[0], T.ctCrownH[L]);
+    setText(qs(".ct-midh")[0], T.ctMidH[L]);
+    setText(qs(".ct-bridgeh")[0], T.ctBridgeH[L]);
+    setHTMLall(".c-label", T.ctLabel[L]);
+    setHTMLall(".c-crown", T.ctCrown[L]);
+    setHTMLall(".c-bridge", T.ctBridge[L]);
+    setHTMLall(".card h3", T.cardh[L]);
+    setHTMLall(".card p", T.cardp[L]);
+    setHTMLall(".q button span:not(.chev)", T.faqq[L]);
+    setHTMLall(".ans-inner", T.faqa[L]);
+    qs(".ex-h")[0].innerHTML = T.exH[L];
+    qs(".ex-p")[0].innerHTML = T.exP[L];
+    setHTMLall(".rel-tx h3", T.relName[L]);
+    setHTMLall(".rel-tx p", T.relTag[L]);
+    qs(".banner h2")[0].innerHTML = T.bannerh2[L];
+    qs(".banner p")[0].innerHTML = T.bannerp[L];
+    qs(".disclaimer")[0].innerHTML = T.disclaimer[L];
+    setHTMLall(".foot-links a", T.foot[L]);
+    document.title = T.title[L];
+    var tog = document.getElementById("langToggle");
+    if(tog) tog.setAttribute("data-active", L);
+    qs('.q[aria-open="true"] .ans').forEach(function(a){ a.style.maxHeight = a.scrollHeight + "px"; });
+    try{ localStorage.setItem("lang", L); }catch(e){}
+  }
+
+  var savedLang = "en";
+  try{ savedLang = localStorage.getItem("lang") || "en"; }catch(e){}
+  applyLang(savedLang);
+  (function(){
+    var tog = document.getElementById("langToggle");
+    if(tog){ tog.addEventListener("click", function(){
+      var cur = document.documentElement.getAttribute("data-lang") || "en";
+      applyLang(cur==="en" ? "zh" : "en");
+    }); }
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.q button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var q = btn.closest('.q');
+      var ans = q.querySelector('.ans');
+      var open = q.getAttribute('aria-open') === 'true';
+      if(open){ ans.style.maxHeight = null; q.removeAttribute('aria-open'); btn.setAttribute('aria-expanded','false'); }
+      else{ ans.style.maxHeight = ans.scrollHeight + 'px'; q.setAttribute('aria-open','true'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  // Reveal on scroll
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
