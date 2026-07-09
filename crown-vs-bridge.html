@@ -94,12 +94,28 @@
   .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
   .btn-ghost{background:var(--card);color:var(--slate);border:1px solid var(--line)}
   .btn-ghost:hover{transform:translateY(-2px)}
-  /* hero mini crown-vs-bridge visual */
-  .hero-vs{margin-top:40px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
-  .hv-card{width:min(220px,40vw);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow-lg)}
-  .hv-card svg{display:block;width:100%;height:auto}
-  .hv-vs{width:56px;height:56px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.2rem;
-    background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow-lg)}
+  /* fighting-game split screen: divide line + clip edges share geometry (line 0,88 -> 100,12) */
+  .hero-vs{position:absolute;inset:0;z-index:0;opacity:.3;pointer-events:none;overflow:hidden}
+  .hv-side{position:absolute;inset:0}
+  .hv-side.top{clip-path:polygon(0% 0%,100% 0%,100% 12%,0% 88%)}
+  .hv-side.bottom{clip-path:polygon(0% 88%,100% 12%,100% 100%,0% 100%)}
+  .hv-card{position:absolute;background:none;border:0;padding:0;box-shadow:none}
+  .hv-card canvas{display:block;width:100%;aspect-ratio:1/1}
+  .hv-card.crown{left:10%;top:-6%;width:min(550px,51vw)}
+  .hv-card.bridge{right:7%;bottom:-40%;width:min(792px,70vw)}
+  .hv-line{position:absolute;inset:0;width:100%;height:100%}
+  .hv-line line{stroke:rgba(233,240,246,.6);stroke-width:1.6}
+  .hv-line .ln-m{display:none}
+  /* mobile: hero is tall, so % bottom-offsets shove the bridge off-screen — reposition both,
+     and use a flatter ~30deg divide line (with matching clip edges) instead of the steep desktop one */
+  @media(max-width:640px){
+    .hv-card.crown{left:-4%;top:0%;width:min(384px,72vw)}
+    .hv-card.bridge{right:-6%;bottom:-10%;width:min(480px,115vw)}
+    .hv-side.top{clip-path:polygon(0% 0%,100% 0%,100% 30%,0% 70%)}
+    .hv-side.bottom{clip-path:polygon(0% 70%,100% 30%,100% 100%,0% 100%)}
+    .hv-line .ln-d{display:none}
+    .hv-line .ln-m{display:block}
+  }
 
   section{padding:72px 0}
   .sec-head{max-width:680px;margin:0 auto 46px;text-align:center}
@@ -265,6 +281,14 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-vs" aria-hidden="true">
+    <div class="hv-side top"><div class="hv-card crown"><canvas id="crown3d" role="img" aria-label="A 3D single dental crown"></canvas></div></div>
+    <div class="hv-side bottom"><div class="hv-card bridge"><canvas id="bridge3d" role="img" aria-label="A 3D three-unit dental bridge"></canvas></div></div>
+    <svg class="hv-line" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line class="ln-d" x1="0" y1="88" x2="100" y2="12" vector-effect="non-scaling-stroke"/>
+      <line class="ln-m" x1="0" y1="70" x2="100" y2="30" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </div>
   <div class="wrap hero-inner reveal in">
     <span class="eyebrow">Patient Guide</span>
     <h1>Crown <span class="vs-em">vs</span> Bridge<span class="sub">What's the difference?</span></h1>
@@ -278,11 +302,6 @@
       <a class="btn btn-primary" href="#table">Compare them
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-ghost" href="#how">See how they work</a>
-    </div>
-    <div class="hero-vs">
-      <div class="hv-card"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A single crown being placed on one tooth"><defs><linearGradient id="ht" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e7edf3"/></linearGradient><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b9c4"/><stop offset="1" stop-color="#e88fa0"/></linearGradient></defs><rect width="200" height="150" rx="12" fill="none"/><path d="M0,118 Q100,104 200,118 L200,150 L0,150 Z" fill="url(#hg)"/><g transform="translate(100,40)"><path d="M-26,-6 C-26,-24 -14,-32 0,-32 C14,-32 26,-24 26,-6 C26,8 21,16 19,26 C18,34 9,32 0,32 C-9,32 -18,34 -19,26 C-21,16 -26,8 -26,-6 Z" fill="url(#ht)" stroke="#0ea5e9" stroke-width="2.2"/><path d="M-12,-18 Q0,-9 12,-18" stroke="#bfe4f5" stroke-width="3" fill="none" stroke-linecap="round"/></g><path d="M92,80 L100,92 L108,80" fill="none" stroke="#0ea5e9" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(100,116)"><path d="M-20,-8 C-20,2 -14,12 0,12 C14,12 20,2 20,-8 C18,-14 -18,-14 -20,-8 Z" fill="url(#ht)" stroke="#cfdbe6" stroke-width="1.4"/></g></svg></div>
-      <div class="hv-vs">VS</div>
-      <div class="hv-card"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A three-unit bridge spanning a gap between two teeth"><defs><linearGradient id="bt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f0e6d5"/></linearGradient><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7b9c4"/><stop offset="1" stop-color="#e88fa0"/></linearGradient></defs><path d="M0,118 Q100,104 200,118 L200,150 L0,150 Z" fill="url(#bg)"/><g stroke="#d97706" stroke-width="2.2" fill="url(#bt)"><path d="M40,44 C40,28 50,22 62,22 C74,22 84,28 84,44 C84,58 80,66 78,76 C77,84 70,82 62,82 C54,82 47,84 46,76 C44,66 40,58 40,44 Z"/><path d="M78,50 C78,36 88,32 100,32 C112,32 122,36 122,50 C122,62 118,70 116,80 C115,88 108,86 100,86 C92,86 85,88 84,80 C82,70 78,62 78,50 Z"/><path d="M116,44 C116,28 126,22 138,22 C150,22 160,28 160,44 C160,58 156,66 154,76 C153,84 146,82 138,82 C130,82 123,84 122,76 C120,66 116,58 116,44 Z"/></g><rect x="44" y="56" width="112" height="10" rx="5" fill="#d97706" opacity="0.28"/></svg></div>
     </div>
   </div>
 </section>
@@ -680,6 +699,83 @@
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+
+<script src="three.min.js"></script>
+<script src="GLTFLoader.js"></script>
+<script src="hero-models.js"></script>
+<script>
+  // ---------- Hero 3D: single crown + 3-unit bridge, each slowly rotating ----------
+  (function(){
+    if(!window.THREE || !window.THREE.GLTFLoader || !window.CVB_MODELS) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Small studio env so the tooth surfaces catch light (no external HDR).
+    var ecv=document.createElement('canvas'); ecv.width=256; ecv.height=128;
+    var ex=ecv.getContext('2d'); var g=ex.createLinearGradient(0,0,0,128);
+    g.addColorStop(0,'#ffffff'); g.addColorStop(.5,'#d7dee4'); g.addColorStop(1,'#8b95a0');
+    ex.fillStyle=g; ex.fillRect(0,0,256,128);
+    ex.fillStyle='rgba(255,255,255,.9)'; ex.fillRect(0,20,256,10); ex.fillRect(0,54,256,6);
+    var envTex=new THREE.CanvasTexture(ecv); envTex.mapping=THREE.EquirectangularReflectionMapping; envTex.encoding=THREE.sRGBEncoding;
+
+    function makeViewer(canvas, mesh, opts){
+      var renderer;
+      try{ renderer=new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true}); }catch(e){ return; }
+      renderer.outputEncoding=THREE.sRGBEncoding; renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=0.62;
+      var scene=new THREE.Scene(); scene.environment=envTex;
+      scene.add(new THREE.HemisphereLight(0xffffff,0x9aa4ad,0.32));
+      var key=new THREE.DirectionalLight(0xffffff,0.6); key.position.set(4,8,6); scene.add(key);
+      var rim=new THREE.DirectionalLight(0xdfeeff,0.28); rim.position.set(-5,-2,-4); scene.add(rim);
+      var camera=new THREE.PerspectiveCamera(30,1,0.1,100); camera.position.set(0,0,opts.dist);
+      var spin=new THREE.Group(); var tilt=new THREE.Group(); tilt.add(spin); scene.add(tilt);
+      mesh.rotation.set(opts.rx||0, opts.ry||0, opts.rz||0);
+      // futuristic look: dark solid fill hides the back edges, bright wireframe grid on the front surface
+      var wcol=opts.color||0xcfe4f2;
+      var fillMat=new THREE.MeshBasicMaterial({color:0x1a1613, side:THREE.DoubleSide, polygonOffset:true, polygonOffsetFactor:1, polygonOffsetUnits:1});
+      var toWire=[]; mesh.traverse(function(o){ if(o.isMesh) toWire.push(o); });
+      toWire.forEach(function(o){
+        o.material=new THREE.MeshBasicMaterial({color:wcol, wireframe:true, transparent:true, opacity:0.5}); o.renderOrder=1;
+        var fill=new THREE.Mesh(o.geometry, fillMat); fill.renderOrder=0; o.add(fill);
+      });
+      spin.add(mesh);
+      tilt.rotation.x = opts.tx||0;
+      var baseY=opts.ry0||0, t0=0, inView=true;
+      spin.rotation.y = baseY;
+      function resize(){
+        var w=canvas.clientWidth||220, h=canvas.clientHeight||w;
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+        renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+        renderer.render(scene,camera);
+      }
+      new ResizeObserver(resize).observe(canvas);
+      new IntersectionObserver(function(en){ inView=en[0].isIntersecting; },{rootMargin:'120px'}).observe(canvas);
+      resize();
+      if(!reduceMotion){
+        var clock=new THREE.Clock();
+        (function tick(){ requestAnimationFrame(tick);
+          if(!inView||document.hidden) return;
+          t0 += Math.min(clock.getDelta(),0.05);
+          // gentle left-right sway of about +/-5 degrees, no full spin
+          spin.rotation.y = baseY + Math.sin(t0*0.7)*0.087;
+          renderer.render(scene,camera);
+        })();
+      }
+    }
+
+    function onLoad(gltf){
+      var crown=gltf.scene.getObjectByName('crown'), bridge=gltf.scene.getObjectByName('bridge');
+      var cc=document.getElementById('crown3d'), bc=document.getElementById('bridge3d');
+      // leaned forward to show the top cap, and turned 20deg horizontally (3/4 view)
+      // crown sized down to roughly one bridge-tooth (larger dist = smaller on screen)
+      if(crown&&cc) makeViewer(cc, crown, {dist:8.5, tx:0.4, ry0:0.349});
+      if(bridge&&bc) makeViewer(bc, bridge, {dist:4.6, tx:0.4, ry0:0.349});
+    }
+    try{
+      var raw=atob(window.CVB_MODELS), bin=new Uint8Array(raw.length);
+      for(var i=0;i<raw.length;i++) bin[i]=raw.charCodeAt(i);
+      new THREE.GLTFLoader().parse(bin.buffer,'',onLoad,function(){});
+    }catch(e){}
+  })();
 </script>
 </body>
 </html>
