@@ -95,7 +95,7 @@
   .btn-ghost{background:var(--card);color:var(--slate);border:1px solid var(--line)}
   .btn-ghost:hover{transform:translateY(-2px)}
   /* fighting-game split screen: divide line + clip edges share geometry (line 0,88 -> 100,12) */
-  .hero-vs{position:absolute;inset:0;z-index:0;opacity:.3;pointer-events:none;overflow:hidden}
+  .hero-vs{position:absolute;inset:0;z-index:0;opacity:.2;pointer-events:none;overflow:hidden}
   .hv-side{position:absolute;inset:0}
   .hv-side.top{clip-path:polygon(0% 0%,100% 0%,100% 12%,0% 88%)}
   .hv-side.bottom{clip-path:polygon(0% 88%,100% 12%,100% 100%,0% 100%)}
@@ -115,6 +115,8 @@
     .hv-side.bottom{clip-path:polygon(0% 70%,100% 30%,100% 100%,0% 100%)}
     .hv-line .ln-d{display:none}
     .hv-line .ln-m{display:block}
+    /* Chinese hero is more compact, so nudge the bridge down to keep its cap below the divide line */
+    html[data-lang="zh"] .hv-card.bridge{bottom:-24%}
   }
 
   section{padding:72px 0}
