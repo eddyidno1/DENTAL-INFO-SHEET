@@ -187,11 +187,10 @@
   .step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
     box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .25s;overflow:hidden;display:flex;flex-direction:column}
   .step:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
-  .step:hover .step-media svg{transform:scale(1.05)}
-  .step-media{position:relative;height:170px;overflow:hidden;background:linear-gradient(160deg,#eaf4ff,#cfe6fb)}
-  .step-media svg{position:absolute;inset:0;width:100%;height:100%;display:block;transition:transform .5s ease}
-  .step-media::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:34%;
-    background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--card) 80%,transparent))}
+  .step:hover .step-media svg,.step:hover .step-media img{transform:scale(1.05)}
+  .step-media{position:relative;height:190px;overflow:hidden;background:#132445}
+  .step-media svg,.step-media img{position:absolute;inset:0;width:100%;height:100%;display:block;transition:transform .5s ease}
+  .step-media img{object-fit:contain}
   .step-body{padding:22px 24px 22px;position:relative;flex:1;display:flex;flex-direction:column}
   .step-num{position:absolute;top:-27px;left:22px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
     font-weight:900;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-2));
@@ -451,17 +450,7 @@
     <div class="steps v1">
       <!-- 1 -->
       <div class="step reveal">
-        <div class="step-media">
-          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A magnifying glass examining a healthy tooth">
-            <defs>
-              <linearGradient id="t1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dce9f8"/></linearGradient>
-              <linearGradient id="gm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8b9c5"/><stop offset="1" stop-color="#ef97a6"/></linearGradient>
-            </defs>
-            <path d="M0,118 Q80,104 150,110 Q220,116 300,106 L300,150 L0,150 Z" fill="url(#gm1)"/>
-            <g transform="translate(122,74)"><path d="M-30,-6 C-30,-26 -16,-35 0,-35 C16,-35 30,-26 30,-6 C30,8 25,17 23,32 C21,50 16,60 0,60 C-16,60 -21,50 -23,32 C-25,17 -30,8 -30,-6 Z" fill="url(#t1)"/><path d="M-14,-20 Q0,-11 14,-20" stroke="#cfe0f2" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
-            <g><circle cx="176" cy="54" r="26" fill="#ffffff" opacity="0.4"/><circle cx="176" cy="54" r="26" fill="none" stroke="#2f74c8" stroke-width="8"/><line x1="195" y1="73" x2="222" y2="100" stroke="#2f74c8" stroke-width="11" stroke-linecap="round"/><path d="M166,48 a12,12 0 0 1 8,-8" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/></g>
-          </svg>
-        </div>
+        <div class="step-media"><img src="crown-step1.png" alt="Exam and treatment plan illustration"></div>
         <div class="step-body">
           <div class="step-num">1</div>
           <h3>Exam &amp; Treatment Plan</h3>
@@ -471,25 +460,7 @@
       </div>
       <!-- 2 -->
       <div class="step reveal">
-        <div class="step-media">
-          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A dental handpiece reshaping a prepared tooth">
-            <defs>
-              <linearGradient id="gm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8b9c5"/><stop offset="1" stop-color="#ef97a6"/></linearGradient>
-              <linearGradient id="d2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5ead2"/><stop offset="1" stop-color="#dcc79c"/></linearGradient>
-              <linearGradient id="m2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f1f4f8"/><stop offset="1" stop-color="#a9b6c8"/></linearGradient>
-            </defs>
-            <path d="M0,118 Q80,104 150,110 Q220,116 300,106 L300,150 L0,150 Z" fill="url(#gm2)"/>
-            <path d="M118,84 C118,75 162,75 162,84 L157,120 C156,128 124,128 122,120 Z" fill="url(#d2)"/>
-            <ellipse cx="140" cy="84" rx="22" ry="6" fill="#fbf3df"/>
-            <g transform="translate(140,66) rotate(26)">
-              <rect x="-13" y="-88" width="26" height="58" rx="13" fill="url(#m2)"/>
-              <rect x="-6" y="-34" width="12" height="16" rx="4" fill="#9aa8bd"/>
-              <rect x="-3" y="-20" width="6" height="20" rx="3" fill="#c3ccd9"/>
-              <circle cx="0" cy="1" r="4.5" fill="#8b98ad"/>
-            </g>
-            <g fill="#8fb4e6"><circle cx="120" cy="72" r="2.4"/><circle cx="160" cy="70" r="2"/><circle cx="150" cy="60" r="1.8"/></g>
-          </svg>
-        </div>
+        <div class="step-media"><img src="crown-step2.png" alt="Tooth preparation illustration"></div>
         <div class="step-body">
           <div class="step-num">2</div>
           <h3>Tooth Preparation</h3>
@@ -499,20 +470,7 @@
       </div>
       <!-- 3 -->
       <div class="step reveal">
-        <div class="step-media">
-          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A U-shaped dental impression tray filled with blue putty">
-            <defs>
-              <linearGradient id="tray3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef3f9"/><stop offset="1" stop-color="#c3cedd"/></linearGradient>
-              <linearGradient id="putty3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f97e0"/><stop offset="1" stop-color="#2f6fc4"/></linearGradient>
-            </defs>
-            <g transform="translate(150,64)">
-              <path d="M-56,-30 A56,54 0 0 0 56,-30" fill="none" stroke="url(#tray3)" stroke-width="34" stroke-linecap="round"/>
-              <path d="M-56,-30 A56,54 0 0 0 56,-30" fill="none" stroke="url(#putty3)" stroke-width="20" stroke-linecap="round"/>
-              <g fill="#bcd6f4"><ellipse cx="-47" cy="-14" rx="5" ry="4"/><ellipse cx="-33" cy="4" rx="5.5" ry="4.5"/><ellipse cx="-12" cy="15" rx="6" ry="5"/><ellipse cx="12" cy="15" rx="6" ry="5"/><ellipse cx="33" cy="4" rx="5.5" ry="4.5"/><ellipse cx="47" cy="-14" rx="5" ry="4"/></g>
-              <rect x="-6" y="-52" width="12" height="16" rx="4" fill="url(#tray3)"/>
-            </g>
-          </svg>
-        </div>
+        <div class="step-media"><img src="crown-step3.png" alt="Impression or scan taken illustration"></div>
         <div class="step-body">
           <div class="step-num">3</div>
           <h3>Impression / Scan Taken</h3>
@@ -522,17 +480,7 @@
       </div>
       <!-- 4 -->
       <div class="step reveal">
-        <div class="step-media">
-          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A temporary crown protecting the tooth, shown with a shield">
-            <defs>
-              <linearGradient id="t4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cddef2"/></linearGradient>
-              <linearGradient id="gm4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8b9c5"/><stop offset="1" stop-color="#ef97a6"/></linearGradient>
-            </defs>
-            <path d="M0,118 Q80,104 150,110 Q220,116 300,106 L300,150 L0,150 Z" fill="url(#gm4)"/>
-            <g transform="translate(130,74)"><path d="M-30,-6 C-30,-26 -16,-35 0,-35 C16,-35 30,-26 30,-6 C30,8 25,17 23,32 C21,50 16,60 0,60 C-16,60 -21,50 -23,32 C-25,17 -30,8 -30,-6 Z" fill="url(#t4)"/><path d="M-14,-20 Q0,-11 14,-20" stroke="#bcd2ec" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
-            <g transform="translate(206,52)"><path d="M0,-18 L16,-11 V3 C16,14 8,20 0,23 C-8,20 -16,14 -16,3 V-11 Z" fill="#14b8ac"/><path d="M-6,1 l4,5 8,-9" stroke="#ffffff" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
-          </svg>
-        </div>
+        <div class="step-media"><img src="crown-step4.png" alt="Temporary crown placed illustration"></div>
         <div class="step-body">
           <div class="step-num">4</div>
           <h3>Temporary Crown Placed</h3>
@@ -551,21 +499,7 @@
     <div class="steps v2">
       <!-- 5 -->
       <div class="step reveal">
-        <div class="step-media">
-          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A custom crown being lowered onto a prepared tooth">
-            <defs>
-              <linearGradient id="t5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dce9f8"/></linearGradient>
-              <linearGradient id="d5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5ead2"/><stop offset="1" stop-color="#dcc79c"/></linearGradient>
-              <linearGradient id="gm5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8b9c5"/><stop offset="1" stop-color="#ef97a6"/></linearGradient>
-              <filter id="sh5" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#164a86" flood-opacity="0.2"/></filter>
-            </defs>
-            <path d="M0,124 Q80,110 150,116 Q220,122 300,112 L300,150 L0,150 Z" fill="url(#gm5)"/>
-            <path d="M128,100 C128,92 172,92 172,100 L168,130 C167,137 133,137 132,130 Z" fill="url(#d5)"/>
-            <ellipse cx="150" cy="100" rx="22" ry="6" fill="#fbf3df"/>
-            <g fill="#1766c9"><path d="M150,58 v12" stroke="#1766c9" stroke-width="5" stroke-linecap="round"/><path d="M141,66 l9,10 9,-10" fill="none" stroke="#1766c9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
-            <g transform="translate(150,34)" filter="url(#sh5)"><path d="M-30,0 C-30,-20 -16,-29 0,-29 C16,-29 30,-20 30,0 C30,11 25,18 23,28 C22,37 16,41 0,41 C-16,41 -22,37 -23,28 C-25,18 -30,11 -30,0 Z" fill="url(#t5)"/><path d="M-14,-13 Q0,-4 14,-13" stroke="#cfe0f2" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
-          </svg>
-        </div>
+        <div class="step-media"><img src="crown-step5.png" alt="Custom crown fitting illustration"></div>
         <div class="step-body">
           <div class="step-num">5</div>
           <h3>Custom Crown Fitting</h3>
@@ -575,18 +509,7 @@
       </div>
       <!-- 6 -->
       <div class="step reveal">
-        <div class="step-media">
-          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The finished crown cemented in place with a natural, healthy result">
-            <defs>
-              <linearGradient id="t6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dce9f8"/></linearGradient>
-              <linearGradient id="gm6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8b9c5"/><stop offset="1" stop-color="#ef97a6"/></linearGradient>
-            </defs>
-            <path d="M0,118 Q80,104 150,110 Q220,116 300,106 L300,150 L0,150 Z" fill="url(#gm6)"/>
-            <g transform="translate(132,74)"><path d="M-30,-6 C-30,-26 -16,-35 0,-35 C16,-35 30,-26 30,-6 C30,8 25,17 23,32 C21,50 16,60 0,60 C-16,60 -21,50 -23,32 C-25,17 -30,8 -30,-6 Z" fill="url(#t6)"/><path d="M-14,-20 Q0,-11 14,-20" stroke="#cfe0f2" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M-20,-14 q6,-5 12,-3" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/></g>
-            <g transform="translate(206,50)"><circle cx="0" cy="0" r="18" fill="#14b8ac"/><path d="M-7,1 l5,6 9,-11" stroke="#ffffff" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
-            <g fill="#14b8ac"><path d="M96,44 l2,5 5,2 -5,2 -2,5 -2,-5 -5,-2 5,-2 Z"/><path d="M172,36 l1.6,4 4,1.6 -4,1.6 -1.6,4 -1.6,-4 -4,-1.6 4,-1.6 Z"/></g>
-          </svg>
-        </div>
+        <div class="step-media"><img src="crown-step6.png" alt="Crown cemented illustration"></div>
         <div class="step-body">
           <div class="step-num">6</div>
           <h3>Crown Cemented</h3>
