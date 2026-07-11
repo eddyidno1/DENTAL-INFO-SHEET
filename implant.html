@@ -163,16 +163,23 @@
     color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,var(--card));
     border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));padding:5px 11px;border-radius:999px}
   .dur.long{color:var(--brand);background:color-mix(in srgb,var(--brand) 13%,var(--card));border-color:color-mix(in srgb,var(--brand) 32%,var(--line))}
-  @media(min-width:760px){
-    .timeline::before{left:50%;transform:translateX(-50%)}
-    .tl-item{width:50%;padding:0;margin-bottom:8px;min-height:96px}
-    .tl-item:nth-child(odd){left:0;padding-right:52px;text-align:right}
-    .tl-item:nth-child(even){left:50%;padding-left:52px;margin-top:-40px}
-    .tl-item:first-child{margin-top:0}
-    .tl-node{left:auto;right:-24px;top:14px}
-    .tl-item:nth-child(even) .tl-node{left:-24px;right:auto}
-    .tl-item:nth-child(odd) .tl-head{flex-direction:row-reverse}
-  }
+  /* optional branch (tooth extraction) */
+  .tl-optional{padding-left:104px}
+  .tl-optional .tl-node{left:30px;width:38px;height:38px;top:4px;background:var(--card);color:var(--accent);
+    border:2px dashed color-mix(in srgb,var(--accent) 55%,var(--line));box-shadow:var(--shadow)}
+  .tl-optional .tl-card{border-style:dashed;background:color-mix(in srgb,var(--accent) 6%,var(--card))}
+  .tl-optional .tl-ic{color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--card))}
+  .opt-tag{margin-left:auto;flex:0 0 auto;font-weight:800;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--card));
+    border:1px solid color-mix(in srgb,var(--accent) 34%,var(--line));padding:3px 9px;border-radius:999px}
+  /* healing interval (not a numbered step) */
+  .tl-interval{position:relative;padding:0 0 0 82px;margin:-6px 0 26px;min-height:38px;display:flex;align-items:center}
+  .tl-int-node{position:absolute;left:19px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;z-index:2;
+    background:var(--card);border:2px dashed color-mix(in srgb,var(--brand) 50%,var(--line));display:grid;place-items:center;color:var(--brand)}
+  .tl-int-pill{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.84rem;color:var(--brand);
+    background:color-mix(in srgb,var(--brand) 11%,var(--card));border:1px dashed color-mix(in srgb,var(--brand) 40%,var(--line));
+    padding:8px 15px;border-radius:14px}
+  .tl-int-pill svg{flex:0 0 auto}
 
   /* aftercare */
   .care{max-width:820px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:24px;
@@ -271,7 +278,7 @@
   <div class="wrap hero-inner">
     <div class="reveal in">
       <span class="eyebrow">Patient Guide</span>
-      <h1>Dental Implants<span class="sub">Restore your smile. Improve your life.</span></h1>
+      <h1>Dental Implants<span class="sub">Restore your smile with lasting strength.</span></h1>
       <p class="lead">A dental implant is a <b>titanium post</b> surgically placed into the jawbone to replace a missing tooth root. It acts as a strong foundation for a crown that looks, feels and functions like a <b>natural tooth</b>.</p>
       <div class="pills">
         <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Natural look &amp; feel</span>
@@ -401,8 +408,8 @@
       </div>
       <div class="card reveal">
         <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12a3 3 0 1 0 3 3c0-3-3-3-3-6a3 3 0 1 1 3 3c0 3 3 3 3 6a3 3 0 1 0 3-3c0-3-3-3-3-6"/></svg></div>
-        <h3>Lasts a lifetime</h3>
-        <p>With good care, the implant itself can last for life — a truly long-term solution.</p>
+        <h3>Long-lasting solution</h3>
+        <p>A lasting investment in your smile.</p>
       </div>
       <div class="card reveal">
         <div class="icon-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 9l2 2 4-4"/><path d="M8 15l-2 6 6-3 6 3-2-6"/></svg></div>
@@ -435,40 +442,36 @@
           <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
         </div>
       </div>
-      <div class="tl-item reveal">
-        <div class="tl-node">2</div>
+      <div class="tl-item tl-optional reveal">
+        <div class="tl-node"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><path d="M6 21v-4"/></svg></div>
         <div class="tl-card">
-          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M20 4l-3 3"/></svg></span><h3>Tooth extraction</h3></div>
-          <p>If needed, the damaged tooth is gently extracted to make way for the implant.</p>
-          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M20 4l-3 3"/></svg></span><h3>Tooth extraction</h3><span class="opt-tag">Optional</span></div>
+          <p>Not everyone needs this. If the damaged tooth is still in place, it's gently removed first — then we allow 3–6 months for the socket to heal before the implant is placed.</p>
+          <span class="dur long"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 3–6 Months to heal</span>
         </div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-node">3</div>
+        <div class="tl-node">2</div>
         <div class="tl-card">
           <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5l3-3 3 3"/><path d="M10 9h4l-1 8a1 1 0 0 1-2 0Z"/></svg></span><h3>Implant placement</h3></div>
           <p>The titanium implant is surgically placed into the jawbone as your new tooth root.</p>
           <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
         </div>
       </div>
-      <div class="tl-item reveal">
-        <div class="tl-node">4</div>
-        <div class="tl-card">
-          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a4.5 4.5 0 0 0-6.4 0L12 8l-2.4-2.4a4.5 4.5 0 1 0-6.4 6.4L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.6Z"/></svg></span><h3>Healing &amp; osseointegration</h3></div>
-          <p>The titanium fuses with the jawbone over time, creating a strong and stable foundation.</p>
-          <span class="dur long"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 3–6 Months</span>
-        </div>
+      <div class="tl-interval reveal">
+        <span class="tl-int-node"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a4.5 4.5 0 0 0-6.4 0L12 8l-2.4-2.4a4.5 4.5 0 1 0-6.4 6.4L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.6Z"/></svg></span>
+        <span class="tl-int-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="ti-tx">Healing &amp; osseointegration · 3+ months for the titanium to fuse with the bone</span></span>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-node">5</div>
+        <div class="tl-node">3</div>
         <div class="tl-card">
-          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v5M9 4l3-2 3 2"/><rect x="9" y="8" width="6" height="6" rx="1.5"/><path d="M10 14l-1 6h6l-1-6"/></svg></span><h3>Abutment placement</h3></div>
-          <p>A connector (abutment) is attached to the implant to hold your new crown.</p>
+          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/><path d="M4 12h16"/></svg></span><h3>Scanning / impression</h3></div>
+          <p>Once the implant has healed, we take a scan or impression of it to prepare your final crown.</p>
           <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
         </div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-node">6</div>
+        <div class="tl-node">4</div>
         <div class="tl-card">
           <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M9.5 9.5l1.5 1.5 3.5-3.5"/></svg></span><h3>Crown placement</h3></div>
           <p>A custom-made crown is placed on top, completing your brand-new smile!</p>
@@ -521,12 +524,8 @@
         <div class="ans"><div class="ans-inner">Most healthy adults with good gum health and enough jawbone are great candidates. If bone has been lost, a bone graft can often rebuild it first. A CBCT 3D scan at your consultation tells us exactly what's possible for you.</div></div>
       </div>
       <div class="q reveal">
-        <button aria-expanded="false"><span>What's the success rate?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
-        <div class="ans"><div class="ans-inner">Dental implants are one of the most reliable treatments in dentistry, with long-term success rates around <strong>95% or higher</strong> when placed by an experienced dentist and cared for well.</div></div>
-      </div>
-      <div class="q reveal">
         <button aria-expanded="false"><span>How long do implants last?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
-        <div class="ans"><div class="ans-inner">The titanium implant itself can last a lifetime with good care. The crown on top typically lasts <strong>10–15 years or more</strong> before it may need replacing, just like a normal crown.</div></div>
+        <div class="ans"><div class="ans-inner">An implant can easily last 10+ years, and often longer with good care.</div></div>
       </div>
       <div class="q reveal">
         <button aria-expanded="false"><span>Implant vs. bridge or denture — what's the difference?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
@@ -604,7 +603,7 @@
       en:["Patient Guide","The building blocks","Why implants?","Here's how it works","Make it last","Good to know","Restore your smile · Improve your life"],
       zh:["患者指南","組成結構","為什麼選植牙","療程流程","延長壽命","值得了解","重拾笑容 · 改善生活"]
     },
-    h1:{en:'Dental Implants<span class="sub">Restore your smile. Improve your life.</span>', zh:'植牙<span class="sub">重拾笑容，改善生活。</span>'},
+    h1:{en:'Dental Implants<span class="sub">Restore your smile with lasting strength.</span>', zh:'植牙<span class="sub">重建笑容，強韌持久。</span>'},
     lead:{
       en:'A dental implant is a <b>titanium post</b> surgically placed into the jawbone to replace a missing tooth root. It acts as a strong foundation for a crown that looks, feels and functions like a <b>natural tooth</b>.',
       zh:'植牙是一支以手術植入齒槽骨的<b>鈦金屬植體</b>，用來取代缺失的牙根。它可作為牙冠的穩固基座，讓成品看起來、用起來都像<b>真牙</b>一樣。'
@@ -629,34 +628,36 @@
       zh:["量身訂製的假牙，外觀與功能都和真牙一樣，也是唯一看得到的部分。","一個小型連接件，將牙冠穩固地連接到牙齦下方的植體。","植入齒槽骨中作為人工牙根，是上方一切結構的地基。","歷經 3 至 6 個月，鈦金屬會與齒槽骨緊密結合，變得非常穩固，並有助於防止缺牙後常見的骨質流失。"]
     },
     cardh:{
-      en:["Natural look & feel","Strong & durable","Prevents bone loss","Lasts a lifetime","Proven success","Confidence restored"],
-      zh:["外觀自然","堅固耐用","防止骨質流失","用得長久","實證成效","重拾自信"]
+      en:["Natural look & feel","Strong & durable","Prevents bone loss","Long-lasting solution","Proven success","Confidence restored"],
+      zh:["外觀自然","堅固耐用","防止骨質流失","長久耐用的方案","實證成效","重拾自信"]
     },
     cardp:{
-      en:["Custom-matched to your smile, an implant blends in so well most people won't know it's there.","Made from proven, biocompatible titanium, it restores full biting and chewing power.","By replacing the tooth root, the implant stimulates the jaw and helps keep the bone healthy.","With good care, the implant itself can last for life — a truly long-term solution.","Backed by decades of research, implants have a very high long-term success rate.","Eat, speak and smile with comfort again — no slipping, no worry, just your best self."],
-      zh:["依你的笑容量身配色，植牙融入自然，多數人都察覺不出來。","採用經實證的生物相容鈦金屬，重建完整的咬合與咀嚼力。","藉由取代牙根，植牙能刺激齒槽骨，有助維持骨質健康。","只要妥善照護，植體本身可以用上一輩子，是真正的長久之選。","經數十年研究實證，植牙擁有非常高的長期成功率。","重新自在地進食、說話與微笑，不滑動、不擔心，做回最好的自己。"]
+      en:["Custom-matched to your smile, an implant blends in so well most people won't know it's there.","Made from proven, biocompatible titanium, it restores full biting and chewing power.","By replacing the tooth root, the implant stimulates the jaw and helps keep the bone healthy.","A lasting investment in your smile.","Backed by decades of research, implants have a very high long-term success rate.","Eat, speak and smile with comfort again — no slipping, no worry, just your best self."],
+      zh:["依你的笑容量身配色，植牙融入自然，多數人都察覺不出來。","採用經實證的生物相容鈦金屬，重建完整的咬合與咀嚼力。","藉由取代牙根，植牙能刺激齒槽骨，有助維持骨質健康。","為你的笑容做一項長久的投資。","經數十年研究實證，植牙擁有非常高的長期成功率。","重新自在地進食、說話與微笑，不滑動、不擔心，做回最好的自己。"]
     },
     steph:{
-      en:["Consultation & treatment plan","Tooth extraction","Implant placement","Healing & osseointegration","Abutment placement","Crown placement"],
-      zh:["諮詢與治療計畫","拔除牙齒","植入植體","癒合與骨整合","裝上支台","裝上牙冠"]
+      en:["Consultation & treatment plan","Tooth extraction","Implant placement","Scanning / impression","Crown placement"],
+      zh:["諮詢與治療計畫","拔除牙齒","植入植體","掃描／取模","裝上牙冠"]
     },
     stepp:{
-      en:["We assess your oral health, take CBCT 3D scans, and create a personalised treatment plan.","If needed, the damaged tooth is gently extracted to make way for the implant.","The titanium implant is surgically placed into the jawbone as your new tooth root.","The titanium fuses with the jawbone over time, creating a strong and stable foundation.","A connector (abutment) is attached to the implant to hold your new crown.","A custom-made crown is placed on top, completing your brand-new smile!"],
-      zh:["評估你的口腔健康，進行 CBCT 3D 掃描，並制定專屬的治療計畫。","如有需要，會先輕柔地拔除受損牙齒，為植體騰出空間。","以手術將鈦金屬植體植入齒槽骨，作為你全新的牙根。","鈦金屬會隨時間與齒槽骨結合，形成穩固紮實的地基。","在植體上裝上連接件（支台），用來固定你的新牙冠。","在最上方裝上量身訂製的牙冠，完成你嶄新的笑容！"]
+      en:["We assess your oral health, take CBCT 3D scans, and create a personalised treatment plan.","Not everyone needs this. If the damaged tooth is still in place, it's gently removed first — then we allow 3–6 months for the socket to heal before the implant is placed.","The titanium implant is surgically placed into the jawbone as your new tooth root.","Once the implant has healed, we take a scan or impression of it to prepare your final crown.","A custom-made crown is placed on top, completing your brand-new smile!"],
+      zh:["評估你的口腔健康，進行 CBCT 3D 掃描，並制定專屬的治療計畫。","並非每個人都需要。若受損的牙齒仍在，會先輕柔地拔除，接著讓齒槽骨癒合 3–6 個月，再植入植體。","以手術將鈦金屬植體植入齒槽骨，作為你全新的牙根。","待植體癒合後，會為它進行掃描或取模，以製作你的最終牙冠。","在最上方裝上量身訂製的牙冠，完成你嶄新的笑容！"]
     },
-    dur:{en:["1 Visit","1 Visit","1 Visit","3–6 Months","1 Visit","1 Visit"], zh:["一次就診","一次就診","一次就診","3–6 個月","一次就診","一次就診"]},
+    dur:{en:["1 Visit","3–6 Months to heal","1 Visit","1 Visit","1 Visit"], zh:["一次就診","癒合 3–6 個月","一次就診","一次就診","一次就診"]},
+    optTag:{en:"Optional", zh:"視情況"},
+    healGap:{en:"Healing &amp; osseointegration · 3+ months for the titanium to fuse with the bone", zh:"癒合與骨整合 · 鈦金屬與齒槽骨結合約需 3+ 個月"},
     careli:{
       en:["Clean daily with a soft brush and non-abrasive toothpaste.","Floss daily and use interdental cleaners around the crown.","Attend regular check-ups and professional cleanings.","Avoid smoking and very hard, crunchy foods."],
       zh:["每天以軟毛牙刷與非研磨性牙膏清潔。","每天使用牙線，並用牙間刷清潔牙冠周圍。","定期回診檢查並接受專業洗牙。","避免抽菸與過硬、酥脆的食物。"]
     },
     carenote:{en:"Good oral hygiene = long-lasting results. With proper care, a dental implant can last a lifetime.", zh:"良好的口腔衛生 = 長久的成效。只要妥善照護，植牙可以用上一輩子。"},
     faqq:{
-      en:["Does getting a dental implant hurt?","How long does the whole process take?","Am I a suitable candidate?","What's the success rate?","How long do implants last?","Implant vs. bridge or denture — what's the difference?"],
-      zh:["植牙會痛嗎？","整個療程需要多久？","我適合做植牙嗎？","成功率有多高？","植牙可以用多久？","植牙、牙橋與活動假牙有什麼不同？"]
+      en:["Does getting a dental implant hurt?","How long does the whole process take?","Am I a suitable candidate?","How long do implants last?","Implant vs. bridge or denture — what's the difference?"],
+      zh:["植牙會痛嗎？","整個療程需要多久？","我適合做植牙嗎？","植牙可以用多久？","植牙、牙橋與活動假牙有什麼不同？"]
     },
     faqa:{
-      en:["The procedure is done under local anaesthetic, so you shouldn't feel pain during placement — most patients say it's easier than a tooth extraction. Mild soreness or swelling for a few days afterwards is normal and easily managed.","From placement to final crown, expect roughly <strong>3–9 months</strong>. Most of that time is healing — the titanium needs 3–6 months to fully fuse with the bone (osseointegration). The appointments themselves are short.","Most healthy adults with good gum health and enough jawbone are great candidates. If bone has been lost, a bone graft can often rebuild it first. A CBCT 3D scan at your consultation tells us exactly what's possible for you.","Dental implants are one of the most reliable treatments in dentistry, with long-term success rates around <strong>95% or higher</strong> when placed by an experienced dentist and cared for well.","The titanium implant itself can last a lifetime with good care. The crown on top typically lasts <strong>10–15 years or more</strong> before it may need replacing, just like a normal crown.","An implant is the only option that replaces the tooth root, so it prevents bone loss and doesn't rely on grinding down neighbouring teeth (as a bridge does) or removable plates (like a denture). It's the most natural, self-supporting and long-lasting choice."],
-      zh:["手術會在局部麻醉下進行，因此植入過程中不會感到疼痛，多數患者都覺得比拔牙還輕鬆。術後幾天出現輕微痠痛或腫脹屬於正常現象，也很容易緩解。","從植入到裝上最終牙冠，大約需要 <strong>3 至 9 個月</strong>。其中大部分是癒合時間，鈦金屬需要 3 至 6 個月與骨頭完全結合（骨整合）。看診本身的時間都很短。","大多數牙齦健康、齒槽骨足夠的成年人都很適合。若骨頭已流失，通常可先透過補骨手術重建。諮詢時的 CBCT 3D 掃描能明確告訴我們最適合你的方案。","植牙是牙科中最可靠的療程之一，只要由經驗豐富的牙醫執行並妥善照護，長期成功率約可達 <strong>95% 以上</strong>。","只要妥善照護，鈦金屬植體本身可以用上一輩子。上方的牙冠通常可使用 <strong>10 至 15 年或更久</strong>，之後可能需要更換，就和一般牙冠一樣。","植牙是唯一能取代牙根的選擇，因此能防止骨質流失，也不需要像牙橋那樣磨小鄰牙，或像活動假牙般需要拆卸。它是最自然、能自我支撐且最持久的選擇。"]
+      en:["The procedure is done under local anaesthetic, so you shouldn't feel pain during placement — most patients say it's easier than a tooth extraction. Mild soreness or swelling for a few days afterwards is normal and easily managed.","From placement to final crown, expect roughly <strong>3–9 months</strong>. Most of that time is healing — the titanium needs 3–6 months to fully fuse with the bone (osseointegration). The appointments themselves are short.","Most healthy adults with good gum health and enough jawbone are great candidates. If bone has been lost, a bone graft can often rebuild it first. A CBCT 3D scan at your consultation tells us exactly what's possible for you.","An implant can easily last 10+ years, and often longer with good care.","An implant is the only option that replaces the tooth root, so it prevents bone loss and doesn't rely on grinding down neighbouring teeth (as a bridge does) or removable plates (like a denture). It's the most natural, self-supporting and long-lasting choice."],
+      zh:["手術會在局部麻醉下進行，因此植入過程中不會感到疼痛，多數患者都覺得比拔牙還輕鬆。術後幾天出現輕微痠痛或腫脹屬於正常現象，也很容易緩解。","從植入到裝上最終牙冠，大約需要 <strong>3 至 9 個月</strong>。其中大部分是癒合時間，鈦金屬需要 3 至 6 個月與骨頭完全結合（骨整合）。看診本身的時間都很短。","大多數牙齦健康、齒槽骨足夠的成年人都很適合。若骨頭已流失，通常可先透過補骨手術重建。諮詢時的 CBCT 3D 掃描能明確告訴我們最適合你的方案。","植牙輕鬆就能使用 10 年以上，妥善照護下通常還能用得更久。","植牙是唯一能取代牙根的選擇，因此能防止骨質流失，也不需要像牙橋那樣磨小鄰牙，或像活動假牙般需要拆卸。它是最自然、能自我支撐且最持久的選擇。"]
     },
     exH:{en:"Explore our other treatments", zh:"探索我們的其他療程"},
     exP:{en:"An implant replaces a missing tooth — but depending on your needs, one of these may suit you better.", zh:"植牙能替換缺失的牙齒；但依你的需求，以下選擇之一可能更適合你。"},
@@ -707,6 +708,8 @@
     setHTMLall(".tl-card h3", T.steph[L]);
     setHTMLall(".tl-card p", T.stepp[L]);
     setLabelAll(".dur", T.dur[L]);
+    if(qs(".opt-tag")[0]) qs(".opt-tag")[0].innerHTML = T.optTag[L];
+    if(qs(".ti-tx")[0]) qs(".ti-tx")[0].innerHTML = T.healGap[L];
     setLabelAll(".care li", T.careli[L]);
     setLabel(qs(".care .note")[0], T.carenote[L]);
     setHTMLall(".q button span:not(.chev)", T.faqq[L]);
