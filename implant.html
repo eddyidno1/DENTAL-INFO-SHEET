@@ -151,9 +151,14 @@
   .tl-node{position:absolute;left:8px;top:0;width:48px;height:48px;border-radius:50%;z-index:2;
     background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;display:grid;place-items:center;
     font-weight:900;font-size:1.2rem;box-shadow:var(--shadow-lg);border:4px solid var(--card)}
-  .tl-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow);
-    transition:transform .2s}
+  .tl-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
+    transition:transform .2s;display:flex;align-items:stretch;overflow:hidden}
   .tl-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+  .tl-body{flex:1;min-width:0;padding:20px 22px}
+  .tl-media{flex:0 0 190px;display:flex;align-items:center;justify-content:center;background:var(--card);border-left:1px solid var(--line)}
+  .tl-media img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .5s ease}
+  .tl-card:hover .tl-media img{transform:scale(1.04)}
+  @media(max-width:600px){.tl-card{flex-direction:column-reverse}.tl-media{flex-basis:auto;height:158px;border-left:0;border-top:1px solid var(--line)}}
   .tl-head{display:flex;align-items:center;gap:11px;margin-bottom:7px}
   .tl-ic{flex:0 0 auto;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:var(--brand);
     background:color-mix(in srgb,var(--brand) 12%,var(--card));border:1px solid var(--line)}
@@ -452,9 +457,12 @@
       <div class="tl-item reveal">
         <div class="tl-node">1</div>
         <div class="tl-card">
-          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><h3>Consultation &amp; treatment plan</h3></div>
-          <p>We assess your oral health, take CBCT 3D scans, and create a personalised treatment plan.</p>
-          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <div class="tl-body">
+            <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><h3>Consultation &amp; treatment plan</h3></div>
+            <p>We assess your oral health, take CBCT 3D scans, and create a personalised treatment plan.</p>
+            <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          </div>
+          <div class="tl-media"><img src="implant-step1.png" alt="Consultation and exam illustration"></div>
         </div>
       </div>
       <div class="tl-item tl-attach tl-optional reveal">
@@ -473,9 +481,12 @@
       <div class="tl-item reveal">
         <div class="tl-node">2</div>
         <div class="tl-card">
-          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5l3-3 3 3"/><path d="M10 9h4l-1 8a1 1 0 0 1-2 0Z"/></svg></span><h3>Implant placement</h3></div>
-          <p>The titanium implant is surgically placed into the jawbone as your new tooth root.</p>
-          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <div class="tl-body">
+            <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5l3-3 3 3"/><path d="M10 9h4l-1 8a1 1 0 0 1-2 0Z"/></svg></span><h3>Implant placement</h3></div>
+            <p>The titanium implant is surgically placed into the jawbone as your new tooth root.</p>
+            <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          </div>
+          <div class="tl-media"><img src="implant-step2.png" alt="Implant fixture placement illustration"></div>
         </div>
       </div>
       <div class="tl-interval tl-attach reveal">
@@ -484,9 +495,12 @@
       <div class="tl-item reveal">
         <div class="tl-node">3</div>
         <div class="tl-card">
-          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/><path d="M4 12h16"/></svg></span><h3>Scanning / impression</h3></div>
-          <p>Once the implant has healed, we take a scan or impression of it to prepare your final crown.</p>
-          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <div class="tl-body">
+            <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/><path d="M4 12h16"/></svg></span><h3>Scanning / impression</h3></div>
+            <p>Once the implant has healed, we take a scan or impression of it to prepare your final crown.</p>
+            <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          </div>
+          <div class="tl-media"><img src="implant-step3.png" alt="Post-placement scan or impression illustration"></div>
         </div>
       </div>
       <div class="tl-interval tl-attach reveal">
@@ -495,9 +509,12 @@
       <div class="tl-item reveal">
         <div class="tl-node">4</div>
         <div class="tl-card">
-          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M9.5 9.5l1.5 1.5 3.5-3.5"/></svg></span><h3>Crown placement</h3></div>
-          <p>A custom-made crown is placed on top, completing your brand-new smile!</p>
-          <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <div class="tl-body">
+            <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M9.5 9.5l1.5 1.5 3.5-3.5"/></svg></span><h3>Crown placement</h3></div>
+            <p>A custom-made crown is placed on top, completing your brand-new smile!</p>
+            <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          </div>
+          <div class="tl-media"><img src="implant-step4.png" alt="Final crown on implant illustration"></div>
         </div>
       </div>
     </div>
