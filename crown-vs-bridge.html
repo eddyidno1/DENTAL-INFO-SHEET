@@ -162,17 +162,33 @@
   .how-lane.bridge .hstep .hn{background:linear-gradient(135deg,var(--brand),var(--brand-2))}
   .hstep h4{font-size:.98rem;color:var(--slate);margin-bottom:5px}
   .hstep p{font-size:.87rem;color:var(--muted)}
+  /* alternative tooth-replacement options (implant / denture) */
+  .lane-alt{margin-top:16px;background:color-mix(in srgb,var(--brand) 7%,var(--card));
+    border:1px dashed color-mix(in srgb,var(--brand) 40%,var(--line));border-radius:16px;padding:18px}
+  .lane-alt-h{font-size:.95rem;color:var(--slate);font-weight:700;margin-bottom:14px}
+  .lane-alt-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.lane-alt-opts{grid-template-columns:1fr}}
+  .alt-opt{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);
+    border-radius:13px;padding:14px 15px;transition:transform .15s ease,box-shadow .2s,border-color .2s}
+  .alt-opt:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:color-mix(in srgb,var(--brand) 45%,var(--line))}
+  .alt-tag{align-self:flex-start;font-weight:800;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--brand);background:color-mix(in srgb,var(--brand) 14%,var(--card));
+    border:1px solid color-mix(in srgb,var(--brand) 32%,var(--line));padding:3px 9px;border-radius:999px}
+  .alt-name{display:flex;align-items:center;gap:7px;font-weight:800;font-size:1.05rem;color:var(--slate)}
+  .alt-name svg{color:var(--brand);flex:0 0 auto;transition:transform .15s ease}
+  .alt-opt:hover .alt-name svg{transform:translateX(3px)}
+  .alt-desc{font-size:.85rem;color:var(--muted)}
 
   /* ===== quick comparison table ===== */
   .ctable{max-width:940px;margin:0 auto;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
-  .ctrow{display:grid;grid-template-columns:1fr 210px 1fr;align-items:stretch}
+  .ctrow{display:grid;grid-template-columns:210px 1fr 1fr;align-items:stretch}
   .ctrow+.ctrow{border-top:1px solid var(--line)}
   .ctcell{padding:18px 20px;display:flex;align-items:center;gap:10px;font-size:.97rem}
-  .ctcell.mid{justify-content:center;text-align:center;font-weight:800;color:var(--slate);background:var(--sky);
-    font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .ctcell.mid{order:-1;justify-content:center;text-align:center;font-weight:800;color:var(--slate);background:var(--sky);
+    font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;border-right:1px solid var(--line)}
   .ctcell.crown svg{color:var(--accent);flex:0 0 auto}
   .ctcell.bridge svg{color:var(--brand);flex:0 0 auto}
-  .ctcell.bridge{justify-content:flex-end;text-align:right;flex-direction:row-reverse}
+  .ctcell.bridge{justify-content:flex-end;text-align:right;flex-direction:row-reverse;border-left:1px solid var(--line)}
   .cthead .ctcell{font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;color:#fff}
   .cthead .ctcell.crown{background:linear-gradient(135deg,var(--accent),var(--accent-2));justify-content:center}
   .cthead .ctcell.bridge{background:linear-gradient(135deg,var(--brand),var(--brand-2));justify-content:center;flex-direction:row}
@@ -181,7 +197,7 @@
     .ctable{border-radius:16px}
     .ctrow{grid-template-columns:1fr}
     .ctcell.mid{order:-1;border-left:0;border-right:0;border-bottom:1px solid var(--line)}
-    .ctcell.bridge{justify-content:flex-start;text-align:left;flex-direction:row;border-top:1px dashed var(--line)}
+    .ctcell.bridge{justify-content:flex-start;text-align:left;flex-direction:row;border-left:0;border-top:1px dashed var(--line)}
     .cthead{display:none}
   }
 
@@ -373,6 +389,21 @@
         <div class="hstep"><div class="hn">2</div><h4>Supporting teeth reshaped</h4><p>The teeth on each side are reshaped to act as anchors.</p></div>
         <div class="hstep"><div class="hn">3</div><h4>Bridge placed</h4><p>The bridge — a pontic joined to two crowns — is fitted over them.</p></div>
         <div class="hstep"><div class="hn">4</div><h4>Final result</h4><p>The gap is filled with a complete, natural-looking smile.</p></div>
+      </div>
+      <div class="lane-alt reveal">
+        <p class="lane-alt-h">Want to replace a missing tooth without reshaping the neighbouring teeth? Consider these two options:</p>
+        <div class="lane-alt-opts">
+          <a class="alt-opt" href="implant.html">
+            <span class="alt-tag">Fixed option</span>
+            <span class="alt-name"><span class="alt-name-tx">Dental Implant</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="alt-desc">A titanium root topped with a crown — permanent and completely standalone.</span>
+          </a>
+          <a class="alt-opt" href="dentures.html">
+            <span class="alt-tag">Removable option</span>
+            <span class="alt-name"><span class="alt-name-tx">Denture</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="alt-desc">A removable replacement you can take out to clean.</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -568,6 +599,10 @@
       en:["A tooth is cracked, worn or weakened, but its root is still healthy.","The tooth is gently reshaped to make room for the crown.","A custom crown is bonded over it, restoring strength and shape.","There's a gap left by one or more missing teeth.","The teeth on each side are reshaped to act as anchors.","The bridge — a pontic joined to two crowns — is fitted over them.","The gap is filled with a complete, natural-looking smile."],
       zh:["牙齒破裂、磨損或脆弱，但牙根仍然健康。","輕輕修磨牙齒，為牙冠騰出空間。","將量身訂製的牙冠黏著其上，重建強度與形狀。","一顆或多顆缺牙留下了空隙。","將兩側的牙齒修磨，作為支撐的支柱。","把牙橋（橋體連接兩個牙冠）裝戴於其上。","缺口被填補，重現完整自然的笑容。"]
     },
+    laneAltH:{en:"Want to replace a missing tooth without reshaping the neighbouring teeth? Consider these two options:", zh:"想在不修磨鄰牙的情況下替換缺牙？可以考慮這兩種選擇："},
+    laneAltTag:{en:["Fixed option","Removable option"], zh:["固定式選擇","活動式選擇"]},
+    laneAltName:{en:["Dental Implant","Denture"], zh:["植牙","活動假牙"]},
+    laneAltDesc:{en:["A titanium root topped with a crown — permanent and completely standalone.","A removable replacement you can take out to clean."], zh:["以鈦金屬牙根搭配牙冠，固定且完全獨立，不影響鄰牙。","可自行取下清潔的活動式替代方案。"]},
     ctCrownH:{en:"Crown", zh:"牙冠"},
     ctMidH:{en:"Quick comparison", zh:"快速比較"},
     ctBridgeH:{en:"Bridge", zh:"牙橋"},
@@ -636,6 +671,10 @@
     setLabelAll(".lane-label", T.laneLabel[L]);
     setHTMLall(".hstep h4", T.howH[L]);
     setHTMLall(".hstep p", T.howP[L]);
+    if(qs(".lane-alt-h")[0]) qs(".lane-alt-h")[0].innerHTML = T.laneAltH[L];
+    setHTMLall(".alt-tag", T.laneAltTag[L]);
+    setHTMLall(".alt-name-tx", T.laneAltName[L]);
+    setHTMLall(".alt-desc", T.laneAltDesc[L]);
     setText(qs(".ct-crownh")[0], T.ctCrownH[L]);
     setText(qs(".ct-midh")[0], T.ctMidH[L]);
     setText(qs(".ct-bridgeh")[0], T.ctBridgeH[L]);
