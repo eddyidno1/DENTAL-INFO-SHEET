@@ -163,19 +163,34 @@
     color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,var(--card));
     border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));padding:5px 11px;border-radius:999px}
   .dur.long{color:var(--brand);background:color-mix(in srgb,var(--brand) 13%,var(--card));border-color:color-mix(in srgb,var(--brand) 32%,var(--line))}
-  /* optional branch (tooth extraction) */
-  .tl-optional{padding-left:104px}
-  .tl-optional .tl-node{left:30px;width:38px;height:38px;top:4px;background:var(--card);color:var(--accent);
-    border:2px dashed color-mix(in srgb,var(--accent) 55%,var(--line));box-shadow:var(--shadow)}
-  .tl-optional .tl-card{border-style:dashed;background:color-mix(in srgb,var(--accent) 6%,var(--card))}
-  .tl-optional .tl-ic{color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--card))}
-  .opt-tag{margin-left:auto;flex:0 0 auto;font-weight:800;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;
+  /* elements that attach to the main line via a fine horizontal connector */
+  .tl-attach{position:relative;padding:0 0 0 82px}
+  .tl-attach::before{content:"";position:absolute;left:33px;width:49px;height:2px;background:var(--line);z-index:1}
+  /* optional branch (tooth extraction) — collapsible, accent-coloured */
+  .tl-optional{margin-bottom:30px}
+  .tl-optional::before{top:33px;background:color-mix(in srgb,var(--accent) 50%,var(--line))}
+  .tl-opt{background:color-mix(in srgb,var(--accent) 7%,var(--card));border:1px dashed color-mix(in srgb,var(--accent) 42%,var(--line));
+    border-radius:16px;overflow:hidden;transition:box-shadow .2s}
+  .tl-opt:hover{box-shadow:var(--shadow)}
+  .tl-opt-btn{width:100%;display:flex;align-items:center;gap:11px;background:none;border:0;cursor:pointer;padding:15px 18px;text-align:left}
+  .tl-opt-btn:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:-3px}
+  .tl-opt .tl-ic{color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,var(--card));border-color:color-mix(in srgb,var(--accent) 26%,var(--line))}
+  .tl-opt-t{flex:1;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .tl-opt-title{font-weight:800;font-size:1.05rem;color:var(--forest)}
+  .opt-tag{flex:0 0 auto;font-weight:800;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;
     color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--card));
     border:1px solid color-mix(in srgb,var(--accent) 34%,var(--line));padding:3px 9px;border-radius:999px}
-  /* healing interval (not a numbered step) */
-  .tl-interval{position:relative;padding:0 0 0 82px;margin:-6px 0 26px;min-height:38px;display:flex;align-items:center}
-  .tl-int-node{position:absolute;left:19px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;z-index:2;
-    background:var(--card);border:2px dashed color-mix(in srgb,var(--brand) 50%,var(--line));display:grid;place-items:center;color:var(--brand)}
+  .tl-opt-chev{flex:0 0 auto;color:var(--accent);transition:transform .3s}
+  .tl-opt[aria-open="true"] .tl-opt-chev{transform:rotate(180deg)}
+  .tl-opt-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .tl-opt-inner{padding:2px 18px 16px 51px}
+  .tl-opt-p{color:var(--muted);font-size:.96rem}
+  .tl-opt-dur{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-weight:800;font-size:.8rem;
+    color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,var(--card));
+    border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));padding:5px 11px;border-radius:999px}
+  /* healing / lab-wait intervals (not numbered steps) — brand-coloured */
+  .tl-interval{margin:-4px 0 24px;min-height:36px;display:flex;align-items:center}
+  .tl-interval::before{top:calc(50% - 1px);background:color-mix(in srgb,var(--brand) 45%,var(--line))}
   .tl-int-pill{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.84rem;color:var(--brand);
     background:color-mix(in srgb,var(--brand) 11%,var(--card));border:1px dashed color-mix(in srgb,var(--brand) 40%,var(--line));
     padding:8px 15px;border-radius:14px}
@@ -442,12 +457,17 @@
           <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
         </div>
       </div>
-      <div class="tl-item tl-optional reveal">
-        <div class="tl-node"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><path d="M6 21v-4"/></svg></div>
-        <div class="tl-card">
-          <div class="tl-head"><span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M20 4l-3 3"/></svg></span><h3>Tooth extraction</h3><span class="opt-tag">Optional</span></div>
-          <p>Not everyone needs this. If the damaged tooth is still in place, it's gently removed first — then we allow 3–6 months for the socket to heal before the implant is placed.</p>
-          <span class="dur long"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 3–6 Months to heal</span>
+      <div class="tl-item tl-attach tl-optional reveal">
+        <div class="tl-opt" aria-open="false">
+          <button class="tl-opt-btn" type="button" aria-expanded="false">
+            <span class="tl-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 2 5 2 5 6 0 3-2 4-2 7 0 2-1 4-3 4s-3-2-3-4c0-3-2-4-2-7 0-4 3-4 5-6Z"/><path d="M20 4l-3 3"/></svg></span>
+            <span class="tl-opt-t"><span class="tl-opt-title">Tooth extraction</span><span class="opt-tag">Optional</span></span>
+            <span class="tl-opt-chev"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+          </button>
+          <div class="tl-opt-body"><div class="tl-opt-inner">
+            <p class="tl-opt-p">Not everyone needs this. If the damaged tooth is still in place, it's gently removed first — then we allow 3–6 months for the socket to heal before the implant is placed.</p>
+            <span class="tl-opt-dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 3–6 Months to heal</span>
+          </div></div>
         </div>
       </div>
       <div class="tl-item reveal">
@@ -458,9 +478,8 @@
           <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
         </div>
       </div>
-      <div class="tl-interval reveal">
-        <span class="tl-int-node"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a4.5 4.5 0 0 0-6.4 0L12 8l-2.4-2.4a4.5 4.5 0 1 0-6.4 6.4L12 21l8.8-8.8a4.5 4.5 0 0 0 0-6.6Z"/></svg></span>
-        <span class="tl-int-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="ti-tx">Healing &amp; osseointegration · 3+ months for the titanium to fuse with the bone</span></span>
+      <div class="tl-interval tl-attach reveal">
+        <span class="tl-int-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="ti-tx">3+ months · Healing &amp; osseointegration while the titanium fuses with the jawbone</span></span>
       </div>
       <div class="tl-item reveal">
         <div class="tl-node">3</div>
@@ -469,6 +488,9 @@
           <p>Once the implant has healed, we take a scan or impression of it to prepare your final crown.</p>
           <span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
         </div>
+      </div>
+      <div class="tl-interval tl-attach reveal">
+        <span class="tl-int-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="ti-tx">2 weeks · your crown is custom-made in the dental lab</span></span>
       </div>
       <div class="tl-item reveal">
         <div class="tl-node">4</div>
@@ -636,16 +658,19 @@
       zh:["依你的笑容量身配色，植牙融入自然，多數人都察覺不出來。","採用經實證的生物相容鈦金屬，重建完整的咬合與咀嚼力。","藉由取代牙根，植牙能刺激齒槽骨，有助維持骨質健康。","為你的笑容做一項長久的投資。","經數十年研究實證，植牙擁有非常高的長期成功率。","重新自在地進食、說話與微笑，不滑動、不擔心，做回最好的自己。"]
     },
     steph:{
-      en:["Consultation & treatment plan","Tooth extraction","Implant placement","Scanning / impression","Crown placement"],
-      zh:["諮詢與治療計畫","拔除牙齒","植入植體","掃描／取模","裝上牙冠"]
+      en:["Consultation & treatment plan","Implant placement","Scanning / impression","Crown placement"],
+      zh:["諮詢與治療計畫","植入植體","掃描／取模","裝上牙冠"]
     },
     stepp:{
-      en:["We assess your oral health, take CBCT 3D scans, and create a personalised treatment plan.","Not everyone needs this. If the damaged tooth is still in place, it's gently removed first — then we allow 3–6 months for the socket to heal before the implant is placed.","The titanium implant is surgically placed into the jawbone as your new tooth root.","Once the implant has healed, we take a scan or impression of it to prepare your final crown.","A custom-made crown is placed on top, completing your brand-new smile!"],
-      zh:["評估你的口腔健康，進行 CBCT 3D 掃描，並制定專屬的治療計畫。","並非每個人都需要。若受損的牙齒仍在，會先輕柔地拔除，接著讓齒槽骨癒合 3–6 個月，再植入植體。","以手術將鈦金屬植體植入齒槽骨，作為你全新的牙根。","待植體癒合後，會為它進行掃描或取模，以製作你的最終牙冠。","在最上方裝上量身訂製的牙冠，完成你嶄新的笑容！"]
+      en:["We assess your oral health, take CBCT 3D scans, and create a personalised treatment plan.","The titanium implant is surgically placed into the jawbone as your new tooth root.","Once the implant has healed, we take a scan or impression of it to prepare your final crown.","A custom-made crown is placed on top, completing your brand-new smile!"],
+      zh:["評估你的口腔健康，進行 CBCT 3D 掃描，並制定專屬的治療計畫。","以手術將鈦金屬植體植入齒槽骨，作為你全新的牙根。","待植體癒合後，會為它進行掃描或取模，以製作你的最終牙冠。","在最上方裝上量身訂製的牙冠，完成你嶄新的笑容！"]
     },
-    dur:{en:["1 Visit","3–6 Months to heal","1 Visit","1 Visit","1 Visit"], zh:["一次就診","癒合 3–6 個月","一次就診","一次就診","一次就診"]},
+    dur:{en:["1 Visit","1 Visit","1 Visit","1 Visit"], zh:["一次就診","一次就診","一次就診","一次就診"]},
     optTag:{en:"Optional", zh:"視情況"},
-    healGap:{en:"Healing &amp; osseointegration · 3+ months for the titanium to fuse with the bone", zh:"癒合與骨整合 · 鈦金屬與齒槽骨結合約需 3+ 個月"},
+    extractH:{en:"Tooth extraction", zh:"拔除牙齒"},
+    extractP:{en:"Not everyone needs this. If the damaged tooth is still in place, it's gently removed first — then we allow 3–6 months for the socket to heal before the implant is placed.", zh:"並非每個人都需要。若受損的牙齒仍在，會先輕柔地拔除，接著讓齒槽骨癒合 3–6 個月，再植入植體。"},
+    extractDur:{en:"3–6 Months to heal", zh:"癒合 3–6 個月"},
+    intervals:{en:["3+ months · Healing & osseointegration while the titanium fuses with the jawbone","2 weeks · your crown is custom-made in the dental lab"], zh:["3+ 個月 · 癒合與骨整合，讓鈦金屬與齒槽骨結合","2 週 · 你的牙冠於牙技所量身訂製"]},
     careli:{
       en:["Clean daily with a soft brush and non-abrasive toothpaste.","Floss daily and use interdental cleaners around the crown.","Attend regular check-ups and professional cleanings.","Avoid smoking and very hard, crunchy foods."],
       zh:["每天以軟毛牙刷與非研磨性牙膏清潔。","每天使用牙線，並用牙間刷清潔牙冠周圍。","定期回診檢查並接受專業洗牙。","避免抽菸與過硬、酥脆的食物。"]
@@ -709,7 +734,10 @@
     setHTMLall(".tl-card p", T.stepp[L]);
     setLabelAll(".dur", T.dur[L]);
     if(qs(".opt-tag")[0]) qs(".opt-tag")[0].innerHTML = T.optTag[L];
-    if(qs(".ti-tx")[0]) qs(".ti-tx")[0].innerHTML = T.healGap[L];
+    if(qs(".tl-opt-title")[0]) qs(".tl-opt-title")[0].innerHTML = T.extractH[L];
+    if(qs(".tl-opt-p")[0]) qs(".tl-opt-p")[0].innerHTML = T.extractP[L];
+    if(qs(".tl-opt-dur")[0]) setLabel(qs(".tl-opt-dur")[0], T.extractDur[L]);
+    setHTMLall(".ti-tx", T.intervals[L]);
     setLabelAll(".care li", T.careli[L]);
     setLabel(qs(".care .note")[0], T.carenote[L]);
     setHTMLall(".q button span:not(.chev)", T.faqq[L]);
@@ -726,6 +754,7 @@
     var tog = document.getElementById("langToggle");
     if(tog) tog.setAttribute("data-active", L);
     qs('.q[aria-open="true"] .ans').forEach(function(a){ a.style.maxHeight = a.scrollHeight + "px"; });
+    qs('.tl-opt[aria-open="true"] .tl-opt-body').forEach(function(b){ b.style.maxHeight = b.scrollHeight + "px"; });
     if(window.updateViewerUI) window.updateViewerUI();
     try{ localStorage.setItem("lang", L); }catch(e){}
   }
@@ -749,6 +778,16 @@
       var open = q.getAttribute('aria-open') === 'true';
       if(open){ ans.style.maxHeight = null; q.removeAttribute('aria-open'); btn.setAttribute('aria-expanded','false'); }
       else{ ans.style.maxHeight = ans.scrollHeight + 'px'; q.setAttribute('aria-open','true'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  // Collapsible tooth-extraction branch in the journey
+  document.querySelectorAll('.tl-opt-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var opt = btn.closest('.tl-opt');
+      var body = opt.querySelector('.tl-opt-body');
+      var open = opt.getAttribute('aria-open') === 'true';
+      if(open){ body.style.maxHeight = null; opt.setAttribute('aria-open','false'); btn.setAttribute('aria-expanded','false'); }
+      else{ body.style.maxHeight = body.scrollHeight + 'px'; opt.setAttribute('aria-open','true'); btn.setAttribute('aria-expanded','true'); }
     });
   });
   // Reveal on scroll
