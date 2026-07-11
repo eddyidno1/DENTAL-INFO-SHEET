@@ -80,10 +80,10 @@
   .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
   .btn-ghost{background:var(--card);color:var(--deep);border:1px solid var(--line)}
   .btn-ghost:hover{transform:translateY(-2px)}
-  .hero-art{margin-top:40px;width:100%;display:flex;justify-content:center}
-  .art-card{width:min(430px,88%);border-radius:26px;overflow:hidden;border:6px solid var(--card);
-    box-shadow:var(--shadow-lg);background:linear-gradient(160deg,var(--sky),#c9ecec)}
+  .hero-art{margin-top:40px;width:min(var(--maxw),66.6vw)}
+  .art-card{width:100%;overflow:hidden;background:linear-gradient(160deg,var(--sky),#c9ecec)}
   .art-card svg{display:block;width:100%;height:auto}
+  .art-card video{display:block;width:100%;height:clamp(300px,46vh,560px);object-fit:cover}
 
   section{padding:74px 0}
   .sec-head{max-width:680px;margin:0 auto 46px;text-align:center}
@@ -250,7 +250,7 @@
       <a class="btn btn-ghost" href="#compare">Same-day vs traditional</a>
     </div>
     <div class="hero-art">
-      <div class="art-card"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ceramic dental crown milled for a same-day fit"><defs><linearGradient id="cw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dbeef0"/></linearGradient><radialGradient id="cglow" cx="50%" cy="42%" r="55%"><stop offset="0" stop-color="#06b6d4" stop-opacity=".22"/><stop offset="1" stop-color="#06b6d4" stop-opacity="0"/></radialGradient><filter id="csh" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#0b3b3f" flood-opacity="0.22"/></filter></defs><ellipse cx="150" cy="150" rx="150" ry="150" fill="url(#cglow)"/><ellipse cx="150" cy="172" rx="66" ry="11" fill="#0b3b3f" opacity="0.08"/><g filter="url(#csh)"><path d="M92,74 C92,44 118,30 150,30 C182,30 208,44 208,74 C208,104 198,128 188,150 C181,164 168,160 150,160 C132,160 119,164 112,150 C102,128 92,104 92,74 Z" fill="url(#cw)" stroke="#cfe9ea" stroke-width="1.5"/><path d="M120,58 Q150,74 180,58" fill="none" stroke="#bfe2e4" stroke-width="4" stroke-linecap="round"/><path d="M150,76 L150,138" stroke="#d4ecec" stroke-width="3" stroke-linecap="round"/></g><g stroke="#06b6d4" stroke-width="3.4" stroke-linecap="round"><path d="M234,40 l0,22 M223,51 l22,0"/></g><circle cx="66" cy="52" r="4.5" fill="#fb7185"/></svg></div>
+      <div class="art-card"><video src="C0004_verticle.mp4" autoplay loop muted playsinline preload="auto" aria-label="A same-day crown being made"></video></div>
     </div>
   </div>
 </section>
