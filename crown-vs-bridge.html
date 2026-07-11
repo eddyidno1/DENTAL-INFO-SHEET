@@ -7,40 +7,23 @@
 <meta name="description" content="Dental crown vs dental bridge: a clear side-by-side comparison of what each one is, what it's used for, how it works, and which is right for you.">
 <style>
   :root{
-    --slate:#1c2534;
-    --brand:#d97706;
-    --brand-2:#f59e0b;
-    --accent:#0ea5e9;
-    --accent-2:#38bdf8;
-    --ink:#2a2118;
-    --muted:#7c6f60;
-    --card:#ffffff;
-    --bg:#fbf7f1;
-    --sky:#fdf0dd;
-    --sky-2:#fff9f0;
-    --line:#efe4d2;
-    --shadow:0 10px 30px -12px rgba(120,72,12,.20);
-    --shadow-lg:0 24px 60px -20px rgba(120,72,12,.28);
+    color-scheme:dark;
+    --slate:#f2e9db;
+    --brand:#fbbf24;
+    --brand-2:#fcd34d;
+    --accent:#38bdf8;
+    --accent-2:#7dd3fc;
+    --ink:#f3ece1;
+    --muted:#b3a794;
+    --card:#241d16;
+    --bg:#15110b;
+    --sky:#241c11;
+    --sky-2:#1b150d;
+    --line:#372d1e;
+    --shadow:0 10px 30px -12px rgba(0,0,0,.5);
+    --shadow-lg:0 24px 60px -20px rgba(0,0,0,.6);
     --radius:20px;
     --maxw:1140px;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --slate:#f2e9db;
-      --brand:#fbbf24;
-      --brand-2:#fcd34d;
-      --accent:#38bdf8;
-      --accent-2:#7dd3fc;
-      --ink:#f3ece1;
-      --muted:#b3a794;
-      --card:#241d16;
-      --bg:#15110b;
-      --sky:#241c11;
-      --sky-2:#1b150d;
-      --line:#372d1e;
-      --shadow:0 10px 30px -12px rgba(0,0,0,.5);
-      --shadow-lg:0 24px 60px -20px rgba(0,0,0,.6);
-    }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -246,8 +229,7 @@
 
   /* banner */
   .banner{position:relative;overflow:hidden;border-radius:28px;padding:56px 40px;text-align:center;
-    background:linear-gradient(135deg,var(--slate),var(--brand));color:#fff;box-shadow:var(--shadow-lg)}
-  @media (prefers-color-scheme: dark){.banner{background:linear-gradient(135deg,#241a10,#a2660d)}}
+    background:linear-gradient(135deg,#241a10,#a2660d);color:#fff;box-shadow:var(--shadow-lg)}
   .banner .eyebrow{background:rgba(255,255,255,.15);color:#fff5e6;border-color:rgba(255,255,255,.22)}
   .banner h2{color:#fff;font-size:clamp(1.9rem,5vw,3rem);font-weight:900;margin-top:16px}
   .banner p{color:#f7ead6;margin-top:14px;font-size:1.1rem;max-width:58ch;margin-left:auto;margin-right:auto}

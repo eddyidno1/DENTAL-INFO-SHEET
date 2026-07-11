@@ -7,38 +7,22 @@
 <meta name="description" content="A friendly, easy-to-understand guide to dental crowns: what they are, when you need one, the 6-step procedure, crown types, aftercare and FAQs.">
 <style>
   :root{
-    --navy:#0b2a5b;
-    --blue:#1766c9;
-    --blue-2:#2f8ee0;
-    --sky:#e8f2fd;
-    --sky-2:#f4f9ff;
-    --teal:#12b3a6;
-    --ink:#152238;
-    --muted:#5a6b85;
-    --card:#ffffff;
-    --bg:#f6fafe;
-    --line:#e2ecf7;
-    --shadow:0 10px 30px -12px rgba(15,58,120,.28);
-    --shadow-lg:0 24px 60px -20px rgba(15,58,120,.35);
+    color-scheme:dark;
+    --navy:#dbe8ff;
+    --blue:#5aa2f0;
+    --blue-2:#79b6f5;
+    --sky:#152a49;
+    --sky-2:#12233d;
+    --teal:#2fd0c2;
+    --ink:#eaf1fb;
+    --muted:#9db0cd;
+    --card:#132339;
+    --bg:#0c1626;
+    --line:#22344f;
+    --shadow:0 10px 30px -12px rgba(0,0,0,.5);
+    --shadow-lg:0 24px 60px -20px rgba(0,0,0,.6);
     --radius:20px;
     --maxw:1140px;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --navy:#dbe8ff;
-      --blue:#5aa2f0;
-      --blue-2:#79b6f5;
-      --sky:#152a49;
-      --sky-2:#12233d;
-      --teal:#2fd0c2;
-      --ink:#eaf1fb;
-      --muted:#9db0cd;
-      --card:#132339;
-      --bg:#0c1626;
-      --line:#22344f;
-      --shadow:0 10px 30px -12px rgba(0,0,0,.5);
-      --shadow-lg:0 24px 60px -20px rgba(0,0,0,.6);
-    }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -217,6 +201,18 @@
   .visit{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-weight:700;font-size:.82rem;
     color:var(--teal);background:color-mix(in srgb,var(--teal) 12%,var(--card));border:1px solid color-mix(in srgb,var(--teal) 30%,var(--line));
     padding:6px 12px;border-radius:999px}
+  /* ---------- Procedure parts (Traditional / Same-day) ---------- */
+  .proc-part{max-width:760px;margin:0 auto 34px;text-align:center}
+  .proc-part.p2{margin-top:64px}
+  .proc-tag{display:inline-block;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue);background:color-mix(in srgb,var(--blue) 14%,var(--card));border:1px solid color-mix(in srgb,var(--blue) 30%,var(--line));
+    padding:5px 14px;border-radius:999px}
+  .proc-tag.tag-teal{color:var(--teal);background:color-mix(in srgb,var(--teal) 14%,var(--card));border-color:color-mix(in srgb,var(--teal) 30%,var(--line))}
+  .proc-h{color:var(--navy);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:850;margin:14px 0 8px;letter-spacing:-.01em}
+  .proc-p{color:var(--muted);font-size:1.02rem}
+  .sameday-cta{display:flex;justify-content:center;margin-top:4px}
+  .btn-teal{background:linear-gradient(135deg,#0d9488,#06b6d4);color:#fff;box-shadow:var(--shadow)}
+  .btn-teal:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 
   /* types table-ish */
   .types{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -255,8 +251,7 @@
 
   /* closing banner */
   .banner{position:relative;overflow:hidden;border-radius:28px;padding:56px 40px;text-align:center;
-    background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;box-shadow:var(--shadow-lg)}
-  @media (prefers-color-scheme: dark){.banner{background:linear-gradient(135deg,#0c1f3d,#12365f);}}
+    background:linear-gradient(135deg,#0c1f3d,#12365f);color:#fff;box-shadow:var(--shadow-lg)}
   .banner .eyebrow{background:rgba(255,255,255,.14);color:#eaf3ff;border-color:rgba(255,255,255,.2)}
   .banner h2{color:#fff;font-size:clamp(1.9rem,5vw,3rem);font-weight:900;margin-top:16px;letter-spacing:.02em}
   .banner p{color:#dbe8ff;margin-top:14px;font-size:1.12rem;max-width:56ch;margin-left:auto;margin-right:auto}
@@ -375,7 +370,7 @@
         <p class="muted">Crowns are used when a tooth is too damaged for a simple filling but is still worth saving. By covering the whole tooth, a crown seals and protects what's left underneath — letting you bite, chew and smile with confidence again.</p>
       </div>
       <div class="stats reveal">
-        <div class="stat"><div class="num">10–15+</div><div class="lbl">years of life with good care</div></div>
+        <div class="stat"><div class="num">~10</div><div class="lbl">years average, longer with good care</div></div>
         <div class="stat"><div class="num">6</div><div class="lbl">simple steps, start to finish</div></div>
         <div class="stat"><div class="num">100%</div><div class="lbl">custom-made to fit your tooth</div></div>
       </div>
@@ -431,8 +426,14 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">How it works</span>
-      <h2>The procedure — 6 simple steps</h2>
+      <h2>The procedure</h2>
       <p>Here's exactly how the process works, from your first visit to your finished smile.</p>
+    </div>
+
+    <div class="proc-part reveal">
+      <span class="proc-tag">Part 1</span>
+      <h3 class="proc-h">Traditional Crown</h3>
+      <p class="proc-p">Your crown is custom-made in a dental lab, so treatment is completed over two visits — usually a couple of weeks apart.</p>
     </div>
     <div class="steps">
       <!-- 1 -->
@@ -452,7 +453,7 @@
           <div class="step-num">1</div>
           <h3>Exam &amp; Treatment Plan</h3>
           <p>We examine your tooth, take X-rays if needed, and create a personalised treatment plan.</p>
-          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Visit 1</span>
         </div>
       </div>
       <!-- 2 -->
@@ -480,7 +481,7 @@
           <div class="step-num">2</div>
           <h3>Tooth Preparation</h3>
           <p>The tooth is gently reshaped to make room for the crown.</p>
-          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Visit 1</span>
         </div>
       </div>
       <!-- 3 -->
@@ -501,9 +502,9 @@
         </div>
         <div class="step-body">
           <div class="step-num">3</div>
-          <h3>Impression Taken</h3>
-          <p>Impressions are taken to create a custom crown that fits perfectly.</p>
-          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <h3>Impression / Scan Taken</h3>
+          <p>An impression or digital scan is taken to create a custom crown that fits perfectly.</p>
+          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Visit 1</span>
         </div>
       </div>
       <!-- 4 -->
@@ -523,7 +524,7 @@
           <div class="step-num">4</div>
           <h3>Temporary Crown Placed</h3>
           <p>A temporary crown is placed to protect your tooth while your custom crown is made.</p>
-          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Visit 1</span>
         </div>
       </div>
       <!-- 5 -->
@@ -547,7 +548,7 @@
           <div class="step-num">5</div>
           <h3>Custom Crown Fitting</h3>
           <p>Your custom crown is checked for fit, shape and colour, then adjusted for comfort.</p>
-          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Visit 2</span>
         </div>
       </div>
       <!-- 6 -->
@@ -568,9 +569,20 @@
           <div class="step-num">6</div>
           <h3>Crown Cemented</h3>
           <p>The crown is securely cemented in place, restoring strength and a natural smile.</p>
-          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1 Visit</span>
+          <span class="visit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Visit 2</span>
         </div>
       </div>
+    </div>
+
+    <div class="proc-part p2 reveal">
+      <span class="proc-tag tag-teal">Part 2</span>
+      <h3 class="proc-h">Same-Day Crown</h3>
+      <p class="proc-p">With CEREC technology, your crown is designed, milled and fitted in a single visit — no impressions to send off, no temporary crown and no second appointment.</p>
+    </div>
+    <div class="sameday-cta reveal">
+      <a class="btn btn-teal sameday-btn" href="same-day-crown.html">See how same-day crowns work
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -666,7 +678,7 @@
       </div>
       <div class="q reveal">
         <button aria-expanded="false"><span>How long does a crown last?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
-        <div class="ans"><div class="ans-inner">With proper care, a dental crown can last <strong>10–15 years or more</strong>. Good brushing and flossing, regular check-ups, and avoiding hard foods all help it last as long as possible.</div></div>
+        <div class="ans"><div class="ans-inner">On average, a dental crown lasts around <strong>10 years</strong>, and often longer with good care. Good brushing and flossing, regular check-ups, and avoiding hard foods all help it last as long as possible.</div></div>
       </div>
       <div class="q reveal">
         <button aria-expanded="false"><span>Will my crown look natural?</span><span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></button>
@@ -765,8 +777,8 @@
     btnPrimary:{en:"See the 6 steps", zh:"查看六大步驟"},
     btnGhost:{en:"Read the FAQ", zh:"常見問題"},
     h2:{
-      en:["What exactly is a dental crown?","When you might need a crown","The procedure — 6 simple steps","Common types of crowns","Caring for your new crown","Frequently asked questions"],
-      zh:["牙冠究竟是什麼？","什麼情況需要牙冠？","療程步驟 — 簡單六步驟","常見的牙冠種類","如何照護你的新牙冠","常見問題"]
+      en:["What exactly is a dental crown?","When you might need a crown","The procedure","Common types of crowns","Caring for your new crown","Frequently asked questions"],
+      zh:["牙冠究竟是什麼？","什麼情況需要牙冠？","療程步驟","常見的牙冠種類","如何照護你的新牙冠","常見問題"]
     },
     secp:{
       en:["Think of it as a tailor-made helmet for a tooth that needs a little extra strength.","Your dentist may recommend a crown in any of these common situations.","Here's exactly how the process works, from your first visit to your finished smile.","Crowns come in different materials. Your dentist helps you pick the best fit for the tooth, your bite and your budget.","A crown isn't fussy — treat it like a natural tooth and it will serve you well for years.","The things patients ask us most about getting a crown."],
@@ -777,8 +789,8 @@
       zh:["<strong>牙冠</strong>是一種量身訂製的牙套，能完整包覆整顆牙齒（從牙齦線以上）。它的形狀與顏色都會與你的天然牙齒相配，因此大多數人都看不出來。","當牙齒受損過大、無法單靠補牙修復，但仍值得保留時，就會使用牙冠。牙冠包覆整顆牙齒，密封並保護底下剩餘的齒質，讓你重新自信地咬合、咀嚼與微笑。"]
     },
     statlbl:{
-      en:["years of life with good care","simple steps, start to finish","custom-made to fit your tooth"],
-      zh:["妥善照護可使用的年數","從頭到尾的簡單步驟","為你的牙齒量身訂製"]
+      en:["years average, longer with good care","simple steps, start to finish","custom-made to fit your tooth"],
+      zh:["年平均使用，妥善照護可更久","從頭到尾的簡單步驟","為你的牙齒量身訂製"]
     },
     cardh:{
       en:["Cracked or weak tooth","Large filling","After a root canal","Worn-down teeth","Cosmetic makeover","Bridge or implant"],
@@ -789,17 +801,24 @@
       zh:["牙冠能將脆弱或裂開的牙齒固定在一起，防止損害繼續擴大。","當補牙範圍過大、牙齒無法自行支撐時，牙冠能重建其強度。","接受治療後的牙齒會變得脆弱，牙冠能加以保護，讓它持續使用多年。","磨牙或酸蝕會使牙齒逐漸變平，牙冠能重建其自然形狀。","牙冠能改善形狀不佳或嚴重變色牙齒的顏色與外形。","牙冠可作為牙橋的支撐或植牙的最後修復，自然地替補缺失的牙齒。"]
     },
     steph:{
-      en:["Exam & Treatment Plan","Tooth Preparation","Impression Taken","Temporary Crown Placed","Custom Crown Fitting","Crown Cemented"],
-      zh:["檢查與治療計畫","牙齒修形","取模印模","裝上臨時牙冠","訂製牙冠試戴","黏著固定牙冠"]
+      en:["Exam & Treatment Plan","Tooth Preparation","Impression / Scan Taken","Temporary Crown Placed","Custom Crown Fitting","Crown Cemented"],
+      zh:["檢查與治療計畫","牙齒修形","取模／口內掃描","裝上臨時牙冠","訂製牙冠試戴","黏著固定牙冠"]
     },
     stepp:{
-      en:["We examine your tooth, take X-rays if needed, and create a personalised treatment plan.","The tooth is gently reshaped to make room for the crown.","Impressions are taken to create a custom crown that fits perfectly.","A temporary crown is placed to protect your tooth while your custom crown is made.","Your custom crown is checked for fit, shape and colour, then adjusted for comfort.","The crown is securely cemented in place, restoring strength and a natural smile."],
-      zh:["我們會檢查你的牙齒，必要時拍攝 X 光，並制定專屬的治療計畫。","輕柔地修整牙齒，為牙冠預留空間。","取得牙齒印模，以製作完美貼合的訂製牙冠。","在訂製牙冠製作期間，先裝上臨時牙冠保護牙齒。","檢查訂製牙冠的密合度、形狀與顏色，並調整至舒適為止。","將牙冠穩固地黏著定位，重建牙齒強度與自然笑容。"]
+      en:["We examine your tooth, take X-rays if needed, and create a personalised treatment plan.","The tooth is gently reshaped to make room for the crown.","An impression or digital scan is taken to create a custom crown that fits perfectly.","A temporary crown is placed to protect your tooth while your custom crown is made.","Your custom crown is checked for fit, shape and colour, then adjusted for comfort.","The crown is securely cemented in place, restoring strength and a natural smile."],
+      zh:["我們會檢查你的牙齒，必要時拍攝 X 光，並制定專屬的治療計畫。","輕柔地修整牙齒，為牙冠預留空間。","取得牙齒印模或數位掃描，以製作完美貼合的訂製牙冠。","在訂製牙冠製作期間，先裝上臨時牙冠保護牙齒。","檢查訂製牙冠的密合度、形狀與顏色，並調整至舒適為止。","將牙冠穩固地黏著定位，重建牙齒強度與自然笑容。"]
     },
     visit:{
-      en:["1 Visit","1 Visit","1 Visit","1 Visit","1 Visit","1 Visit"],
-      zh:["一次就診","一次就診","一次就診","一次就診","一次就診","一次就診"]
+      en:["Visit 1","Visit 1","Visit 1","Visit 1","Visit 2","Visit 2"],
+      zh:["第一次就診","第一次就診","第一次就診","第一次就診","第二次就診","第二次就診"]
     },
+    procTag:{en:["Part 1","Part 2"], zh:["第一部分","第二部分"]},
+    procH:{en:["Traditional Crown","Same-Day Crown"], zh:["傳統牙冠","當天牙冠"]},
+    procP:{
+      en:["Your crown is custom-made in a dental lab, so treatment is completed over two visits — usually a couple of weeks apart.","With CEREC technology, your crown is designed, milled and fitted in a single visit — no impressions to send off, no temporary crown and no second appointment."],
+      zh:["你的牙冠會在牙技所量身訂製，因此療程分兩次就診完成，通常相隔約兩週。","運用 CEREC 技術，你的牙冠可在一次就診中完成設計、研磨與裝戴，無需送模、免臨時牙冠，也不必二次回診。"]
+    },
+    sameDayBtn:{en:"See how same-day crowns work", zh:"了解當天牙冠的流程"},
     typeh:{
       en:["Porcelain / All-Ceramic","Zirconia","Porcelain-Fused-to-Metal","Metal / Gold Alloy"],
       zh:["陶瓷／全瓷","二氧化鋯","金屬燒瓷","金屬／金合金"]
@@ -822,8 +841,8 @@
       zh:["製作牙冠會痛嗎？","牙冠可以使用多久？","牙冠看起來自然嗎？","我該如何照護？","如果感覺過高或不舒服怎麼辦？"]
     },
     faqa:{
-      en:["Not usually. The tooth is numbed with local anaesthetic during preparation, so most people feel only mild pressure. Some tenderness or sensitivity for a few days afterwards is normal and settles quickly.","With proper care, a dental crown can last <strong>10–15 years or more</strong>. Good brushing and flossing, regular check-ups, and avoiding hard foods all help it last as long as possible.","Yes. Crowns are custom-made and matched to the shape and colour of your surrounding teeth. Porcelain and ceramic crowns in particular are almost impossible to tell apart from a natural tooth.","Treat it just like a natural tooth: brush twice a day, floss daily, and keep up regular dental visits. Avoid chewing very hard items directly on the crown, and wear a night guard if you grind your teeth.","Let your dentist know. A crown that feels too tall on your bite is a quick, painless adjustment. It's important to fix it early so your bite stays comfortable and balanced."],
-      zh:["通常不會。修形過程中會以局部麻醉使牙齒失去知覺，因此大多數人只會感覺到輕微壓力。術後幾天內出現些微酸軟或敏感屬於正常現象，並會很快緩解。","只要妥善照護，牙冠可以使用<strong>10 至 15 年，甚至更久</strong>。良好的刷牙與使用牙線、定期回診，以及避免咬硬物，都能讓它用得更久。","會的。牙冠皆為量身訂製，並會與周圍牙齒的形狀與顏色相配。尤其是陶瓷與全瓷牙冠，幾乎與天然牙齒難以分辨。","把它當作天然牙齒照護即可：每天刷牙兩次、每天使用牙線，並定期回診。避免直接用牙冠咬非常硬的東西，若會磨牙請配戴夜間咬合板。","請告知你的牙醫。牙冠若在咬合時感覺過高，只需快速且無痛地調整即可。及早處理很重要，能讓你的咬合維持舒適與平衡。"]
+      en:["Not usually. The tooth is numbed with local anaesthetic during preparation, so most people feel only mild pressure. Some tenderness or sensitivity for a few days afterwards is normal and settles quickly.","On average, a dental crown lasts around <strong>10 years</strong>, and often longer with good care. Good brushing and flossing, regular check-ups, and avoiding hard foods all help it last as long as possible.","Yes. Crowns are custom-made and matched to the shape and colour of your surrounding teeth. Porcelain and ceramic crowns in particular are almost impossible to tell apart from a natural tooth.","Treat it just like a natural tooth: brush twice a day, floss daily, and keep up regular dental visits. Avoid chewing very hard items directly on the crown, and wear a night guard if you grind your teeth.","Let your dentist know. A crown that feels too tall on your bite is a quick, painless adjustment. It's important to fix it early so your bite stays comfortable and balanced."],
+      zh:["通常不會。修形過程中會以局部麻醉使牙齒失去知覺，因此大多數人只會感覺到輕微壓力。術後幾天內出現些微酸軟或敏感屬於正常現象，並會很快緩解。","牙冠平均可使用約<strong>10 年</strong>，妥善照護下通常能用得更久。良好的刷牙與使用牙線、定期回診，以及避免咬硬物，都能讓它用得更久。","會的。牙冠皆為量身訂製，並會與周圍牙齒的形狀與顏色相配。尤其是陶瓷與全瓷牙冠，幾乎與天然牙齒難以分辨。","把它當作天然牙齒照護即可：每天刷牙兩次、每天使用牙線，並定期回診。避免直接用牙冠咬非常硬的東西，若會磨牙請配戴夜間咬合板。","請告知你的牙醫。牙冠若在咬合時感覺過高，只需快速且無痛地調整即可。及早處理很重要，能讓你的咬合維持舒適與平衡。"]
     },
     bannerh2:{en:"Strong. Protected. Beautiful.", zh:"堅固。保護。美觀。"},
     bannerp:{
@@ -872,6 +891,10 @@
     setHTMLall(".step h3", T.steph[L]);
     setHTMLall(".step p", T.stepp[L]);
     setLabelAll(".visit", T.visit[L]);
+    setHTMLall(".proc-tag", T.procTag[L]);
+    setHTMLall(".proc-h", T.procH[L]);
+    setHTMLall(".proc-p", T.procP[L]);
+    setLabel(qs(".sameday-btn")[0], T.sameDayBtn[L]);
     setHTMLall(".type h3", T.typeh[L]);
     setHTMLall(".type p", T.typep[L]);
     setHTMLall(".type .tag", T.typetag[L]);
