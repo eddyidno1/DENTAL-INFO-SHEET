@@ -41,6 +41,7 @@
     background:color-mix(in srgb, var(--bg) 82%, transparent);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--plum);letter-spacing:.02em}
+  .brand-logo{width:34px;height:29px;flex:0 0 auto;background:url(logo-purple.png) center/contain no-repeat}
   .nav-right{display:flex;align-items:center;gap:16px}
   .nav-links{display:flex;gap:22px}
   .nav-links a{color:var(--muted);font-weight:600;font-size:.92rem;transition:color .2s}
@@ -196,7 +197,7 @@
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <div class="brand"><span>So Dental</span></div>
+    <div class="brand"><span class="brand-logo"></span><span>So Dental</span></div>
     <div class="nav-right">
       <nav class="nav-links">
         <a href="#types">Types</a>
