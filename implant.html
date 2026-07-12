@@ -808,6 +808,8 @@
     var tog = document.getElementById("langToggle");
     if(tog){ tog.addEventListener("click", function(){
       var cur = document.documentElement.getAttribute("data-lang") || "en";
+      applyLang(cur==="en" ? "zh" : "en");
+    }); }
   })();
 
   // Nav pages dropdown menu
