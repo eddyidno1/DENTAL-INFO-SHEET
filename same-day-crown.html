@@ -46,17 +46,32 @@
   .nav-links{display:flex;gap:22px}
   .nav-links a{color:var(--muted);font-weight:600;font-size:.92rem;transition:color .2s}
   .nav-links a:hover{color:var(--brand)}
-  .nav-cta{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;color:#fff;
+  .nav-menu-wrap{position:relative}
+  .nav-menu-btn{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;color:#fff;cursor:pointer;border:0;
     background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:9px 15px;border-radius:999px;
     box-shadow:var(--shadow);white-space:nowrap;transition:transform .15s}
-  .nav-cta:hover{transform:translateY(-2px)}
+  .nav-menu-btn:hover{transform:translateY(-2px)}
+  .nmb-burger{display:none}
+  .nmb-chev{transition:transform .25s}
+  .nav-menu-wrap.open .nmb-chev{transform:rotate(180deg)}
+  .nav-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:210px;background:var(--card);
+    border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:8px;
+    display:none;flex-direction:column;gap:2px;z-index:60}
+  .nav-menu-wrap.open .nav-menu{display:flex}
+  .nav-menu a{display:block;padding:10px 13px;border-radius:10px;color:var(--ink);font-weight:600;font-size:.92rem;
+    white-space:nowrap;transition:background .15s,color .15s}
+  .nav-menu a:hover{background:color-mix(in srgb,var(--brand) 15%,var(--card));color:var(--brand)}
+  .nav-menu-wrap [data-l="zh"]{display:none}
+  html[data-lang="zh"] .nav-menu-wrap [data-l="en"]{display:none}
+  html[data-lang="zh"] .nav-menu-wrap [data-l="zh"]{display:inline}
+  @media(max-width:760px){.nav-menu-btn{padding:9px 11px;gap:0}.nmb-label,.nmb-chev{display:none}.nmb-burger{display:block}}
   .lang-toggle{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);background:var(--card);
     border-radius:999px;padding:3px;cursor:pointer;font-weight:800;font-size:.8rem;color:var(--muted);
     box-shadow:var(--shadow);font-family:inherit;line-height:1;flex:0 0 auto}
   .lang-toggle span{padding:6px 12px;border-radius:999px;transition:background .2s, color .2s}
   .lang-toggle[data-active="en"] span[data-l="en"],
   .lang-toggle[data-active="zh"] span[data-l="zh"]{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
-  @media(max-width:860px){.nav-links{display:none}.nav-cta{padding:8px 13px;font-size:.82rem}.nav-cta svg{display:none}.nav-right{gap:12px}}
+  @media(max-width:860px){.nav-links{display:none}.nav-right{gap:12px}}
 
   /* hero (centered) */
   .hero{position:relative;overflow:hidden;padding:66px 0 78px}
@@ -225,8 +240,19 @@
         <a href="#benefits">Benefits</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="nav-cta" href="index.html">Dental Crowns
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<div class="nav-menu-wrap">
+        <button class="nav-menu-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Menu">
+          <span class="nmb-label"><span data-l="en">Treatments</span><span data-l="zh">其他療程</span></span>
+          <svg class="nmb-burger" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="nmb-chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav-menu" role="menu">
+          <a href="index.html" role="menuitem"><span data-l="en">Dental Crown</span><span data-l="zh">牙冠</span></a>
+          <a href="crown-vs-bridge.html" role="menuitem"><span data-l="en">Crown vs Bridge</span><span data-l="zh">牙冠 vs 牙橋</span></a>
+          <a href="dentures.html" role="menuitem"><span data-l="en">Dentures</span><span data-l="zh">活動假牙</span></a>
+          <a href="implant.html" role="menuitem"><span data-l="en">Dental Implants</span><span data-l="zh">植牙</span></a>
+        </div>
+      </div>
       <button class="lang-toggle" id="langToggle" data-active="en" type="button" aria-label="Switch language / 切換語言"><span data-l="en">EN</span><span data-l="zh">中文</span></button>
     </div>
   </div>
@@ -550,7 +576,6 @@
     document.documentElement.setAttribute("lang", L==="zh"?"zh-Hant":"en");
     document.documentElement.setAttribute("data-lang", L);
     setHTMLall(".nav-links a", T.nav[L]);
-    setLabel(qs(".nav-cta")[0], T.navCrown[L]);
     setHTMLall(".eyebrow", T.eyebrow[L]);
     qs(".hero h1")[0].innerHTML = T.h1[L];
     setLabel(qs(".one-visit")[0], T.oneVisit[L]);
@@ -595,8 +620,16 @@
     var tog = document.getElementById("langToggle");
     if(tog){ tog.addEventListener("click", function(){
       var cur = document.documentElement.getAttribute("data-lang") || "en";
-      applyLang(cur==="en" ? "zh" : "en");
-    }); }
+  })();
+
+  // Nav pages dropdown menu
+  (function(){
+    var wrap = document.querySelector('.nav-menu-wrap'); if(!wrap) return;
+    var btn = wrap.querySelector('.nav-menu-btn');
+    btn.addEventListener('click', function(e){ e.stopPropagation();
+      var open = wrap.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
+    document.addEventListener('click', function(e){ if(!wrap.contains(e.target)){ wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
   })();
 
   // FAQ accordion
