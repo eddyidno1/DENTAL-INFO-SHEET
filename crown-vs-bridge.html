@@ -201,6 +201,11 @@
   .alt-desc{font-size:.85rem;color:var(--muted)}
 
   /* ===== quick comparison table ===== */
+  .ct-legend{max-width:940px;margin:0 auto 16px;display:none;gap:22px;justify-content:center;flex-wrap:wrap}
+  .ct-legend .leg-item{display:inline-flex;align-items:center;gap:9px;font-size:.92rem;font-weight:700;color:var(--ink)}
+  .ct-legend .leg-dot{width:13px;height:13px;border-radius:50%;flex:0 0 auto}
+  .ct-legend .leg-crown .leg-dot{background:var(--accent)}
+  .ct-legend .leg-bridge .leg-dot{background:var(--brand)}
   .ctable{max-width:940px;margin:0 auto;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
   .ctrow{display:grid;grid-template-columns:210px 1fr 1fr;align-items:stretch}
   .ctrow+.ctrow{border-top:1px solid var(--line)}
@@ -220,6 +225,7 @@
     .ctcell.mid{order:-1;border-left:0;border-right:0;border-bottom:1px solid var(--line)}
     .ctcell.bridge{justify-content:flex-start;text-align:left;flex-direction:row;border-left:0;border-top:1px dashed var(--line)}
     .cthead{display:none}
+    .ct-legend{display:flex}
   }
 
   /* which — cards */
@@ -448,6 +454,10 @@
       <span class="eyebrow">At a glance</span>
       <h2>Quick comparison</h2>
       <p>The same questions, answered for each — so you can see the difference at a glance.</p>
+    </div>
+    <div class="ct-legend reveal">
+      <span class="leg-item leg-crown"><span class="leg-dot"></span><span class="leg-crownl">Crown</span></span>
+      <span class="leg-item leg-bridge"><span class="leg-dot"></span><span class="leg-bridgel">Bridge</span></span>
     </div>
     <div class="ctable reveal">
       <div class="ctrow cthead">
@@ -709,6 +719,8 @@
     setText(qs(".ct-crownh")[0], T.ctCrownH[L]);
     setText(qs(".ct-midh")[0], T.ctMidH[L]);
     setText(qs(".ct-bridgeh")[0], T.ctBridgeH[L]);
+    if(qs(".leg-crownl")[0]) setText(qs(".leg-crownl")[0], T.ctCrownH[L]);
+    if(qs(".leg-bridgel")[0]) setText(qs(".leg-bridgel")[0], T.ctBridgeH[L]);
     setHTMLall(".c-label", T.ctLabel[L]);
     setHTMLall(".c-crown", T.ctCrown[L]);
     setHTMLall(".c-bridge", T.ctBridge[L]);
