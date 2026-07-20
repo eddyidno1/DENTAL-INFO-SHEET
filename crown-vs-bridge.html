@@ -36,53 +36,19 @@
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.16em;
     text-transform:uppercase;color:var(--brand);background:var(--sky);padding:7px 14px;border-radius:999px;border:1px solid var(--line)}
 
-  /* nav */
-  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(12px);
-    background:color-mix(in srgb, var(--bg) 82%, transparent);border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:flex-end;height:64px;gap:14px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--slate);letter-spacing:.02em}
-  .nav-right{display:flex;align-items:center;gap:16px}
-  /* vertical nav rail (desktop) */
-  .nav-links{
-    position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:45;
-    display:flex;flex-direction:column;gap:2px;
-    background:color-mix(in srgb,var(--card) 86%,transparent);
-    backdrop-filter:saturate(180%) blur(12px);
-    border:1px solid var(--line);border-radius:16px;padding:7px;box-shadow:var(--shadow-lg)}
-  .nav-links a{display:block;padding:8px 11px;border-radius:11px;max-width:118px;line-height:1.3;
-    color:var(--muted);font-weight:600;font-size:.82rem;transition:color .2s,background .2s}
-  .nav-links a:hover{color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent)}
-  .nav-links a.active{color:var(--brand);font-weight:700;
-    background:color-mix(in srgb,var(--brand) 16%,var(--card))}
-  @media(max-width:1420px){.nav-links{display:none}}
-  .nav-menu-wrap{position:relative}
-  .nav-menu-btn{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;color:#fff;cursor:pointer;border:0;
-    background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:9px 15px;border-radius:999px;
-    box-shadow:var(--shadow);white-space:nowrap;transition:transform .15s}
-  .nav-menu-btn:hover{transform:translateY(-2px)}
-  .nmb-burger{display:none}
-  .nmb-chev{transition:transform .25s}
-  .nav-menu-wrap.open .nmb-chev{transform:rotate(180deg)}
-  .nav-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:210px;background:var(--card);
-    border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:8px;
-    display:none;flex-direction:column;gap:2px;z-index:60}
-  .nav-menu-wrap.open .nav-menu{display:flex}
-  .nav-menu a{display:block;padding:10px 13px;border-radius:10px;color:var(--ink);font-weight:600;font-size:.92rem;
-    white-space:nowrap;transition:background .15s,color .15s}
-  .nav-menu a:hover{background:color-mix(in srgb,var(--brand) 15%,var(--card));color:var(--brand)}
-  .nav-menu-wrap [data-l="zh"]{display:none}
-  html[data-lang="zh"] .nav-menu-wrap [data-l="en"]{display:none}
-  html[data-lang="zh"] .nav-menu-wrap [data-l="zh"]{display:inline}
-  @media(max-width:760px){.nav-menu-btn{padding:9px 11px;gap:0}.nmb-label,.nmb-chev{display:none}.nmb-burger{display:block}.lang-toggle{order:1}.nav-menu-wrap{order:2}}
   .lang-toggle{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);background:var(--card);
     border-radius:999px;padding:3px;cursor:pointer;font-weight:800;font-size:.8rem;color:var(--muted);
     box-shadow:var(--shadow);font-family:inherit;line-height:1;flex:0 0 auto}
   .lang-toggle span{padding:6px 12px;border-radius:999px;transition:background .2s, color .2s}
   .lang-toggle[data-active="en"] span[data-l="en"],
   .lang-toggle[data-active="zh"] span[data-l="zh"]{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
-  @media(max-width:880px){.nav-links{display:none}.nav-right{gap:12px}}
 
   /* hero */
+  /* language toggle, pinned to the top-right of the hero */
+  .hero-lang{position:absolute;top:20px;z-index:5;
+    right:max(22px, calc((100% - var(--maxw)) / 2 + 22px))}
+  @media(max-width:760px){.hero-lang{top:14px;right:16px}}
   .hero{position:relative;overflow:hidden;padding:66px 0 76px}
   .hero-bg{position:absolute;inset:0;z-index:0;background:
     radial-gradient(52% 48% at 82% 12%, color-mix(in srgb,var(--brand) 24%, transparent), transparent 70%),
@@ -300,38 +266,10 @@
 <body>
 
 <!-- NAV -->
-<header class="nav">
-  <div class="wrap nav-inner">
-    <div class="nav-right">
-<div class="nav-menu-wrap">
-        <button class="nav-menu-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Menu">
-          <span class="nmb-label"><span data-l="en">Treatments</span><span data-l="zh">其他療程</span></span>
-          <svg class="nmb-burger" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          <svg class="nmb-chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
-        <div class="nav-menu" role="menu">
-          <a href="index.html" role="menuitem"><span data-l="en">Dental Crown</span><span data-l="zh">牙冠</span></a>
-          <a href="same-day-crown.html" role="menuitem"><span data-l="en">Same-Day Crowns</span><span data-l="zh">當天牙冠</span></a>
-          <a href="dentures.html" role="menuitem"><span data-l="en">Dentures</span><span data-l="zh">活動假牙</span></a>
-          <a href="implant.html" role="menuitem"><span data-l="en">Dental Implants</span><span data-l="zh">植牙</span></a>
-        </div>
-      </div>
-      <button class="lang-toggle" id="langToggle" data-active="en" type="button" aria-label="Switch language / 切換語言"><span data-l="en">EN</span><span data-l="zh">中文</span></button>
-    </div>
-  </div>
-</header>
-
-<nav class="nav-links">
-  <a href="#whatare">Crown</a>
-  <a href="#whatare">Bridge</a>
-  <a href="#how">How it works</a>
-  <a href="#table">Compare</a>
-  <a href="#faq">FAQ</a>
-</nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-lang"><button class="lang-toggle" id="langToggle" data-active="en" type="button" aria-label="Switch language / 切換語言"><span data-l="en">EN</span><span data-l="zh">中文</span></button></div>
   <div class="hero-vs" aria-hidden="true">
     <div class="hv-side top"><div class="hv-card crown"><canvas id="crown3d" role="img" aria-label="A 3D single dental crown"></canvas></div></div>
     <div class="hv-side bottom"><div class="hv-card bridge"><canvas id="bridge3d" role="img" aria-label="A 3D three-unit dental bridge"></canvas></div></div>
@@ -604,8 +542,6 @@
 <script>
   // ---------- Language toggle (EN / Traditional Chinese) ----------
   var T = {
-    nav:{en:["Crown","Bridge","How it works","Compare","FAQ"], zh:["牙冠","牙橋","療程","比較","常見問題"]},
-    navCrown:{en:"Dental Crowns", zh:"牙冠"},
     eyebrow:{
       en:["Patient Guide","Side by side","Step by step","At a glance","Which one","Good to know","Restore your smile · With confidence"],
       zh:["患者指南","並列比較","逐步解析","一目了然","該選哪個","值得了解","重建笑容 · 安心選擇"]
@@ -703,7 +639,6 @@
   function applyLang(L){
     document.documentElement.setAttribute("lang", L==="zh"?"zh-Hant":"en");
     document.documentElement.setAttribute("data-lang", L);
-    setHTMLall(".nav-links a", T.nav[L]);
     setHTMLall(".eyebrow", T.eyebrow[L]);
     qs(".hero h1")[0].innerHTML = T.h1[L];
     qs(".hero .lead")[0].innerHTML = T.lead[L];
@@ -763,15 +698,6 @@
     }); }
   })();
 
-  // Nav pages dropdown menu
-  (function(){
-    var wrap = document.querySelector('.nav-menu-wrap'); if(!wrap) return;
-    var btn = wrap.querySelector('.nav-menu-btn');
-    btn.addEventListener('click', function(e){ e.stopPropagation();
-      var open = wrap.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
-    document.addEventListener('click', function(e){ if(!wrap.contains(e.target)){ wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
-  })();
 
   // FAQ accordion
   document.querySelectorAll('.q button').forEach(function(btn){
@@ -865,34 +791,6 @@
       new THREE.GLTFLoader().parse(bin.buffer,'',onLoad,function(){});
     }catch(e){}
   })();
-</script>
-<script>
-/* nav rail: highlight the section currently in view */
-(function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
-  if(!links.length) return;
-  var seen = {}, items = [];
-  links.forEach(function(a){
-    var id = a.getAttribute('href').slice(1), el = id && document.getElementById(id);
-    if(!el || seen[id]) return;          // skip missing targets and repeats
-    seen[id] = 1; items.push({link:a, el:el});
-  });
-  if(!items.length) return;
-  function update(){
-    // pick the section that starts closest above the line -- nav order does not
-    // always match document order, so compare positions rather than list order
-    var line = window.scrollY + 140, current = null, best = -Infinity;
-    items.forEach(function(it){
-      var top = it.el.getBoundingClientRect().top + window.scrollY;
-      if(top <= line && top > best){ best = top; current = it; }
-    });
-    links.forEach(function(a){ a.classList.remove('active'); });
-    if(current) current.link.classList.add('active');
-  }
-  update();
-  window.addEventListener('scroll', update, {passive:true});
-  window.addEventListener('resize', update);
-})();
 </script>
 </body>
 </html>
